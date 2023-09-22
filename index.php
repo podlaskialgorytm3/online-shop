@@ -6,6 +6,6 @@
     <title>eBoutique</title>
 </head>
 <body>
-    s
+    
 </body>
 </html>
