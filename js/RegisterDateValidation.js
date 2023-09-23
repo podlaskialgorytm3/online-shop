@@ -116,6 +116,7 @@ const registerUser = () => {
 		cache: false,
 		success: function(){
             console.log("Poprawnie dodano do bazy danych!")
+            window.location.href = "login.php";
             }
 	    }) )
 }

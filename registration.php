@@ -20,8 +20,12 @@ $haslo = md5($_POST['haslo']);
 $sql = "INSERT INTO user (username,imie,nazwisko,adres,email,haslo) 
 VALUES ('$username','$imie','$nazwisko','$adres','$email','$haslo')";
 $conn = mysqli_connect($hostname, $user, $password,$database);
+
 if (mysqli_query($conn, $sql)) {
-	echo json_encode(array("statusCode"=>200));
+    ob_start();
+    header('location: index.php');
+    ob_end();
+ 	echo json_encode(array("statusCode"=>200));
 } 
 else {
 	echo json_encode(array("statusCode"=>201));
