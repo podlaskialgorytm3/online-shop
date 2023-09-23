@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div#header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    background-color: rgb(131, 197, 241);;
+    box-shadow: 8px 8px 29px 0px rgb(131, 197, 241);
+    color: white;
+}
+div#header>div{
+    margin: 100px;
+}
+div#header>div.header-left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div#header>div.header-right-side{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div#header>div.header-right-side>div.accounts{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+div#header>div.header-right-side>div.accounts>a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    transition: 0.5s;
+}
+div#header>div.header-right-side>div.accounts>a:hover{
+    color: black;
+}
