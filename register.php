@@ -36,6 +36,8 @@
             <div class="form-group">
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Powtórz hasło!">
                 <span class="register-confirmPassword-error error-alert"></span>
+                <br>
+                <span class="other-password-error error-alert"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Zarejestruj się" style="font-size: 18px;">

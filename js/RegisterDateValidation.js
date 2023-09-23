@@ -6,6 +6,7 @@ const registerAddressError = document.querySelector(".register-address-error")
 const registerEmailError = document.querySelector(".register-email-error")
 const registerPasswordError = document.querySelector(".register-password-error")
 const registerConfirmPasswordError = document.querySelector(".register-confirmPassword-error")
+const registerOtherPasswordError = document.querySelector(".other-password-error")
 const submitButton = document.querySelector("input[type=submit]")
 
 const username = document.querySelector("#username")
@@ -85,6 +86,13 @@ submitButton.addEventListener("click",(e) =>{
     else{
         help++
         registerConfirmPasswordError.textContent = ""
+    }
+    if(confirmPassword.value != password.value && confirmPassword.value != "" && password.value != ""){
+        registerOtherPasswordError.textContent = "Hasła się nie zgadzają!"
+    }
+    else{
+        registerOtherPasswordError.textContent = ""
+        help++
     }
     if(help == 7){
         registerUser()
