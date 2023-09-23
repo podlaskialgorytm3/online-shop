@@ -40,24 +40,32 @@ if(isset($_POST['submit'])){
         <form action="#" method="post">
             <div class="form-group">
                 <input type="email" id="email" name="email" placeholder="Wpisz swój email!">
+                <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                        if(empty($_POST["email"])){
+                            echo  '<span class="error-alert">Podano puste pole!</span>';
+                        }
+                    }
+                ?>
             </div>
             <div class="form-group">
                 <input type="password" id="password" name="password" placeholder="Wpisz swoje hasło!">
-            </div>
-            <div class="form-group">
-                <?php 
-                    if(isset($error)){
-                        echo '<span class="error-alert">'.$error.'</span>';
+                <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                        if(empty($_POST["password"])){
+                            echo  '<span class="error-alert">Podano puste pole!</span>';
+                        }
                     }
                 ?>
+            </div>
+            <div class="form-group">
                 <input type="submit" name="submit" value="Zaloguj się" style="font-size: 18px;">
             </div>
             <div class="form-group">
                 <p>Nie masz jeszcze konta? <a href="register.php">Zarejestruj się!</a></p>
             </div>
         </form>
-    </div>
-
+</div>
 
 </body>
 </html>
