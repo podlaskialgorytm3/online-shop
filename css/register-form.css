@@ -65,3 +65,7 @@ body {
     color: #002e60;
     font-weight: 900;
 }
+.error-alert{
+    color: red;
+    font-size: 18px;
+}
