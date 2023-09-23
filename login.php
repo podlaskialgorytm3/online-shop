@@ -3,34 +3,29 @@
 
 session_start();
 
-$error = "";
+$hostname = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'sklep';
 if(isset($_POST['submit'])){
-    
-    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $email = $_POST['email'];
     $haslo = md5($_POST['password']);
-    $typ = $_POST['typ'];
+    $select = "SELECT * FROM user WHERE email = '$email' && haslo='$haslo'";
+    $result = mysqli_query($conn,$select);
 
-
-$select = "SELECT * FROM user WHERE email = '$email' && password='$haslo'";
-
-$result = mysqli_num_rows($conn,$select);
-
-if(mysqli_num_rows($result) > 0){
+    if(mysqli_num_rows($result) > 0){
     $row = mysqli_fetch_array($result);
     if($row['typ'] == 'admin'){
         $_SESSION['admin_name'] = $row['username'];
         header('location:admin_pages/admin.php');
     }
-    elseif(row['typ'] == 'user'){
+    elseif($row['typ'] == 'user'){
         $_SESSION['user_name'] = $row['username'];
-        echo "siema";
         header('location:user_pages/user.php');
-    }
-}
-else{
+    }}}
+    else{
     $error = "Nieprawidłowy e-mail lub hasło!";
-}
-};
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +50,7 @@ else{
                         echo '<span class="error-alert">'.$error.'</span>';
                     }
                 ?>
-                <input type="submit" value="Zaloguj się" style="font-size: 18px;">
+                <input type="submit" name="submit" value="Zaloguj się" style="font-size: 18px;">
             </div>
             <div class="form-group">
                 <p>Nie masz jeszcze konta? <a href="register.php">Zarejestruj się!</a></p>

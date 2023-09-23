@@ -1,10 +1,5 @@
 <?php
 
-$hostname = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'sklep';
-
-$conn = mysqli_connect($hostname,$user,$password,$database);
+$conn = mysqli_connect('localhost','root','','sklep');
 
 ?>

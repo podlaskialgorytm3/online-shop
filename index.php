@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'components/meta.php' ?>
+    <?php include 'components/meta.php'?>
     <title>SKLEP M&D</title>
 </head>
 <body>
