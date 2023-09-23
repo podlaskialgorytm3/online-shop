@@ -7,6 +7,7 @@ const registerEmailError = document.querySelector(".register-email-error")
 const registerPasswordError = document.querySelector(".register-password-error")
 const registerConfirmPasswordError = document.querySelector(".register-confirmPassword-error")
 const registerOtherPasswordError = document.querySelector(".other-password-error")
+const registerOtherEmailError = document.querySelector(".other-email-error")
 const submitButton = document.querySelector("input[type=submit]")
 
 const username = document.querySelector("#username")
@@ -17,7 +18,18 @@ const email = document.querySelector("#email")
 const password = document.querySelector("#password")
 const confirmPassword = document.querySelector("#confirmPassword")
 
-
+let emails = []
+const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-data.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            database.forEach(element =>{
+                emails.push(element['email'])
+            })
+    }
+}
 submitButton.addEventListener("click",(e) =>{
     e.preventDefault()
     let regexp = /^[A-Za-ząęółśżźćń]+$/;
@@ -94,26 +106,18 @@ submitButton.addEventListener("click",(e) =>{
         registerOtherPasswordError.textContent = ""
         help++
     }
-    const ajax = new XMLHttpRequest();
-    ajax.open("GET","../components/fetch-data.php" , true);
-    ajax.send();
-
-    ajax.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            let database = JSON.parse(this.responseText);
-            database.forEach(element =>{
-                if(element['email'] == email.value){
-                    registerEmailError.textContent = "Wpisany mail jest już zajęty!"
-                }
-                else{
-                    registerEmailError.textContent = ""
-                    help++
-                }
-            })
-        }
+    if(emails.includes(email.value)){
+        registerOtherEmailError.textContent = "Podany email jest już zarejestrowany!"
+    }
+    else{
+        registerOtherEmailError.textContent = ""
+        help++
     }
     if(help == 9){
         registerUser()
+    }
+    else{
+        console.log(help)
     }
 })
 
