@@ -101,4 +101,20 @@ submitButton.addEventListener("click",(e) =>{
 
 const registerUser = () => {
     console.log("Poprawnie wporwadzone dane!")
+    $.ajax({
+		url: "registration.php",
+		type: "POST",
+		data: {
+			username: username.value,
+            imie: firstName.value,
+            nazwisko: lastName.value,
+            adres: address.value,
+            email: email.value,
+            haslo: password.value,	
+		 },
+		cache: false,
+		success: function(){
+            console.log("Poprawnie dodano do bazy danych!")
+            }
+	    }) 
 }
