@@ -2,7 +2,7 @@
     font-family: 'Quicksand', sans-serif;
 }
 body {
-    background-color: rgb(246, 222, 238);
+    background-color: #0056b3;
     display: flex;
     flex-direction: column;
     justify-content: center;
