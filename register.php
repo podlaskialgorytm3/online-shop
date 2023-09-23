@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <?php include 'components/meta.php' ?>
+    <title>SKLEP M&D | REJESTRACJA</title>
     <link rel="stylesheet" href="css/register-form.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    <title>Register</title>
 </head>
 <body>
 <div class="container">
@@ -35,7 +31,7 @@
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Powtórz hasło!">
             </div>
             <div class="form-group">
-                <input type="submit" value="Zarejestruj się">
+                <input type="submit" value="Zarejestruj się" style="font-size: 18px;">
             </div>
             <div class="form-group">
                 <p>Masz już konto? <a href="login.php">Zaloguj się!</a></p>
