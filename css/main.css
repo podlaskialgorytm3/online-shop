@@ -1,0 +1,10 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    background-color: rgb(246, 222, 238);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
