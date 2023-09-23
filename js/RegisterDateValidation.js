@@ -94,13 +94,14 @@ submitButton.addEventListener("click",(e) =>{
         registerOtherPasswordError.textContent = ""
         help++
     }
-    if(help == 7){
+    if(help == 8){
         registerUser()
     }
 })
 
 const registerUser = () => {
     console.log("Poprawnie wporwadzone dane!")
+    console.log(
     $.ajax({
 		url: "registration.php",
 		type: "POST",
@@ -116,5 +117,5 @@ const registerUser = () => {
 		success: function(){
             console.log("Poprawnie dodano do bazy danych!")
             }
-	    }) 
+	    }) )
 }
