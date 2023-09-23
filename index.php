@@ -3,7 +3,6 @@
 <head>
     <?php include 'components/meta.php' ?>
     <title>SKLEP M&D</title>
-    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
     <?php include 'components/header.php' ?>

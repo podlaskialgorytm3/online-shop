@@ -1,6 +1,9 @@
+<head>
+    <link rel="stylesheet" href="../css/header.css">
+</head>
 <div id="header">
     <div class="header-left-side">
-        <img src="images/shop_icon.png" alt="Icon our shop!" style="width: 80px">            
+        <img src="../images/shop_icon.png" alt="Icon our shop!" style="width: 80px">            
     </div>
     <div class="header-right-side">
         <div class="shoping-cart">
