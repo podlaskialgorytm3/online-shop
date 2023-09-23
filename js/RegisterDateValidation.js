@@ -1,0 +1,1 @@
+console.log("In this file, I will code validation of register")
