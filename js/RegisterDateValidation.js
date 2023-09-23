@@ -94,7 +94,25 @@ submitButton.addEventListener("click",(e) =>{
         registerOtherPasswordError.textContent = ""
         help++
     }
-    if(help == 8){
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-data.php" , true);
+    ajax.send();
+
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            database.forEach(element =>{
+                if(element['email'] == email.value){
+                    registerEmailError.textContent = "Wpisany mail jest już zajęty!"
+                }
+                else{
+                    registerEmailError.textContent = ""
+                    help++
+                }
+            })
+        }
+    }
+    if(help == 9){
         registerUser()
     }
 })
