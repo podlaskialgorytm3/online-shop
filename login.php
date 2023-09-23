@@ -7,6 +7,9 @@ $hostname = 'localhost';
 $user = 'root';
 $password = '';
 $database = 'sklep';
+
+$error = "";
+
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $haslo = md5($_POST['password']);
@@ -22,10 +25,10 @@ if(isset($_POST['submit'])){
     elseif($row['typ'] == 'user'){
         $_SESSION['user_name'] = $row['username'];
         header('location:user_pages/user.php');
-    }}}
+    }}
     else{
     $error = "Nieprawidłowy e-mail lub hasło!";
-    }
+    }}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +58,9 @@ if(isset($_POST['submit'])){
                         if(empty($_POST["password"])){
                             echo  '<span class="error-alert">Podano puste pole!</span>';
                         }
+                    }
+                    if($error){
+                        echo  '<span class="error-alert">'.$error.'</span>';
                     }
                 ?>
             </div>
