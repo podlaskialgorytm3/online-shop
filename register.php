@@ -36,6 +36,9 @@
             <div class="form-group">
                 <input type="submit" value="Zarejestruj się">
             </div>
+            <div class="form-group">
+                <p>Masz już konto? <a href="login.php">Zaloguj się!</a></p>
+            </div>
         </form>
     </div>
 

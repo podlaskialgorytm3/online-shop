@@ -3,7 +3,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: rgb(246, 222, 238);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,4 +60,15 @@ body {
 
 .form-group input[type="submit"]:hover {
     background-color: #0056b3;
+}
+.form-group p{
+    font-size: 18px
+}
+.form-group a{
+    text-decoration: none;
+    color: #0056b3;
+}
+.form-group a:hover{
+    color: #002e60;
+    font-weight: 900;
 }
