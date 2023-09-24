@@ -14,7 +14,7 @@ $stmt->bind_param("s",$token_hash);
 
 $stmt->execute();
 
-$result = $stmt->get_result();unnecessary
+$result = $stmt->get_result();
 
 $user = $result->fetch_assoc();
 
