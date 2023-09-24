@@ -42,16 +42,17 @@ body {
     font-size: 18px;
 }
 
-.form-group input[type="submit"] {
+.form-group input[type="submit"],button {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
-.form-group input[type="submit"]:hover {
+.form-group input[type="submit"]:hover,button:hover {
     background-color: rgb(131, 197, 241);
 }
 .form-group p{

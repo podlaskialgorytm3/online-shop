@@ -69,6 +69,7 @@ if(isset($_POST['submit'])){
             </div>
             <div class="form-group">
                 <p>Nie masz jeszcze konta? <a href="register.php">Zarejestruj się!</a></p>
+                <p>Zapomniałeś hasła? <a href="forgot-password.php">Przypomij hasło!</a></p>
             </div>
         </form>
 </div>
