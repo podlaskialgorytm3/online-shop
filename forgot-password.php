@@ -13,8 +13,9 @@
             <input type="email" id="email" name="email" placeholder="Wpisz swój email!">
         </div>
         <div class="form-group">
-                <button class="send-code">Wyślij kod</button>
+                <button class="send-code">Wyślij link na mail'a!</button>
         </div>
     </form>
+</div>
 </body>
 </html>
