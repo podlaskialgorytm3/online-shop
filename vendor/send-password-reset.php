@@ -59,4 +59,21 @@ if($mysqli->affected_rows){
     }
 }
 
-echo "Wiadomość została wysłana, sprawdź pocztę!";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SKLEP M&D</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/register-form.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-group">
+        <h2>Wiadomość została wysłana!</h2>
+        <p>Sprawdź mail'a!</p>
+        <p>[WSKAZÓWKA]: Sprawdź zakładkę spam.</p>
+    </div>
+</div>
+</body>
+</html>
