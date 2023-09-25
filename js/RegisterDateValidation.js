@@ -85,19 +85,53 @@ submitButton.addEventListener("click",(e) =>{
             registerEmailError.textContent = "Niepoprawny format e-mail!"
         }
     }
+    let regex = /[A-Z]/g
+    let numberRegex = /[0-9]/g
     if(password.value == ""){
         registerPasswordError.textContent = "Pole jest wymagane!"
     }
     else{
-        help++
-        registerPasswordError.textContent = ""
+        if(password.value.length > 7){
+            if(regex.test(password.value)){
+                if(numberRegex.test(password.value)){
+                    registerPasswordError.textContent = ""
+                    help++
+                }
+                else{
+                    registerPasswordError.textContent = "Hasło powinno mieć conajniej jedną cyfrę!"
+                }
+            }
+            else{
+                registerPasswordError.textContent = "Hasło powinno mieć conajniej jedną dużą literę!"
+            }
+        }
+        else{
+            registerPasswordError.textContent = "Hasło powinno mieć conajmniej 8 znaków!"
+        }
     }
+    let regexX = /[A-Z]/g
+    let numberRegexX = /[0-9]/g
     if(confirmPassword.value == ""){
         registerConfirmPasswordError.textContent = "Pole jest wymagane!"
     }
     else{
-        help++
-        registerConfirmPasswordError.textContent = ""
+        if(confirmPassword.value.length > 7){
+            if(regexX.test(confirmPassword.value)){
+                if(numberRegexX.test(confirmPassword.value)){
+                    registerConfirmPasswordError.textContent = ""
+                    help++
+                }
+                else{
+                    registerConfirmPasswordError.textContent = "Hasło powinno mieć conajniej jedną cyfrę!"
+                }
+            }
+            else{
+                registerConfirmPasswordError.textContent = "Hasło powinno mieć conajniej jedną dużą literę!"
+            }
+        }
+        else{
+            registerConfirmPasswordError.textContent = "Hasło powinno mieć conajmniej 8 znaków!"
+        }
     }
     if(confirmPassword.value != password.value && confirmPassword.value != "" && password.value != ""){
         registerOtherPasswordError.textContent = "Hasła się nie zgadzają!"
