@@ -42,14 +42,19 @@ if(strtotime($user["reset_token_expires_at"]) <= time()){
 
         <div class="form-group">
             <input type="password" id="password" name="password" placeholder="Wpisz nowe hasło!">
+            <span class="password-error error-alert"></span>
         </div>
         <div class="form-group">
             <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Wpisz ponownie nowe hasło!">
+            <span class="confirm-password-error error-alert"></span>
         </div>
         <div class="form-group">
+                <span class="not-matching error-alert"></span>
                 <button class="send-code">Zmień hasło!</button>
         </div>
     </form>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/ResetPasswordValidation.js"></script>
 </body>
 </html>
