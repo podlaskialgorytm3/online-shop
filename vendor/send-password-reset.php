@@ -66,6 +66,7 @@ if($mysqli->affected_rows){
     <title>SKLEP M&D</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/register-form.css">
+    <link rel="shortcut icon" href="../images/shop_icon.png" type="image/x-icon">
 </head>
 <body>
 <div class="container">
