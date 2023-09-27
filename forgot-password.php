@@ -11,7 +11,7 @@
     <h2>Przypomij hasło!</h2>
     <form action="vendor/send-password-reset.php" method="post">
         <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Wpisz swój email!">
+            <input type="email" id="email" name="email" placeholder="Wpisz swój email!" required>
         </div>
         <div class="form-group">
                 <button class="send-code">Wyślij link na mail'a!</button>
