@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/register-form.css">
 </head>
 <body>
+<?php include 'components/bookmark.php'; ?>
 <div class="container">
         <h2>Zarejestruj się!</h2>
         <form action="#" method="post">

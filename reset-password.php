@@ -34,6 +34,7 @@ if(strtotime($user["reset_token_expires_at"]) <= time()){
     <link rel="stylesheet" href="css/register-form.css">
 </head>
 <body>
+<?php include 'components/bookmark.php'; ?>
 <div class="container">
     <h2>Zresetuj hasło!</h2>
     <form action="process-reset-password.php" method="post">
