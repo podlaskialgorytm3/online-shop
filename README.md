@@ -5,4 +5,4 @@
 <p>3) W katalogu "Database" znajdziesz bazę, którą będziesz musiał zainportować lokalnie do MySQL</p>
 
 <h2>Jeśli chcesz sprawdzić stronkę kliknij link poniżej!</h2>
-<a href="http://podlaskialgorytm.ct8.pl/">Strona Michał i Dawid</a>
+<a target="_blank" href="http://podlaskialgorytm.ct8.pl/">Strona Michał i Dawid</a>
