@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="css/responsiveness.css">
 </head>
 <body>
+    <?php include 'components/bookmark.php'; ?>
 <div class="container">
         <h2>Zaloguj się!</h2>
         <form action="#" method="post">

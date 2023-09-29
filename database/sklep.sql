@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 23, 2023 at 04:52 PM
+-- Generation Time: Wrz 27, 2023 at 08:36 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -35,7 +35,9 @@ CREATE TABLE `user` (
   `adres` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `haslo` varchar(255) NOT NULL,
-  `typ` varchar(255) NOT NULL DEFAULT 'user'
+  `typ` varchar(255) NOT NULL DEFAULT 'user',
+  `reset_token_hash` varchar(64) DEFAULT NULL,
+  `reset_token_expires_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -56,7 +58,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_USER` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_USER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
