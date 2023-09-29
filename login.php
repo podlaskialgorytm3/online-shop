@@ -36,6 +36,7 @@ if(isset($_POST['submit'])){
     <?php include 'components/meta.php' ?>
     <title>SKLEP M&D | Logownaie</title>
     <link rel="stylesheet" href="css/register-form.css">
+    <link rel="stylesheet" href="css/responsiveness.css">
 </head>
 <body>
 <div class="container">

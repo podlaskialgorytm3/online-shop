@@ -4,6 +4,7 @@
     <?php include 'components/meta.php' ?>
     <title>SKLEP M&D | REJESTRACJA</title>
     <link rel="stylesheet" href="css/register-form.css">
+    <link rel="stylesheet" href="css/responsiveness.css">
 </head>
 <body>
 <div class="container">
