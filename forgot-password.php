@@ -4,6 +4,7 @@
     <?php include 'components/meta.php' ?>
     <title>SKLEP M&D | Przypomnij hasło!</title>
     <link rel="stylesheet" href="css/register-form.css">
+    <link rel="stylesheet" href="css/responsiveness.css">
 </head>
 <body>
 <?php include 'components/bookmark.php'; ?>
