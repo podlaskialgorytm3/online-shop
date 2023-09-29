@@ -3,11 +3,6 @@
 
 session_start();
 
-$hostname = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'sklep';
-
 $error = "";
 
 if(isset($_POST['submit'])){

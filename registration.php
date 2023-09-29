@@ -1,13 +1,9 @@
 <?php
 
-include 'config.php';
+@include 'config.php';
 
-$hostname = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'sklep';
 
-$pdo = new PDO("mysql:host=$hostname;dbname=$database", $user, $password);
+$pdo = new PDO("mysql:host=$hostname;dbname=$database", $login, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $username = mysqli_real_escape_string($conn,$_POST['username']);
@@ -19,7 +15,7 @@ $haslo = md5($_POST['haslo']);
 
 $sql = "INSERT INTO user (username,imie,nazwisko,adres,email,haslo) 
 VALUES ('$username','$imie','$nazwisko','$adres','$email','$haslo')";
-$conn = mysqli_connect($hostname, $user, $password,$database);
+$conn = mysqli_connect($hostname, $login, $password,$database);
 
 if (mysqli_query($conn, $sql)) {
     ob_start();

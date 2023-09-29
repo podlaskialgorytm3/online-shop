@@ -3,6 +3,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+@include "../config.php";
+
 require "autoload.php";
 
 $mail = new PHPMailer(true);
@@ -28,7 +30,7 @@ $token_hash = hash("sha256", $token);
 
 $expiry = date("Y-m-d H:i:s", time() + 60 * 30);
 
-$mysqli = new mysqli(hostname: "localhost",username: "root",password: "",database: "sklep");
+$mysqli = new mysqli(hostname: $hostname,username: $login,password: $password,database: $database);
                      
 $sql = "UPDATE user
         SET reset_token_hash = ?,

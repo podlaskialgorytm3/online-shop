@@ -1,10 +1,11 @@
 <?php
+@include 'config.php';
 
 $token = $_POST["token"];
 
 $token_hash = hash("sha256",$token);
 
-$mysqli = new mysqli(hostname: "localhost",username: "root",password: "",database: "sklep");
+$mysqli = new mysqli(hostname: $hostname,username: $login,password: $password,database: $database);
 
 $sql = "SELECT * FROM user WHERE reset_token_hash = ?";
 
