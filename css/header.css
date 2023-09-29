@@ -43,3 +43,11 @@ div#header>div.header-right-side>div.accounts>a{
 div#header>div.header-right-side>div.accounts>a:hover{
     color: black;
 }
+div.management-menu>a>img{
+    width: 50px;
+}
+div.management-menu{
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+}
