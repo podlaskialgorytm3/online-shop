@@ -17,3 +17,6 @@
         <a href="../../admin_pages/payment-menage.php">Płatności</a>
     </div>
 </div>
+<div class="logout">
+    <a href="../../logout.php" title="Wyloguj się!"><img src="../../images/logout.png" alt="Wyloguj się"></a>
+</div>
