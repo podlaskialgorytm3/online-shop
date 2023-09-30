@@ -57,7 +57,11 @@ div.logout{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s;
 }
 div.logout>a>img{
     width: 60px;
+}
+div.logout:hover{
+    box-shadow: 8px 1px 42px -8px rgb(239, 236, 236);
 }
