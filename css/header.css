@@ -47,7 +47,6 @@ div.management-menu>a>img{
     width: 50px;
 }
 div.management-menu{
-    width: 70vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
 }
