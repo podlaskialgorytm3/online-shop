@@ -60,17 +60,13 @@
             <th>Edytuj</th>
         </thead>
         <tbody id="category-body">
-            <tr>
-                <td>1</td>
-                <td>Nike</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-                <td>USUŃ</td>
-                <td>EDYTUj</td>
-            </tr>
+            
         </tbody>
     </table>
     <div class="add-element">
         +
     </div>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>
+<script src="../../js/AddProductToTable.js"></script>
