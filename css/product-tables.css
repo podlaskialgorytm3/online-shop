@@ -50,6 +50,14 @@ table.category-table>thead>th>td,table.category-table>tbody>tr>td{
     width: calc(100%/5);
     text-align: center;
 }
+table.tag-table>thead>th>td,table.tag-table>tbody>tr>td{
+    width: calc(100%/5);
+    text-align: center;
+}
+table.product-table>thead>th>td,table.product-table>tbody>tr>td{
+    width: calc(100%/5);
+    text-align: center;
+}
 th {
     background-color: #f2f2f2;
     color: #333;

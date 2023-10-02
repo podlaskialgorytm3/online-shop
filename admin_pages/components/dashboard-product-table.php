@@ -9,45 +9,48 @@
         <div class="select-table category">Kategoria</div>
     </div>
     <table class="product-table table">
-        <tr>
-            <td>Produkty</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Produkty</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Produkty</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+    <thead>
+            <th>Id_Produktu</th>
+            <th>Nazwa Produktu</th>
+            <th>Kategorie</th>
+            <th>Parametry</th>
+            <th>Cena</th>
+            <th>Stan magazynowy</th>
+            <th>Opis Produktu</th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
+        </thead>
+        <tbody id="tag-body">
+            <tr>
+                <td>1</td>
+                <td>Nike</td>
+                <td>Buty</td>
+                <td>DADDY SHOES</td>
+                <td>1000</td>
+                <td>32</td>
+                <td>Bardzo zwyczajne buty do chodzenia.</td>
+                <td>USUŃ</td>
+                <td>EDYTUj</td>
+            </tr>
+        </tbody>
     </table>
     <table class="tag-table table">
-    <tr>
-            <td>Parametry</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Parametry</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Parametry</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+        <thead>
+            <th>Id_parametru</th>
+            <th>Nazwa Parametru</th>
+            <th>Opis Parametru</th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
+        </thead>
+        <tbody id="tag-body">
+            <tr>
+                <td>1</td>
+                <td>Nike</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+                <td>USUŃ</td>
+                <td>EDYTUj</td>
+            </tr>
+        </tbody>
     <table class="category-table table">
         <thead>
             <th>Id_kategorii</th>
@@ -61,36 +64,8 @@
                 <td>1</td>
                 <td>Nike</td>
                 <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Addidas</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Puma</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Puma</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Puma</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Puma</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Puma</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+                <td>USUŃ</td>
+                <td>EDYTUj</td>
             </tr>
         </tbody>
     </table>
