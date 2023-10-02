@@ -1,0 +1,9 @@
+div.dashboard{
+    width: 65vw;
+    height: 90vh;
+    position: absolute;
+    top: 5%;
+    right: 7%;
+    background-color: white;
+    border-radius: 30px;
+}

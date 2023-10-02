@@ -49,8 +49,8 @@ div.main-panel>a:hover,div.manage-panel>a:hover,div.logout-panel>a:hover{
 div.logout{
     position: absolute;
     background-color: white;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     right: 1%;
     top: 2%;
     border-radius: 30px;
@@ -60,7 +60,7 @@ div.logout{
     transition: 1s;
 }
 div.logout>a>img{
-    width: 60px;
+    width: 55px;
 }
 div.logout:hover{
     box-shadow: 8px 1px 42px -8px rgb(239, 236, 236);
