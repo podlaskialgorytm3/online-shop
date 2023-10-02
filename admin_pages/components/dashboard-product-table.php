@@ -21,17 +21,6 @@
             <th>Edytuj</th>
         </thead>
         <tbody id="tag-body">
-            <tr>
-                <td>1</td>
-                <td>Nike</td>
-                <td>Buty</td>
-                <td>DADDY SHOES</td>
-                <td>1000</td>
-                <td>32</td>
-                <td>Bardzo zwyczajne buty do chodzenia.</td>
-                <td>USUŃ</td>
-                <td>EDYTUj</td>
-            </tr>
         </tbody>
     </table>
     <table class="tag-table table">
@@ -43,13 +32,6 @@
             <th>Edytuj</th>
         </thead>
         <tbody id="tag-body">
-            <tr>
-                <td>1</td>
-                <td>Nike</td>
-                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
-                <td>USUŃ</td>
-                <td>EDYTUj</td>
-            </tr>
         </tbody>
     <table class="category-table table">
         <thead>
@@ -60,10 +42,15 @@
             <th>Edytuj</th>
         </thead>
         <tbody id="category-body">
-            
         </tbody>
     </table>
-    <div class="add-element">
+    <div class="add-element add-product">
+        +
+    </div>
+    <div class="add-element add-tag">
+        +
+    </div>
+    <div class="add-element add-category">
         +
     </div>
 </div>

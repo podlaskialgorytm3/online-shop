@@ -85,7 +85,7 @@ div.add-element{
     right: -10%;
     bottom: 1%;
     border-radius: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     transition: 1s;
