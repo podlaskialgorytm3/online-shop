@@ -49,24 +49,50 @@
         </tr>
     </table>
     <table class="category-table table">
-    <tr>
-            <td>Kategoria</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Kategoria</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Kategoria</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <thead>
+            <th>Id_kategorii</th>
+            <th>Nazwa Kategorii</th>
+            <th>Opis Kategorii</th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
+        </thead>
+        <tbody id="category-body">
+            <tr>
+                <td>1</td>
+                <td>Nike</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Addidas</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Puma</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Puma</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Puma</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Puma</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Puma</td>
+                <td>Bardzo zwyczajne zdanie mające na celu uzupełnić opis.</td>
+            </tr>
+        </tbody>
     </table>
     <div class="add-element">
         +
