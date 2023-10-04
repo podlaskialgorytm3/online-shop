@@ -61,7 +61,7 @@
     
 </div>
 <div class="add-category-panel add-panel">
-    <div class="exit"><img src="../../images/x.png" alt=""></div>
+    <div class="exit exit-add-category"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
         <h2>Dodaj Kategorię</h2>
         <label for="nazwa_kategorii">

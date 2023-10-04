@@ -9,13 +9,18 @@ const submit = document.querySelector(".category-submit")
 const nameCategoryError = document.querySelector(".name-category-error")
 const descriptionCategoryError = document.querySelector(".description-category-error")
 
-
+const exit = document.querySelector(".exit-add-category")
 
 
 addCategoryBtn.addEventListener("click",() => {
-    addCategoryPanel.style.display = "flex";
-    dashboard.style.display = "none";
+    addCategoryPanel.style.display = "flex"
+    dashboard.style.display = "none"
     sideBar.style.display = "none"
+})
+exit.addEventListener("click",() => {
+    addCategoryPanel.style.display = "none"
+    dashboard.style.display = "block"
+    sideBar.style.display = "block"
 })
 
 submit.addEventListener("click",(e) => {

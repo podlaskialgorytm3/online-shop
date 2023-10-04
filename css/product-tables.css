@@ -142,3 +142,12 @@ input[type="submit"]:hover {
     color: red;
     font-size: 18px;
 }
+div.exit{
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    cursor: pointer;
+}
+div.exit>img{
+    width: 50px;
+}
