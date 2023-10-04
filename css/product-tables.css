@@ -92,3 +92,56 @@ div.add-element{
     font-size: 50px;
     cursor: pointer;
 }
+.add-panel{
+    display: none;
+    width: 400px;
+    height: auto;
+    background-color: #ffffff;
+    position: absolute;
+    top: calc(50% - 300px);
+    left: calc(50% - 200px);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+input[type="text"]{
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.add-category-panel{
+    display: flex;
+}
+input[type="submit"]{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+input[type="submit"]:hover {
+    background-color: rgb(131, 197, 241);
+}
+.error-alert{
+    color: red;
+    font-size: 18px;
+}
