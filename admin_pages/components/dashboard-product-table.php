@@ -61,21 +61,23 @@
     
 </div>
 <div class="add-category-panel add-panel">
+    <div class="exit"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
         <h2>Dodaj Kategorię</h2>
         <label for="nazwa_kategorii">
-            <input type="text" name="nazwa_kategorii" placeholder="Wpisz nazwę kategorii.">
+            <input type="text" name="nazwa_kategorii" placeholder="Wpisz nazwę kategorii." class="name-category">
             <span class="name-category-error error-alert"></span>
         </label>
         <label for="opis_kategorii">
-            <input type="text" name="opis_kategorii" placeholder="Wpisz opis kategorii.">
+            <input type="text" name="opis_kategorii" placeholder="Wpisz opis kategorii." class="description-category">
             <span class="description-category-error error-alert"></span>
         </label>
         <label for="submit">
-            <input type="submit" name="submit" value="Dodaj Kategorie">
+            <input type="submit" name="submit" value="Dodaj Kategorie" class="category-submit">
         </label>
     </form>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>
 <script src="../../js/GetDataToTables.js"></script>
+<script src="../../js/AddCategoryToDatabase.js"></script>

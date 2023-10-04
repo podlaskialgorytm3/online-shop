@@ -126,9 +126,6 @@ input[type="text"]{
     border-radius: 5px;
     font-size: 18px;
 }
-.add-category-panel{
-    display: flex;
-}
 input[type="submit"]{
     background-color: #007bff;
     color: #fff;
