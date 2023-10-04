@@ -18,10 +18,14 @@ addCategoryBtn.addEventListener("click",() => {
     sideBar.style.display = "none"
 })
 exit.addEventListener("click",() => {
+    exitHandling()
+})
+
+const exitHandling = () => {
     addCategoryPanel.style.display = "none"
     dashboard.style.display = "block"
     sideBar.style.display = "block"
-})
+}
 
 submit.addEventListener("click",(e) => {
     e.preventDefault()
@@ -47,5 +51,16 @@ submit.addEventListener("click",(e) => {
 
 
 addData = () => {
-
+    $.ajax({
+		url: "../admin_pages/pushData/addCategoryToDatabase.php",
+		type: "POST",
+		data: {
+			nazwa_kategorii: nameCategory.value,
+            opis_kategorii: descriptionCategory.value
+		 },
+		cache: false,
+		success: function(){
+            exitHandling()
+            }
+	    })
 }
