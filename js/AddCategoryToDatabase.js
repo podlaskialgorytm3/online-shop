@@ -49,6 +49,14 @@ submit.addEventListener("click",(e) => {
     }
 })
 
+function getCategory(){
+    $.ajax({
+        url: "../admin_pages/getData/getCategory.php",
+        method: 'POST'
+    }).done(function( data ) {
+        $('#category-body').html(data);
+    })
+}
 
 addData = () => {
     $.ajax({
@@ -61,6 +69,7 @@ addData = () => {
 		cache: false,
 		success: function(){
             exitHandling()
+            getCategory()
             }
 	    })
 }
