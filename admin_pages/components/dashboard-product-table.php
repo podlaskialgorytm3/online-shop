@@ -77,6 +77,11 @@
         </label>
     </form>
 </div>
+<div class="success-add success-add-category">
+    <img src="../../images/checked.png" alt=""><p> Udano się dodać Kategorię!</p>
+</div>
+
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>
 <script src="../../js/GetDataToTables.js" type="module"></script>
