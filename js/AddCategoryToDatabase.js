@@ -11,6 +11,8 @@ const descriptionCategoryError = document.querySelector(".description-category-e
 
 const exit = document.querySelector(".exit-add-category")
 
+const successAddCategory = document.querySelector(".success-add-category")
+
 
 addCategoryBtn.addEventListener("click",() => {
     addCategoryPanel.style.display = "flex"
@@ -70,6 +72,10 @@ addData = () => {
 		success: function(){
             exitHandling()
             getCategory()
+            successAddCategory.style.opacity = "1"
+            setInterval(() => {
+                successAddCategory.style.opacity = "0"
+            },5000)
             }
 	    })
 }
