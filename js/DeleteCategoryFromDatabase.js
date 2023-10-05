@@ -15,5 +15,8 @@ deleteBtn.forEach(button => {
             dashboard.style.display = "block"
             sideBar.style.display = "block"
         })
+        confirmCategory.addEventListener("click",() =>{
+            
+        })
     })
 })

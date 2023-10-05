@@ -53,7 +53,7 @@ submit.addEventListener("click",(e) => {
 
 function getCategory(){
     $.ajax({
-        url: "../admin_pages/getData/getCategory.php",
+        url: "../admin_pages/getData/get-category.php",
         method: 'POST'
     }).done(function( data ) {
         $('#category-body').html(data);
@@ -62,7 +62,7 @@ function getCategory(){
 
 addData = () => {
     $.ajax({
-		url: "../admin_pages/pushData/addCategoryToDatabase.php",
+		url: "../admin_pages/pushData/add-category-to-database.php",
 		type: "POST",
 		data: {
 			nazwa_kategorii: nameCategory.value,
