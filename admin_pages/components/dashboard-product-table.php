@@ -38,8 +38,8 @@
             <th>Id_kategorii</th>
             <th>Nazwa Kategorii</th>
             <th>Opis Kategorii</th>
-            <th>Usuń</th>
             <th>Edytuj</th>
+            <th>Usuń</th>
         </thead>
         <tbody id="category-body">
         </tbody>
@@ -80,7 +80,13 @@
 <div class="success-add success-add-category">
     <img src="../../images/checked.png" alt=""><p> Udano się dodać Kategorię!</p>
 </div>
-
+<div class="confirm-delete">
+    <p>Czy na pewno chcesz usunąć?</p>
+    <div>
+        <button class="confirm">Tak</button>
+        <button class="reject">Nie</button>
+    </div>
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>

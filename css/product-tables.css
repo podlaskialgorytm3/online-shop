@@ -173,3 +173,48 @@ div.success-add>img{
 div.success-add>p{
     font-size: 18px;
 }
+.confirm-delete{
+    width: 400px;
+    height: auto;
+    background-color: #ffffff;
+    position: absolute;
+    top: calc(50% - 300px);
+    left: calc(50% - 200px);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.confirm-delete>div{
+    margin-top: 30px;
+}
+.confirm-delete>div>button{
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: #bcd2e9;
+    font-size: 18px;
+    font-weight: 700;
+}
+.confirm-delete>div>button.confirm{
+    background-color: rgb(52, 255, 34);
+}
+.confirm-delete>div>button.confirm:hover{
+    background-color: rgb(13, 157, 0);
+    color: white;
+}
+.confirm-delete>div>button.reject{
+    background-color: rgb(252, 72, 99);
+}
+.confirm-delete>div>button.reject:hover{
+    background-color: rgb(139, 0, 21);
+    color: white;
+}
