@@ -81,10 +81,10 @@
     <img src="../../images/checked.png" alt=""><p> Udano się dodać Kategorię!</p>
 </div>
 <div class="confirm-delete">
-    <p>Czy na pewno chcesz usunąć?</p>
+    <p>Czy na pewno chcesz usunąc kategorię?</p>
     <div>
-        <button class="confirm">Tak</button>
-        <button class="reject">Nie</button>
+        <button class="confirm confirm-category">Tak</button>
+        <button class="reject reject-category">Nie</button>
     </div>
 </div>
 

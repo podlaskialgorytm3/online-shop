@@ -175,6 +175,7 @@ div.success-add>p{
 }
 .confirm-delete{
     width: 400px;
+    text-align: center;
     height: auto;
     background-color: #ffffff;
     position: absolute;
@@ -185,7 +186,7 @@ div.success-add>p{
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
