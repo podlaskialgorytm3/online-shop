@@ -57,9 +57,6 @@
 <div class="add-product-panel add-panel">
     
 </div>
-<div class="add-tag-panel add-panel">
-    
-</div>
 <div class="add-category-panel add-panel">
     <div class="exit exit-add-category"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
@@ -74,6 +71,23 @@
         </label>
         <label for="submit">
             <input type="submit" name="submit" value="Dodaj Kategorie" class="category-submit">
+        </label>
+    </form>
+</div>
+<div class="add-tag-panel add-panel">
+    <div class="exit exit-add-tag"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Dodaj Parametr</h2>
+        <label for="nazwa_parametru">
+            <input type="text" name="nazwa_parametru" placeholder="Wpisz nazwę paramtetru." class="name-tag">
+            <span class="name-tag-error error-alert"></span>
+        </label>
+        <label for="opis_kategorii">
+            <input type="text" name="opis_parametru" placeholder="Wpisz opis parametru." class="description-tag">
+            <span class="description-tag-error error-alert"></span>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Dodaj Parametr" class="tag-submit">
         </label>
     </form>
 </div>
@@ -109,3 +123,4 @@
 <script src="../../js/GetDataToTables.js" type="module"></script>
 <script src="../../js/AddCategoryToDatabase.js"></script>
 <script src="../../js/GetDataToTags.js"></script>
+<script src="../../js/AddTagToDatabase.js"></script>
