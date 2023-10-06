@@ -20,7 +20,7 @@
             <th>Usuń</th>
             <th>Edytuj</th>
         </thead>
-        <tbody id="tag-body">
+        <tbody id="product-body">
         </tbody>
     </table>
     <table class="tag-table table">
@@ -108,3 +108,4 @@
 <script src="../../js/ChangesProductTable.js"></script>
 <script src="../../js/GetDataToTables.js" type="module"></script>
 <script src="../../js/AddCategoryToDatabase.js"></script>
+<script src="../../js/GetDataToTags.js"></script>
