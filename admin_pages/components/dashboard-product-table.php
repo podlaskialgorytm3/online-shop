@@ -87,7 +87,23 @@
         <button class="reject reject-category">Nie</button>
     </div>
 </div>
-
+<div class="edit-category-panel add-panel">
+    <div class="exit exit-edit-category"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Edytuj kategorię</h2>
+        <label for="nazwa_kategorii">
+            <input type="text" name="nazwa_kategorii" placeholder="Wpisz nazwę kategorii." class="name-category-edit">
+            <span class="name-category-error-edit error-alert"></span>
+        </label>
+        <label for="opis_kategorii">
+            <input type="text" name="opis_kategorii" placeholder="Wpisz opis kategorii." class="description-category-edit">
+            <span class="description-category-error-edit error-alert"></span>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Edytuj Kategorie" class="category-edit-submit">
+        </label>
+    </form>
+</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>
 <script src="../../js/GetDataToTables.js" type="module"></script>

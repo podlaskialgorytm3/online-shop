@@ -219,3 +219,8 @@ div.success-add>p{
     background-color: rgb(139, 0, 21);
     color: white;
 }
+
+
+.edit-category-panel{
+    display: none;
+}
