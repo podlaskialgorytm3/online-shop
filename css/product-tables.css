@@ -173,7 +173,7 @@ div.success-add>img{
 div.success-add>p{
     font-size: 18px;
 }
-.confirm-delete{
+.cf{
     width: 400px;
     text-align: center;
     height: auto;
@@ -192,10 +192,10 @@ div.success-add>p{
     align-items: center;
     font-size: 20px;
 }
-.confirm-delete>div{
+.cf>div{
     margin-top: 30px;
 }
-.confirm-delete>div>button{
+.cf>div>button{
     width: 100px;
     height: 50px;
     background-color: transparent;
@@ -205,17 +205,17 @@ div.success-add>p{
     font-size: 18px;
     font-weight: 700;
 }
-.confirm-delete>div>button.confirm{
+.cf>div>button.confirm{
     background-color: rgb(52, 255, 34);
 }
-.confirm-delete>div>button.confirm:hover{
+.cf>div>button.confirm:hover{
     background-color: rgb(13, 157, 0);
     color: white;
 }
-.confirm-delete>div>button.reject{
+.cf>div>button.reject{
     background-color: rgb(252, 72, 99);
 }
-.confirm-delete>div>button.reject:hover{
+.cf>div>button.reject:hover{
     background-color: rgb(139, 0, 21);
     color: white;
 }

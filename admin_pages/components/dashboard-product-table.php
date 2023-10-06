@@ -94,11 +94,18 @@
 <div class="success-add success-add-category">
     <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
-<div class="confirm-delete">
+<div class="confirm-delete cf">
     <p>Czy na pewno chcesz usunąc kategorię?</p>
     <div>
         <button class="confirm confirm-category">Tak</button>
         <button class="reject reject-category">Nie</button>
+    </div>
+</div>
+<div class="confirm-delete-tag cf">
+    <p>Czy na pewno chcesz usunąc parametr?</p>
+    <div>
+        <button class="confirm confirm-tag">Tak</button>
+        <button class="reject reject-tag">Nie</button>
     </div>
 </div>
 <div class="edit-category-panel add-panel">
