@@ -78,7 +78,7 @@
     </form>
 </div>
 <div class="success-add success-add-category">
-    <img src="../../images/checked.png" alt=""><p> Udano się dodać Kategorię!</p>
+    <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
 <div class="confirm-delete">
     <p>Czy na pewno chcesz usunąc kategorię?</p>

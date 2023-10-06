@@ -13,6 +13,7 @@ const exit = document.querySelector(".exit-add-category")
 
 const successAddCategory = document.querySelector(".success-add-category")
 
+const successText = document.querySelector(".success-text")
 
 addCategoryBtn.addEventListener("click",() => {
     addCategoryPanel.style.display = "flex"
@@ -73,6 +74,7 @@ addData = () => {
             exitHandling()
             getCategory()
             successAddCategory.style.opacity = "1"
+            successText.textContent = "Udało się dodać kategorię!"
             setInterval(() => {
                 successAddCategory.style.opacity = "0"
             },5000)

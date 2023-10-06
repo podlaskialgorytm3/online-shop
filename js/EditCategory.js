@@ -14,36 +14,16 @@ editButton.forEach(button => {
         dashboard.style.display = "none"
         sideBar.style.display = "none"
         supplementingInput(button.dataset.id)
+        validation(button.dataset.id)
+        
     })
 })
 exitEditCategory.addEventListener("click",() => {
-    editCategoryPanel.style.display = "none"
-    dashboard.style.display = "block"
-    sideBar.style.display = "block"
-})
-submitCategoryEdit.addEventListener("click",(e) => {
-    e.preventDefault()
-    stepValidation = 0
-    if(nameCategoryEdit.value == ""){
-        nameCategoryErrorEdit.textContent = "Pole jest wymagane!"
-    }
-    else{
-        stepValidation++
-        nameCategoryErrorEdit.textContent = ""
-    }
-    if(descriptionCategoryEdit.value == ""){
-        descriptionCategoryErrorEdit.textContent = "Pole jest wymagane!"
-    }
-    else{
-        stepValidation++
-        descriptionCategoryErrorEdit.textContent = ""
-    }
-    if(stepValidation == 2){
-        editData()
-    }
+    exitEditPanelHandler()
 })
 
-const supplementingInput = (id) =>{
+
+supplementingInput = (id) =>{
     const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-category.php" , true);
     ajax.send();
@@ -59,6 +39,59 @@ const supplementingInput = (id) =>{
     }}
 }
 
-const editData = () => {
-    console.log("Poprawnie zwalidowane dane")
+function editData(id){
+    $.ajax({
+		url: "../admin_pages/pushData/edit-category-to-database.php",
+		type: "POST",
+		data: {
+            id: id,
+			nazwa_kategorii: nameCategoryEdit.value,
+            opis_kategorii: descriptionCategoryEdit.value
+		 },
+		cache: false,
+		success: function(){
+            getCategory()
+            successText.textContent = "Udało się zedytować kategorię!"
+            nameCategoryEdit.value = ""
+            descriptionCategoryEdit.value = ""
+            exitEditPanelHandler()
+            successAddCategory.style.opacity = "1"
+            setInterval(() => {
+                successAddCategory.style.opacity = "0"
+            },5000)
+            }
+	    })
 }
+
+exitEditPanelHandler = () => {
+    editCategoryPanel.style.display = "none"
+    dashboard.style.display = "block"
+    sideBar.style.display = "block"
+}
+validation = (id) => {
+    let i = 0
+    document.querySelector(".category-edit-submit").addEventListener("click",(e) => {
+        e.preventDefault()
+        if(i == 0){
+        stepValidation = 0
+        if(nameCategoryEdit.value == ""){
+            nameCategoryErrorEdit.textContent = "Pole jest wymagane!"
+        }
+        else{
+            stepValidation++
+            nameCategoryErrorEdit.textContent = ""
+        }
+        if(descriptionCategoryEdit.value == ""){
+            descriptionCategoryErrorEdit.textContent = "Pole jest wymagane!"
+        }
+        else{
+            stepValidation++
+            descriptionCategoryErrorEdit.textContent = ""
+        }
+        if(stepValidation == 2){
+            editData(id)
+        }}
+        i++
+    })
+}
+
