@@ -8,7 +8,6 @@ submitCategoryEdit = document.querySelector(".category-edit-submit")
 exitEditCategory = document.querySelector(".exit-edit-category")
 editCategoryPanel = document.querySelector(".edit-category-panel")
 
-console.log(editButton)
 editButton.forEach(button => {
     button.addEventListener("click", () => {
         editCategoryPanel.style.display = "flex"
@@ -17,9 +16,32 @@ editButton.forEach(button => {
         supplementingInput(button.dataset.id)
     })
 })
-
-
-
+exitEditCategory.addEventListener("click",() => {
+    editCategoryPanel.style.display = "none"
+    dashboard.style.display = "block"
+    sideBar.style.display = "block"
+})
+submitCategoryEdit.addEventListener("click",(e) => {
+    e.preventDefault()
+    stepValidation = 0
+    if(nameCategoryEdit.value == ""){
+        nameCategoryErrorEdit.textContent = "Pole jest wymagane!"
+    }
+    else{
+        stepValidation++
+        nameCategoryErrorEdit.textContent = ""
+    }
+    if(descriptionCategoryEdit.value == ""){
+        descriptionCategoryErrorEdit.textContent = "Pole jest wymagane!"
+    }
+    else{
+        stepValidation++
+        descriptionCategoryErrorEdit.textContent = ""
+    }
+    if(stepValidation == 2){
+        editData()
+    }
+})
 
 const supplementingInput = (id) =>{
     const ajax = new XMLHttpRequest();
@@ -35,4 +57,8 @@ const supplementingInput = (id) =>{
                 } 
             }
     }}
+}
+
+const editData = () => {
+    console.log("Poprawnie zwalidowane dane")
 }
