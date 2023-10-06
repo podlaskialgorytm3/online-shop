@@ -125,6 +125,23 @@
         </label>
     </form>
 </div>
+<div class="edit-tag-panel add-panel">
+    <div class="exit exit-edit-tag"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Edytuj parametr</h2>
+        <label for="Nazwa parametru">
+            <input type="text" name="nazwa_parametru" placeholder="Wpisz nazwę parametru." class="name-tag-edit">
+            <span class="name-tag-error-edit error-alert"></span>
+        </label>
+        <label for="Opis Parametru">
+            <input type="text" name="opis_parametru" placeholder="Wpisz opis parametru." class="description-tag-edit">
+            <span class="description-tag-error-edit error-alert"></span>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Edytuj Parametr" class="tag-edit-submit">
+        </label>
+    </form>
+</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>
 <script src="../../js/GetDataToTables.js" type="module"></script>
