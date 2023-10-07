@@ -6,12 +6,12 @@
 $pdo = new PDO("mysql:host=$hostname;dbname=$database", $login, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$name_category = mysqli_real_escape_string($conn,$_POST['nazwa_parametru']);
-$description_category = mysqli_real_escape_string($conn,$_POST['opis_parametru']);
+$name_tag = mysqli_real_escape_string($conn,$_POST['nazwa_parametru']);
+$description_tag = mysqli_real_escape_string($conn,$_POST['opis_parametru']);
 
 
 $sql = "INSERT INTO parametry (nazwa_parametru,opis_parametru) 
-VALUES ('$name_category','$description_category')";
+VALUES ('$name_tag','$description_tag')";
 $conn = mysqli_connect($hostname, $login, $password,$database);
 
 if (mysqli_query($conn, $sql)) {

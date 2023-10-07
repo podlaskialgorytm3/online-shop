@@ -11,9 +11,7 @@ const exitTag = document.querySelector(".exit-add-tag")
 const successAddTag = document.querySelector(".success-add")
 
 const successTextTag = document.querySelector(".success-text")
-console.log("adads")
 addTagBtn.addEventListener("click",() => {
-    console.log("siema")
     addTagPanel.style.display = "flex"
     dashboard.style.display = "none"
     sideBar.style.display = "none"
@@ -46,7 +44,7 @@ submitTag.addEventListener("click",(e) => {
         descriptionTagError.textContent = ""
     }
     if(stepValidation == 2){
-        addData()
+        addDataTag()
     }
 })
 
@@ -59,7 +57,7 @@ function getTag(){
     })
 }
 
-addData = () => {
+addDataTag = () => {
     $.ajax({
 		url: "../admin_pages/pushData/add-tag-to-database.php",
 		type: "POST",
