@@ -17,6 +17,12 @@ function findCategory($id,$pdo){
        return $rows["nazwa_kategorii"];
     }
  }
+ function findTag($id,$pdo){
+    $connect = $pdo->query('SELECT parametry.nazwa_parametru FROM parametry WHERE id_parametru = '. $id);
+    while($rows = $connect->fetch()){
+       return $rows["nazwa_parametru"];
+    }
+ }
 
 
 $html = '';
@@ -25,7 +31,7 @@ foreach ($stmt as $row){
     $html .=  '<td>' . $row['Id_produktu'] . '</td>';
     $html .=  '<td>' . $row['nazwa_produktu'] . '</td>';
     $html .=  '<td>' . findCategory($row['id_kategorii'],$pdo) . '</td>';
-    $html .=  '<td>' . $row['id_parametru'] . '</td>';
+    $html .=  '<td>' . findTag($row['id_parametru'],$pdo) . '</td>';
     $html .=  '<td>' . $row['cena'] . '</td>';
     $html .=  '<td>' . $row['stan_magazynowy'] . '</td>';
     $html .=  '<td>' . $row['opis_produktu'] . '</td>';
