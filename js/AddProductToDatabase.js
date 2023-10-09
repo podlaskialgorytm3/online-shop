@@ -91,7 +91,7 @@ submitProduct.addEventListener("click",(e) => {
         stepValidation++
     }
     if(stepValidation == 5){
-        console.log("Udana walidacja!")
+        addDataProduct()
     }
 })
 
@@ -125,17 +125,22 @@ addDataProduct = () => {
 		url: "../admin_pages/pushData/add-product-to-database.php",
 		type: "POST",
 		data: {
-			nazwa_parametru: nameTag.value,
-            opis_parametru: descriptionTag.value
+			nazwa_produktu: nameProduct.value,
+            id_kategorii: categoryToProduct.value,
+            id_parametru: tagToProduct.value,
+            cena: priceProduct.value,
+            stan_magazynowy: stockProduct.value,
+            opis_produktu: descriptionProduct.value,
+            URL: URL_Product.value
 		 },
 		cache: false,
 		success: function(){
-            exitHandlingTag()
-            getTag()
-            successAddTag.style.opacity = "1"
-            successTextTag.textContent = "Udało się dodać parametr!"
+            exitHandlingProduct()
+            getProduct()
+            successAddProduct.style.opacity = "1"
+            successTextProduct.textContent = "Udało się dodać produkt!"
             setInterval(() => {
-                successAddTag.style.opacity = "0"
+                successAddProduct.style.opacity = "0"
             },5000)
             }
 	    })
