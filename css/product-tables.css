@@ -37,9 +37,6 @@ table.table{
 table.table::-webkit-scrollbar {
     display: none;
   }
-table.product-table{
-    display: none;
-}
 table.tag-table{
     display: none;
 }
@@ -223,4 +220,14 @@ div.success-add>p{
 
 .edit-category-panel{
     display: none;
+}
+
+table.product-table{
+    display: block;
+}
+.add-product{
+    display: flex;
+}
+.product{
+    background-color: rgba(131, 197, 241, 0.582);
 }
