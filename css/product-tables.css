@@ -115,7 +115,7 @@ label{
     margin-bottom: 20px;
     width: 100%;
 }
-input[type="text"]{
+input[type="text"],input[type="select"],input[type="number"]{
     width: 300px;
     height: 40px;
     padding: 10px;
@@ -216,17 +216,8 @@ div.success-add>p{
     background-color: rgb(139, 0, 21);
     color: white;
 }
-
-
-.edit-category-panel{
-    display: none;
-}
-
 table.product-table{
     display: block;
-}
-.add-product{
-    display: flex;
 }
 .product{
     background-color: rgba(131, 197, 241, 0.582);

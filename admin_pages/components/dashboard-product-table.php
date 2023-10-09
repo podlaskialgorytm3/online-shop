@@ -44,7 +44,7 @@
         <tbody id="category-body">
         </tbody>
     </table>
-    <div class="add-element add-product">
+    <div class="add-element add-product" style="display: flex;">
         +
     </div>
     <div class="add-element add-tag">
@@ -88,6 +88,41 @@
         </label>
         <label for="submit">
             <input type="submit" name="submit" value="Dodaj Parametr" class="tag-submit">
+        </label>
+    </form>
+</div>
+<div class="add-pro-panel add-panel">
+    <div class="exit exit-add-product"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Dodaj Produkt</h2>
+        <label for="nazwa_produktu">
+            <input type="text" name="nazwa_produktu" placeholder="Wpisz nazwę produktu." class="name-product">
+            <span class="name-product-error error-alert"></span>
+        </label>
+        <label for="Kategoria">
+            <select name="kategoria" class="category-to-product"></select>
+        </label>
+        <label for="Parametr">
+            <select name="parametr" class="tag-to-product"></select>
+        </label>
+        <label for="Cena">
+            <input type="number" name="cena" placeholder="Wpisz cenę produktu." class="price-product">
+            <span class="price-product-error error-alert"></span>
+        </label>
+        <label for="Stan Magazynowy">
+            <input type="number" name="stan_magazynowy" placeholder="Wpisz stan magazynowy." class="stock-product">
+            <span class="stock-product-error error-alert"></span>
+        </label>
+        <label for="URL">
+            <input type="text" name="URL" placeholder="Wpisz URL zdjęcia produktu." class="URL-product">
+            <span class="URL-product-error error-alert"></span>
+        </label>
+        <label for="opis_produktu">
+            <input type="text" name="opis_produktu" placeholder="Wpisz opis produktu." class="description-product">
+            <span class="description-product-error error-alert"></span>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Dodaj Produkt" class="product-submit">
         </label>
     </form>
 </div>
@@ -149,3 +184,4 @@
 <script src="../../js/GetDataToTags.js"></script>
 <script src="../../js/AddTagToDatabase.js"></script>
 <script src="../../js/GetDataToProduct.js"></script>
+<script src="../../js/AddProductToDatabase.js"></script>
