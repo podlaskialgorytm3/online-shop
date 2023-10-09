@@ -11,12 +11,20 @@ try {
 
 $stmt = $pdo->query('SELECT * FROM produkty');
 
+function findCategory($id,$pdo){
+    $connect = $pdo->query('SELECT kategorie.nazwa_kategorii FROM kategorie WHERE id_kategorii = '. $id);
+    while($rows = $connect->fetch()){
+       return $rows["nazwa_kategorii"];
+    }
+ }
+
+
 $html = '';
 foreach ($stmt as $row){
     $html .=  '<tr>';
     $html .=  '<td>' . $row['Id_produktu'] . '</td>';
     $html .=  '<td>' . $row['nazwa_produktu'] . '</td>';
-    $html .=  '<td>' . $row['id_kategorii'] . '</td>';
+    $html .=  '<td>' . findCategory($row['id_kategorii'],$pdo) . '</td>';
     $html .=  '<td>' . $row['id_parametru'] . '</td>';
     $html .=  '<td>' . $row['cena'] . '</td>';
     $html .=  '<td>' . $row['stan_magazynowy'] . '</td>';
