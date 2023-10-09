@@ -1,17 +1,22 @@
 <?php
 require_once '../../config.php';
-$prac = $pdo->query('SELECT * FROM parametry');
-
 $html = '';
 
-
-
-while($row = $prac->fetch()){
-    $html .= '<option value="';
-    $html .= $row['id_parametru'];
-    $html .= '">';
-    $html .= $row['nazwa_parametru'];
-    $html .= '</option>';
+try {
+    $pdo = new PDO('mysql:host='.$hostname.';dbname='.$database, $login, $password);
+    $pdo->query('SET NAMES utf8');
+    $prac = $pdo->query('SELECT * FROM parametry');
+    while($row = $prac->fetch()){
+        $html .= '<option value="';
+        $html .= $row['id_parametru'];
+        $html .= '">';
+        $html .= $row['nazwa_parametru'];
+        $html .= '</option>';
+    }
+} catch (PDOException $e) {
+    echo 'Połączenie nie mogło zostać utworzone: ' . $e->getMessage();
+    exit();
 }
+
 
 echo $html;

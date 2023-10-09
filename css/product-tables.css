@@ -115,13 +115,16 @@ label{
     margin-bottom: 20px;
     width: 100%;
 }
-input[type="text"],input[type="select"],input[type="number"]{
+input[type="text"],select,input[type="number"]{
     width: 300px;
     height: 40px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
+}
+select{
+    font-size: 14px;
 }
 input[type="submit"]{
     background-color: #007bff;
