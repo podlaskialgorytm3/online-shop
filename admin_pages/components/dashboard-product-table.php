@@ -184,6 +184,41 @@
         </label>
     </form>
 </div>
+<div class="edit-pro-panel add-panel">
+    <div class="exit exit-edit-product"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Edytuj Produkt</h2>
+        <label for="nazwa_produktu">
+            <input type="text" name="nazwa_produktu" placeholder="Wpisz nazwę produktu." class="name-product-edit">
+            <span class="name-product-error-edit error-alert"></span>
+        </label>
+        <label for="Kategoria">
+            <select name="kategoria" class="category-to-product-edit"></select>
+        </label>
+        <label for="Parametr">
+            <select name="parametr" class="tag-to-product-edit"></select>
+        </label>
+        <label for="Cena">
+            <input type="number" name="cena" placeholder="Wpisz cenę produktu." class="price-product-edit">
+            <span class="price-product-error-edit error-alert"></span>
+        </label>
+        <label for="Stan Magazynowy">
+            <input type="number" name="stan_magazynowy" placeholder="Wpisz stan magazynowy." class="stock-product-edit">
+            <span class="stock-product-error-edit error-alert"></span>
+        </label>
+        <label for="URL">
+            <input type="text" name="URL" placeholder="Wpisz URL zdjęcia produktu." class="URL-product-edit">
+            <span class="URL-product-error-edit error-alert"></span>
+        </label>
+        <label for="opis_produktu">
+            <input type="text" name="opis_produktu" placeholder="Wpisz opis produktu." class="description-product-edit">
+            <span class="description-product-error-edit error-alert"></span>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Edytuj Produkt" class="product-submit-edit">
+        </label>
+    </form>
+</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ChangesProductTable.js"></script>
 <script src="../../js/GetDataToTables.js" type="module"></script>
