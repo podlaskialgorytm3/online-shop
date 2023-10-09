@@ -73,9 +73,9 @@ suplementingProduct = (id) => {
 
 
 validationProduct = (id) => {
+    let i = 0
     submitProductEdit.addEventListener("click",(e) => {
         e.preventDefault()
-        let i = 0
         stepValidation = 0
         if(i == 0){
         if(nameProductEdit.value == ""){
