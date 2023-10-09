@@ -45,22 +45,53 @@ const exitHandlingProduct = () => {
 submitProduct.addEventListener("click",(e) => {
     e.preventDefault()
     stepValidation = 0
-    if(nameTag.value == ""){
-        nameTagError.textContent = "Pole jest wymagane!"
+    if(nameProduct.value == ""){
+        nameProductError.textContent = "Podano puste pole!"
     }
     else{
+        nameProductError.textContent = ""
         stepValidation++
-        nameTagError.textContent = ""
     }
-    if(descriptionTag.value == ""){
-        descriptionTagError.textContent = "Pole jest wymagane!"
+    if(priceProduct.value == ""){
+        priceProductError.textContent = "Podano puste pole!"
     }
     else{
-        stepValidation++
-        descriptionTagError.textContent = ""
+        if(priceProduct.value < 0){
+            priceProductError.textContent = "Podano wartość ujemną dla ceny!"
+        }
+        else{
+            priceProductError.textContent = ""
+            stepValidation++
+        }
     }
-    if(stepValidation == 2){
-        addDataProduct()
+    if(stockProduct.value == ""){
+        stockProductError.textContent = "Podano puste pole!"
+    }
+    else{
+        if(stockProduct.value < 0){
+            stockProductError.textContent = "Podano wartość ujemną dla stanu magazynowego!"
+        }
+        else{
+            stockProductError.textContent = ""
+            stepValidation++
+        }
+    }
+    if(URL_Product.value == ""){
+        URL_ProductError.textContent = "Podano puste pole!"
+    }
+    else{
+        URL_ProductError.textContent = ""
+        stepValidation++
+    }
+    if(descriptionProduct.value == ""){
+        descriptionProductError.textContent = "Podano puste pole!"
+    }
+    else{
+        descriptionProductError.textContent = ""
+        stepValidation++
+    }
+    if(stepValidation == 5){
+        console.log("Udana walidacja!")
     }
 })
 
