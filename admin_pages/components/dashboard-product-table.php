@@ -12,8 +12,8 @@
     <thead>
             <th>Id_Produktu</th>
             <th>Nazwa Produktu</th>
-            <th>Kategorie</th>
-            <th>Parametry</th>
+            <th>Kategoria</th>
+            <th>Parametr</th>
             <th>Cena</th>
             <th>Stan magazynowy</th>
             <th>Opis Produktu</th>
@@ -148,3 +148,4 @@
 <script src="../../js/AddCategoryToDatabase.js"></script>
 <script src="../../js/GetDataToTags.js"></script>
 <script src="../../js/AddTagToDatabase.js"></script>
+<script src="../../js/GetDataToProduct.js"></script>
