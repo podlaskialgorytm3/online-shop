@@ -143,6 +143,13 @@
         <button class="reject reject-tag">Nie</button>
     </div>
 </div>
+<div class="confirm-delete-product cf">
+    <p>Czy na pewno chcesz usunąc produkt?</p>
+    <div>
+        <button class="confirm confirm-product">Tak</button>
+        <button class="reject reject-product">Nie</button>
+    </div>
+</div>
 <div class="edit-category-panel add-panel">
     <div class="exit exit-edit-category"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
