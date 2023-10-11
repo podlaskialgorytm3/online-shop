@@ -12,6 +12,7 @@
             <th>Adres</th>
             <th>Email</th>
             <th>Typ</th>
+            <th>Notatka</th>
             <th>Edytuj</th>
     </thead>
         <tbody id="user-body">
