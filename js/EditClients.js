@@ -153,27 +153,29 @@ validationData = (id) => {
 }
 
 editUser = (id) => {
+    console.log(
     $.ajax({
 		url: "../admin_pages/pushData/edit-user-to-database.php",
 		type: "POST",
 		data: {
             id: id,
             username: usernameEdit.value,
-            imie: nameEditEdit.value,
+            imie: nameEdit.value,
             nazwisko: lastnameEdit.value,
             adres: addressEdit.value,
-
-			
+            email: emailEdit.value,
+            typ: typeEdit.value,
+            notatka: noteEdit.value
 		 },
 		cache: false,
 		success: function(){
             getClients()
             exitEditPopup()
             successEditUser.style.opacity = "1"
-            successTextEditUser.textContent = "Udało się edytować produkt!"
+            successTextEditUser.textContent = "Udało się edytować użytkownika!"
             setInterval(() => {
                 successEditUser.style.opacity = "0"
             },5000)
             }
-	    })
+	    }))
 }
