@@ -4,7 +4,6 @@ sideBar = document.querySelector(".side-panel")
 
 editUser = document.querySelectorAll(".edit-user")
 
-exitEditUser = document.querySelector(".edit-exit-user")
 usernameEdit = document.querySelector(".username-edit")
 usernameErrorEdit = document.querySelector(".username-error-edit")
 nameEdit = document.querySelector(".name-edit")
@@ -21,9 +20,15 @@ noteErrorEdit = document.querySelector(".note-error-edit")
 
 userSubmitEdit = document.querySelector(".user-submit-edit")
 
+exitEditUser = document.querySelector(".exit-edit-user")
+
 successEditUser = document.querySelector(".success-add")
 
 successTextEditUser = document.querySelector(".success-text")
+
+currentEmail = ""
+
+
 
 editUser.forEach(button => {
     button.addEventListener("click", () => {
@@ -31,8 +36,40 @@ editUser.forEach(button => {
         dashboard.style.display = 'none'
         sideBar.style.display = 'none'
         sumplementingInput(button.dataset.id)
+        validationData(button.dataset.id)
     })
 })
+
+exitEditPopup = () => {
+    editUserPanel.style.display = 'none'
+    dashboard.style.display = 'block'
+    sideBar.style.display = 'block'
+}
+exitEditUser.addEventListener("click", () => {
+    exitEditPopup()
+})
+emails = []
+ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-data.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            database.forEach(element =>{
+                emails.push(element['email'])
+            })
+    }
+}
+
+function getClients(){
+    $.ajax({
+        url: "../admin_pages/getData/get-clients.php",
+        method: 'POST'
+    }).done(function( data ) {
+        $('#user-body').html(data);
+    })
+}
+
 
 
 sumplementingInput = (id) => {
@@ -51,13 +88,92 @@ sumplementingInput = (id) => {
                     emailEdit.value = database[i].email
                     typeEdit.value = database[i].typ
                     noteEdit.value = database[i].notatka
+                    currentEmail = database[i].email
                 } 
             }
     }}
 }
 
-
-validationData = () => {
-
+validationData = (id) => {
+    //let i = 0
+    userSubmitEdit.addEventListener("click",(e) => {
+        e.preventDefault()
+        stepValidation = 0
+        console.log(usernameEdit.value)
+        if(usernameEdit.value == ""){
+            usernameErrorEdit.textContent = "Wprowadzono puste pole!"
+        }
+        else{
+            usernameErrorEdit.textContent = ""
+            stepValidation++
+        }
+        if(nameEdit.value == ""){
+            nameErrorEdit.textContent = "Wprowadzono puste pole!"
+        }
+        else{
+            nameErrorEdit.textContent = ""
+            stepValidation++
+        }
+        if(lastnameEdit.value == ""){
+            lastnameErrorEdit.textContent = "Wprowadzono puste pole!"
+        }
+        else{
+            lastnameErrorEdit.textContent = ""
+            stepValidation++
+        }
+        if(addressEdit.value == ""){
+            addressErrorEdit.textContent = "Wprowadzono puste pole!"
+        }
+        else{
+            addressErrorEdit.textContent = ""
+            stepValidation++
+        }
+        if(emailEdit.value == ""){
+            emailErrorEdit.textContent = "Wprowadzono puste pole!"
+        }
+        else{
+            mailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(emailEdit.value.match(mailRegexp)){
+                if(emails.includes(emailEdit.value) && currentEmail != emailEdit.value){
+                    emailErrorEdit.textContent = "Podano już istniejący email!"
+                }
+                else{
+                    emailErrorEdit.textContent = ""
+                    stepValidation++
+                }
+            }
+            else{
+                emailErrorEdit.textContent = "Zły format e-mail!"
+            }
+        }
+        if(stepValidation == 5){
+            editUser(id)
+        }
+    })
 }
 
+editUser = (id) => {
+    $.ajax({
+		url: "../admin_pages/pushData/edit-user-to-database.php",
+		type: "POST",
+		data: {
+            id: id,
+            username: usernameEdit.value,
+            imie: nameEditEdit.value,
+            nazwisko: lastnameEdit.value,
+            adres: addressEdit.value,
+
+			
+		 },
+		cache: false,
+		success: function(){
+            getClients()
+            exitEditPopup()
+            successEditUser.style.opacity = "1"
+            successTextEditUser.textContent = "Udało się edytować produkt!"
+            setInterval(() => {
+                successEditUser.style.opacity = "0"
+            },5000)
+            }
+	    })
+}
