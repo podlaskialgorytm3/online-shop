@@ -226,5 +226,5 @@ table.product-table{
     background-color: rgba(131, 197, 241, 0.582);
 }
 .edit-user-panel{
-    display: flex;
+    display: none;
 }

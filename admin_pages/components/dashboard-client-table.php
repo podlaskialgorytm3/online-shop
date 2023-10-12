@@ -22,7 +22,7 @@
 <div class="edit-user-panel add-panel">
     <div class="exit exit-edit-user"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
-        <h2>Edytuj Produkt</h2>
+        <h2>Edytuj Użytkownika</h2>
         <label for="Nazwa Użytkownika">
             <input type="text" name="username" placeholder="Wpisz nazwę użytkownika." class="username-edit">
             <span class="username-error-edit error-alert"></span>
@@ -49,7 +49,7 @@
                 <option value="user">Klient</option>
             </select>
         </label>
-        <label for="notatke">
+        <label for="notatka">
             <input type="text" name="notatka" placeholder="Wpisz notatkę użytkownikowi." class="note-edit">
             <span class="note-error-edit error-alert"></span>
         </label>
@@ -58,6 +58,8 @@
         </label>
     </form>
 </div>
-
+<div class="success-add success-add-category">
+    <img src="../../images/checked.png" alt=""><p class="success-text"></p>
+</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetDataToClients.js"></script>
