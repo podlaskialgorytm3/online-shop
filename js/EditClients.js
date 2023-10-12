@@ -95,8 +95,9 @@ sumplementingInput = (id) => {
 }
 
 validationData = (id) => {
-    //let i = 0
+    let i = 0
     userSubmitEdit.addEventListener("click",(e) => {
+        if(i == 0){
         e.preventDefault()
         stepValidation = 0
         console.log(usernameEdit.value)
@@ -148,7 +149,7 @@ validationData = (id) => {
         }
         if(stepValidation == 5){
             editUser(id)
-        }
+        }}i++
     })
 }
 
