@@ -14,7 +14,6 @@ $stmt = $pdo->query('SELECT * FROM user');
 $html = '';
 foreach ($stmt as $row){
     $html .=  '<tr>';
-    $html .=  '<td>' . $row['ID_USER'] . '</td>';
     $html .=  '<td>' . $row['username'] . '</td>';
     $html .=  '<td>' . $row['imie'] . '</td>';
     $html .=  '<td>' . $row['nazwisko'] . '</td>';

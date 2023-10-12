@@ -5,7 +5,6 @@
 <div class="dashboard">
 <table class="user-table table">
     <thead>
-            <th>Id_użytkownika</th>
             <th>Nazwa użytkownika</th>
             <th>Imię</th>
             <th>Nazwisko</th>
