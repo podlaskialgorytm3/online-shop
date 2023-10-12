@@ -21,7 +21,7 @@ foreach ($stmt as $row){
     $html .=  '<td>' . $row['email'] . '</td>';
     $html .=  '<td>' . $row['typ'] . '</td>';
     $html .=  '<td>' . $row['notatka'] . '</td>';
-    $html .=  '<td><button class="edit edit-category" data-id="'.$row['ID_USER'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
+    $html .=  '<td><button class="edit edit-user" data-id="'.$row['ID_USER'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
     $html .=  '</tr>';
 }
 
@@ -35,6 +35,6 @@ echo $html;
 </head>
 <body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="../../js/EditClients.js"></script>
 </body>
 </html>
