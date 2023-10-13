@@ -19,6 +19,14 @@ const exitBtn = document.querySelector(".exit-add-delivery")
 const successAdd = document.querySelector(".success-add")
 const successText = document.querySelector(".success-text")
 
+getDelivery = () =>{
+    $.ajax({
+        url: "../admin_pages/getData/get-delivery.php",
+        method: 'POST'
+    }).done(function( data ) {
+        $('#delivery-body').html(data);
+    })
+}
 const exitHandle = () => {
     dashboard.style.display = "block"
     sideBar.style.display = "block"
@@ -85,9 +93,33 @@ const validationData = () => {
             priceDeliveryError.textContent = ""
         }
     }
-    if(stepValidation == 4)console.log("super")
+    if(stepValidation == 4)
+        addDeliveryToDatabase()
 }
-
+const addDeliveryToDatabase = () => {
+    console.log(
+    $.ajax({
+        url: "../admin_pages/pushData/add-delivery-to-database.php",
+        type: "POST",
+        data: {
+            nazwa: nameDelivery.value,
+            adres: addressDelivery.value,
+            email: emailDelivery.value,
+            cena: priceDelivery.value
+        },
+        cache: false,
+        success: function(){
+            exitHandle()
+            getDelivery()
+            successAdd.style.opacity = "1"
+            successText.textContent = "Udało się dodać dostawce!"
+            setInterval(() => {
+                successAdd.style.opacity = "0"
+            },5000)
+            }
+        }))
+    
+}
 
 addDelivery.addEventListener("click",() => {
     ingoingHandle()
