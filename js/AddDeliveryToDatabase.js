@@ -29,10 +29,28 @@ const ingoingHandle = () => {
     sideBar.style.display = "none"
     addDeliveryPanel.style.display = "flex"
 }
+const isEmpty = (text) => {
+    text = "" ? true : false
+}
+const lessThanZero = (number) => {
+    number < 0 ? true : false
+}
+const isMail = (mail) => {
+    let mailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    mail.match(mailRegexp) ? true :  false
+}
+const validationData = () => {
+
+}
+
 
 addDelivery.addEventListener("click",() => {
     ingoingHandle()
 })
 exitBtn.addEventListener("click",() => {
     exitHandle()
+})
+deliverySubmit.addEventListener("click", (e) => {
+    e.preventDefault
+    validationData()
 })
