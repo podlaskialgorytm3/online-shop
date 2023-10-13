@@ -38,7 +38,7 @@
             <span class="email-delivery-error error-alert"></span>
         </label>
         <label for="Cena">
-            <input type="text" name="cena_dostawy" placeholder="Wpisz cene dostawy." class="price-delivery">
+            <input type="number" name="cena_dostawy" placeholder="Wpisz cene dostawy." class="price-delivery">
             <span class="price-delivery-error error-alert"></span>
         </label>
         <label for="submit">
