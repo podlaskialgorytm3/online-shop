@@ -3,7 +3,7 @@
  <link rel="stylesheet" href="../../css/product-tables.css">
 </head>
 <div class="dashboard">
-<table class="user-table table">
+<table class="delivery-table table">
     <thead>
             <th>Id_dostawcy</th>
             <th>Nazwa</th>
@@ -49,7 +49,13 @@
 <div class="success-add success-add-category">
     <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
-
+<div class="confirm-delete-delivery cf">
+    <p>Czy na pewno chcesz usunąc dostawce?</p>
+    <div>
+        <button class="confirm confirm-delivery">Tak</button>
+        <button class="reject reject-delivery">Nie</button>
+    </div>
+</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetDataToDelivery.js"></script>
 <script src="../../js/AddDeliveryToDatabase.js"></script>
