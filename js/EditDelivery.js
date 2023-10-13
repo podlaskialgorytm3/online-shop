@@ -101,7 +101,6 @@ sumplementingInput = (id) => {
 }
 
 editDeliveryToDatabase = (id) => {
-    console.log(
     $.ajax({
         url: "../admin_pages/pushData/edit-delivery-to-database.php",
         type: "POST",
@@ -122,8 +121,7 @@ editDeliveryToDatabase = (id) => {
                 successAdd.style.opacity = "0"
             },5000)
             }
-        }))
-    
+        })   
 }
 
 editDeliveryBtns.forEach(button => {
