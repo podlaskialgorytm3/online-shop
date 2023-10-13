@@ -56,6 +56,31 @@
         <button class="reject reject-delivery">Nie</button>
     </div>
 </div>
+<div class="edit-delivery-panel add-panel">
+    <div class="exit exit-delivery-edit"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Edytuj Dostawcę</h2>
+        <label for="Nazwa Dostawcy">
+            <input type="text" name="nazwa_dostawcy" placeholder="Wpisz nazwę dostawcy." class="name-delivery-edit">
+            <span class="name-delivery-error-edit error-alert"></span>
+        </label>
+        <label for="Adres">
+            <input type="text" name="adres_dostawcy" placeholder="Wpisz adres dostawcy." class="address-delivery-edit">
+            <span class="address-delivery-error-edit error-alert"></span>
+        </label>
+        <label for="Email">
+            <input type="text" name="email_dostawcy" placeholder="Wpisz email dostawcy." class="email-delivery-edit">
+            <span class="email-delivery-error-edit error-alert"></span>
+        </label>
+        <label for="Cena">
+            <input type="number" name="cena_dostawy" placeholder="Wpisz cene dostawy." class="price-delivery-edit">
+            <span class="price-delivery-error-edit error-alert"></span>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Edytuj Dostawcę" class="delivery-submit-edit">
+        </label>
+    </form>
+</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetDataToDelivery.js"></script>
 <script src="../../js/AddDeliveryToDatabase.js"></script>

@@ -12,11 +12,11 @@ $address = $_POST['adres'];
 $email = $_POST['email'];
 $price = $_POST['cena'];
 
-$sql = "UPDATE dostawcy  SET 
+$sql = "UPDATE dostawcy SET 
     Nazwa = '$name',
     Email = '$email',
     Cena = $price,
-    Adres = '$address',
+    Adres = '$address'
     WHERE Id_dostawcy = $id";
 $conn = mysqli_connect($hostname, $login, $password,$database);
 

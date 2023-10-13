@@ -97,7 +97,6 @@ const validationData = () => {
         addDeliveryToDatabase()
 }
 const addDeliveryToDatabase = () => {
-    console.log(
     $.ajax({
         url: "../admin_pages/pushData/add-delivery-to-database.php",
         type: "POST",
@@ -117,7 +116,7 @@ const addDeliveryToDatabase = () => {
                 successAdd.style.opacity = "0"
             },5000)
             }
-        }))
+        })
     
 }
 

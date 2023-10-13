@@ -21,7 +21,7 @@ foreach ($stmt as $row){
     $html .=  '<td>' . $row['Adres'] . '</td>';
     $html .=  '<td>' . $row['Email'] . '</td>';
     $html .=  '<td>' . $row['Cena'] . '</td>';
-    $html .=  '<td><button class="edit edit-deliver" data-id="'.$row['Id_dostawcy'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
+    $html .=  '<td><button class="edit edit-delivery" data-id="'.$row['Id_dostawcy'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
     $html .=  '<td><button class="delete delete-delivery" data-id="'.$row['Id_dostawcy'].'"><img src="../../images/delete.png" style="width: 30px"  alt=""></button></td>';
     $html .=  '</tr>';
 }
@@ -37,5 +37,6 @@ echo $html;
 <body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/DeleteDelivery.js"></script>
+<script src="../../js/EditDelivery.js"></script>
 </body>
 </html>
