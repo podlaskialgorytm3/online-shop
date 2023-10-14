@@ -25,6 +25,13 @@ function findPrice($id,$pdo,$full_price){
             $full_price = $rows2['cena'] * $rows['ilość'] + $full_price;
         }
     }
+    $connect3 = $pdo->query('SELECT * FROM zamowienia WHERE Id_zamowienia = '. $id);
+    while($rows = $connect3->fetch()){
+        $connect2 = $pdo->query('SELECT Cena FROM dostawcy WHERE Id_dostawcy = '. $rows['Id_dostawcy']);
+        while($rows2 = $connect2->fetch()){
+            $full_price = $rows2['Cena']+ $full_price;
+        }
+    }
     return $full_price;
 }
 function findIDZP($id,$pdo){
