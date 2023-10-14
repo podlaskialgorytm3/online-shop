@@ -27,11 +27,19 @@ function findPrice($id,$pdo,$full_price){
     }
     return $full_price;
 }
-function findIdToMidTable($id,$pdo){
+function findIDZP($id,$pdo){
     $tab = "";
     $connect = $pdo->query('SELECT * FROM zamowienia_produkty WHERE Id_zamowienia = '. $id);
     while($rows = $connect->fetch()){
        $tab = strval($rows['id_zamowienie_produkt'])." ".$tab;
+    }
+    return $tab;
+ }
+ function findIDP($id,$pdo){
+    $tab = "";
+    $connect = $pdo->query('SELECT * FROM zamowienia_produkty WHERE Id_zamowienia = '. $id);
+    while($rows = $connect->fetch()){
+       $tab = strval($rows['Id_produktu'])." ".$tab;
     }
     return $tab;
  }
@@ -47,7 +55,7 @@ foreach ($stmt as $row){
     $html .=  '<td>' . $row['status'] . '</td>';
     $html .=  '<td>' . findDelivery($row['Id_dostawcy'],$pdo) . '</td>';
     $html .=  '<td>' . findPrice($row['Id_zamowienia'],$pdo,$full_price) . ' zł</td>';
-    $html .=  '<td><button class="edit show-delivery" data-id="'.findIdToMidTable($row['Id_zamowienia'],$pdo).'"><img src="../../images/show.png" style="width: 30px" alt=""></button></td>';
+    $html .=  '<td><button class="edit show-delivery" data-ID_ZP="'.findIDZP($row['Id_zamowienia'],$pdo).'" data-ID_P="'.findIDP($row['Id_zamowienia'],$pdo).'"><img src="../../images/show.png" style="width: 30px" alt=""></button></td>';
     $html .=  '<td><button class="edit edit-delivery" data-id="'.$row['Id_zamowienia'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
     $html .=  '</tr>';
 }
