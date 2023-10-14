@@ -236,3 +236,6 @@ table.product-table{
     top: calc(50% - 300px);
     left: calc(50% - 400px);
 }
+.order-table>tbody>tr>td,.detail-table>tbody>tr>td{
+    text-align: center;
+}
