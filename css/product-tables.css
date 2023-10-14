@@ -102,6 +102,9 @@ div.add-element{
     align-items: center;
     padding: 20px;
 }
+.add-panel>table{
+    margin-top: 30px;
+}
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -227,4 +230,9 @@ table.product-table{
 }
 .edit-user-panel{
     display: none;
+}
+.show-delivery-panel{
+    width: 800px;
+    top: calc(50% - 300px);
+    left: calc(50% - 400px);
 }

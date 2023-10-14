@@ -20,9 +20,11 @@
 </div>
 
 <div class="add-panel show-delivery-panel">
+<div class="exit exit-showing"><img src="../../images/x.png" alt=""></div>
 <table class="detail-table table">
     <thead>
             <th>Produkt</th>
+            <th>Cena detaliczna</th>
             <th>Ilość</th>
             <th>Cena</th>
     </thead>
