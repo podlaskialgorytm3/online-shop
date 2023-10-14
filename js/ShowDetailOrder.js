@@ -53,8 +53,8 @@ showDeliveryButton.forEach(button => {
             let amountColumn = document.createElement("td")
             let fullPriceColumn = document.createElement("td")
             productColumn.textContent = products[i]
-            priceColumn.textContent = prices[i]
-            amountColumn.textContent = amount[i]
+            priceColumn.textContent = prices[i] + " zł"
+            amountColumn.textContent = amount[i] + " szt."
             fullPriceColumn.textContent = (parseInt(amount[i]) * parseFloat(prices[i])).toFixed(2) + " zł"
             tr.appendChild(productColumn)
             tr.appendChild(priceColumn)
