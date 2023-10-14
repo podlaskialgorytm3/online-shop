@@ -22,7 +22,7 @@ function findPrice($id,$pdo,$full_price){
     while($rows = $connect->fetch()){
         $connect2 = $pdo->query('SELECT cena FROM produkty WHERE Id_produktu = '. $rows['Id_produktu']);
         while($rows2 = $connect2->fetch()){
-            $full_price = $rows2['cena'] + $full_price;
+            $full_price = $rows2['cena'] * $rows['ilość'] + $full_price;
         }
     }
     return $full_price;
