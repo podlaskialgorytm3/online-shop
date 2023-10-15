@@ -16,7 +16,6 @@ exitBtnEdit = document.querySelector(".exit-delivery-edit")
 
 editDeliveryBtns = document.querySelectorAll(".edit-delivery")
 
-i = 0
 
 getDelivery = () =>{
     $.ajax({
@@ -37,49 +36,54 @@ ingoingHandleEdit = () => {
     editDeliveryPanel.style.display = "flex"
 }
 validationDataEdit = (id) => {
-    let stepValidation = 0
-    if(i == 0){
-    if(isEmpty(nameDeliveryEdit.value)){
-        nameDeliveryErrorEdit.textContent = "Podano puste pole!"
-    }
-    else{
-        nameDeliveryErrorEdit.textContent = ""
-        stepValidation++
-    }
-    if(isEmpty(addressDeliveryEdit.value)){
-        addressDeliveryErrorEdit.textContent = "Podano puste pole!"
-    }
-    else{
-        addressDeliveryErrorEdit.textContent = ""
-        stepValidation++
-    }
-    if(isEmpty(emailDeliveryEdit.value)){
-        emailDeliveryErrorEdit.textContent = "Podano puste pole!"
-    }
-    else{
-        if(isMail(emailDeliveryEdit.value)){
-            emailDeliveryErrorEdit.textContent = ""
-            stepValidation++    
+    i = 0
+    deliverySubmitEdit.addEventListener("click", (e) => {
+        if(i == 0){
+        e.preventDefault()
+        stepValidation = 0
+        if(isEmpty(nameDeliveryEdit.value)){
+            nameDeliveryErrorEdit.textContent = "Podano puste pole!"
         }
         else{
-            emailDeliveryErrorEdit.textContent = "Niepoprawny format email!"
-        }
-    }
-    if(isEmpty(priceDeliveryEdit.value)){
-        priceDeliveryErrorEdit.textContent = "Podano puste pole!"
-    }
-    else{
-        if(lessThanZero(priceDeliveryEdit.value)){
-            priceDeliveryErrorEdit.textContent = "Cena dostawy poniżej zera!"
-        }
-        else{
+            nameDeliveryErrorEdit.textContent = ""
             stepValidation++
-            priceDeliveryErrorEdit.textContent = ""
         }
-    }
-    if(stepValidation == 4)
-        editDeliveryToDatabase(id)
-    }i++
+        if(isEmpty(addressDeliveryEdit.value)){
+            addressDeliveryErrorEdit.textContent = "Podano puste pole!"
+        }
+        else{
+            addressDeliveryErrorEdit.textContent = ""
+            stepValidation++
+        }
+        if(isEmpty(emailDeliveryEdit.value)){
+            emailDeliveryErrorEdit.textContent = "Podano puste pole!"
+        }
+        else{
+            if(isMail(emailDeliveryEdit.value)){
+                emailDeliveryErrorEdit.textContent = ""
+                stepValidation++    
+            }
+            else{
+                emailDeliveryErrorEdit.textContent = "Niepoprawny format email!"
+            }
+        }
+        if(isEmpty(priceDeliveryEdit.value)){
+            priceDeliveryErrorEdit.textContent = "Podano puste pole!"
+        }
+        else{
+            if(lessThanZero(priceDeliveryEdit.value)){
+                priceDeliveryErrorEdit.textContent = "Cena dostawy poniżej zera!"
+            }
+            else{
+                stepValidation++
+                priceDeliveryErrorEdit.textContent = ""
+            }
+        }
+        if(stepValidation == 4)
+            editDeliveryToDatabase(id)
+        }i++
+    })
+    
 }
 
 sumplementingInput = (id) => {
@@ -128,10 +132,8 @@ editDeliveryBtns.forEach(button => {
     button.addEventListener("click",() => {
         ingoingHandleEdit()
         sumplementingInput(button.dataset.id)
-        deliverySubmitEdit.addEventListener("click", (e) => {
-            e.preventDefault()
-            validationDataEdit(button.dataset.id)
-        })
+        validationDataEdit(button.dataset.id)
+    
     })
 })
 
