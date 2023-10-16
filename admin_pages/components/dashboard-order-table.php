@@ -33,16 +33,24 @@
 </table>
 </div>
 <div class="add-panel change-status">
-<div class="exit exit-showing"><img src="../../images/x.png" alt=""></div>
+<div class="exit exit-order-edit"><img src="../../images/x.png" alt=""></div>
     <h2>Zmień status</h2>
     <form action="" method="POST">
-        <select name="status" id="status">
+        <label for="status">
+        <select name="status" id="status-select">
             <option value="W trakcie przygotowywania">W trakcie przygotowywania</option>
-            <option value="Wysłane">Wysłana</option>
+            <option value="Wysłana">Wysłana</option>
             <option value="Oczekująca na odbiór">Oczekująca na odbiór</option>
             <option value="Dostarczona">Dostarczona</option>
         </select>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Zmień status" class="change-status-btn">
+        </label>
     </form>
+</div>
+<div class="success-add success-add-category">
+    <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
