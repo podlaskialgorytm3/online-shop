@@ -12,7 +12,7 @@
             <th>Dostawca</th>
             <th>Kwota</th>
             <th>Szczegóły</th>
-            <th>Edytuj</th>
+            <th>Zmień status</th>
     </thead>
         <tbody id="order-body">
     </tbody>
@@ -32,7 +32,18 @@
         </tbody>
 </table>
 </div>
-
+<div class="add-panel change-status">
+<div class="exit exit-showing"><img src="../../images/x.png" alt=""></div>
+    <h2>Zmień status</h2>
+    <form action="" method="POST">
+        <select name="status" id="status">
+            <option value="W trakcie przygotowywania">W trakcie przygotowywania</option>
+            <option value="Wysłane">Wysłana</option>
+            <option value="Oczekująca na odbiór">Oczekująca na odbiór</option>
+            <option value="Dostarczona">Dostarczona</option>
+        </select>
+    </form>
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetDataToOrder.js"></script>
