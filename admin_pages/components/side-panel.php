@@ -15,6 +15,7 @@
         <a href="../../admin_pages/order-menage.php">Zamówienia</a>
         <a href="../../admin_pages/delivery-menage.php">Dostawy</a>
         <a href="../../admin_pages/payment-menage.php">Płatności</a>
+        <a href="../../admin_pages/create-page.php">Tworzenie stron</a>
     </div>
 </div>
 <div class="logout">
