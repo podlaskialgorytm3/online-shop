@@ -9,9 +9,14 @@
         <div class="shoping-cart">
         <!-- <img src="images/shopping_cart.png" alt="Shopping cart." style="width: 60px">  -->
         </div>
+        <div id="simple-pages" class="accounts">
+            
+        </div>
         <div class="accounts">
             <a href="login.php">Zaloguj się!</a>
             <a href="register.php">Zarejestruj się!</a>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/GetLinks.js"></script>

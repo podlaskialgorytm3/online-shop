@@ -15,6 +15,6 @@ if(!isset($_SESSION['user_admin'])){
 <body>
     <?php @include "components/header.php" ?>
     <?php @include '../admin_pages/components/side-panel.php' ?>
-    <h1>Tworzenie stron</h1>
+    <?php @include '../admin_pages/components/dashboard-create-page.php' ?>
 </body>
 </html>
