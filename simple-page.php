@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php include __DIR__ . '/components/meta.php' ?>
+    <link rel="stylesheet" href="/css/simple-page.css">
     <title><?php echo $_GET['tytul']; ?></title>
 </head>
 <body>

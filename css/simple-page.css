@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+div.content{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+}
+h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+p,li{
+    font-size: 18px;
+}
