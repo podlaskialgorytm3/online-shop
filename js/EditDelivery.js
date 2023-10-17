@@ -36,9 +36,7 @@ ingoingHandleEdit = () => {
     editDeliveryPanel.style.display = "flex"
 }
 validationDataEdit = (id) => {
-    i = 0
     deliverySubmitEdit.addEventListener("click", (e) => {
-        if(i == 0){
         e.preventDefault()
         stepValidation = 0
         if(isEmpty(nameDeliveryEdit.value)){
@@ -79,9 +77,9 @@ validationDataEdit = (id) => {
                 priceDeliveryErrorEdit.textContent = ""
             }
         }
-        if(stepValidation == 4)
+        if(stepValidation == 4){
             editDeliveryToDatabase(id)
-        }i++
+        }
     })
     
 }

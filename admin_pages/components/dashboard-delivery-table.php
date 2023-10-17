@@ -10,8 +10,8 @@
             <th>Adres</th>
             <th>Email</th>
             <th>Cena</th>
-            <th>Usuń</th>
             <th>Edytuj</th>
+            <th>Usuń</th>
     </thead>
     <tbody id="delivery-body">
     </tbody>
