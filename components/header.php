@@ -3,7 +3,7 @@
 </head>
 <div id="header">
     <div class="header-left-side">
-        <img src="../images/shop_icon.png" alt="Icon our shop!" style="width: 80px">            
+        <a href="index.php"><img src="../images/shop_icon.png" alt="Icon our shop!" style="width: 80px">  </a>          
     </div>
     <div class="header-right-side">
         <div class="shoping-cart">
