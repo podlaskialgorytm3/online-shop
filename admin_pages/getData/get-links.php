@@ -13,7 +13,8 @@ $stmt = $pdo->query('SELECT * FROM strony');
 
 $html = '';
 foreach ($stmt as $row){
-    $html .=  '<a href="simple-page.php?id='.$row['id_strony'].'&tytul='.$row['tytul'].'">'.$row['tytul'].'</a>';
+    if($row['status'] == 'widoczny')
+        $html .=  '<a href="simple-page.php?id='.$row['id_strony'].'&tytul='.$row['tytul'].'">'.$row['tytul'].'</a>';
 }
 
 sleep(1);

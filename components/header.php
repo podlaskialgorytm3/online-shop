@@ -9,7 +9,7 @@
         <div class="shoping-cart">
         <!-- <img src="images/shopping_cart.png" alt="Shopping cart." style="width: 60px">  -->
         </div>
-        <div id="simple-pages" class="accounts">
+        <div id="simple-pages">
             
         </div>
         <div class="accounts">
