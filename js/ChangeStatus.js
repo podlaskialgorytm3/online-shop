@@ -56,9 +56,14 @@ editOrderBtns.forEach(button => {
     button.addEventListener("click",() => {
         showEditPanel()
         sumplementingInput(button.dataset.id)
+        let i = 0
         submitStatus.addEventListener("click",(e) => {
+            if(i == 0){
             e.preventDefault()
             changeStatus(button.dataset.id)
+            }
+            i+=1
         })
+        
     })
 })
