@@ -17,8 +17,8 @@
             <th>Cena</th>
             <th>Stan magazynowy</th>
             <th>Opis Produktu</th>
-            <th>Usuń</th>
             <th>Edytuj</th>
+            <th>Usuń</th>
         </thead>
         <tbody id="product-body">
         </tbody>
@@ -28,8 +28,8 @@
             <th>Id_parametru</th>
             <th>Nazwa Parametru</th>
             <th>Opis Parametru</th>
-            <th>Usuń</th>
             <th>Edytuj</th>
+            <th>Usuń</th>
         </thead>
         <tbody id="tag-body">
         </tbody>
