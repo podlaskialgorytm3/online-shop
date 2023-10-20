@@ -74,7 +74,7 @@
             </select>
         </label>
         <label for="submit">
-            <input type="submit" name="submit" value="Dodaj Stronę" class="page-submit-edit">
+            <input type="submit" name="submit" value="Edytuj Stronę" class="page-submit-edit">
         </label>
     </form>
 </div>
@@ -86,4 +86,5 @@
 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>  	
 <script>
 	let editor = new FroalaEditor('.description-page');	
+    let editorToEdit = new FroalaEditor('.description-page-edit');	
 </script>	
