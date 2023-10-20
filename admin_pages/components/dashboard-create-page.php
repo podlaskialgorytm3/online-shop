@@ -1,6 +1,7 @@
 <head>
  <link rel="stylesheet" href="../../css/dashboard.css">
  <link rel="stylesheet" href="../../css/product-tables.css">
+ <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
 </head>
 <div class="dashboard">
 <table class="page-table table">
@@ -47,8 +48,18 @@
 <div class="success-add">
     <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
-
+<div class="confirm-delete-page cf">
+    <p>Czy na pewno chcesz usunąc stronę?</p>
+    <div>
+        <button class="confirm confirm-page">Tak</button>
+        <button class="reject reject-page">Nie</button>
+    </div>
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetPage.js"></script>
 <script src="../../js/AddPageToDatabase.js"></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>  	
+<script>
+	let editor = new FroalaEditor('.description-page');	
+</script>	
