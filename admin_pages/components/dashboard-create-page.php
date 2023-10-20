@@ -55,6 +55,30 @@
         <button class="reject reject-page">Nie</button>
     </div>
 </div>
+<div class="edit-page-panel add-panel">
+    <div class="exit exit-edit-page-"><img src="../../images/x.png" alt=""></div>
+    <form action="" method="POST">
+        <h2>Edytuj Stronę</h2>
+        <label for="Tytuł">
+            <input type="text" name="tytul_strony" placeholder="Wpisz tytuł strony." class="title-page-edit">
+            <span class="title-page-error-edit error-alert"></span>
+        </label>
+        <label for="Opis">
+            <textarea name="opis_strony" class="description-page-edit" cols="30" rows="10" placeholder="Wpisz opis strony"></textarea>
+            <span class="description-page-error-edit error-alert"></span>
+        </label>
+        <label for="Status">
+            <select name="" class="status-page-edit">
+                <option value="widoczny">widoczny</option>
+                <option value="ukryty">ukryty</option>
+            </select>
+        </label>
+        <label for="submit">
+            <input type="submit" name="submit" value="Dodaj Stronę" class="page-submit-edit">
+        </label>
+    </form>
+</div>
+
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetPage.js"></script>
