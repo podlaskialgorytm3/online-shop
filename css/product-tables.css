@@ -141,13 +141,13 @@ input[type="submit"]{
 input[type="submit"]:hover {
     background-color: rgb(131, 197, 241);
 }
-.add-page-panel{
+.add-page-panel,.edit-page-panel{
     width: 1200px;
     height: 800px;
     top: calc(50% - 400px);
     left: calc(50% - 600px);
 }
-.description-page{
+.description-page,.description-page-edit{
     height: 600px;
 }
 .error-alert{
