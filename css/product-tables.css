@@ -141,9 +141,14 @@ input[type="submit"]{
 input[type="submit"]:hover {
     background-color: rgb(131, 197, 241);
 }
-textarea{
-    width: 380px;
-    resize: vertical;
+.add-page-panel{
+    width: 1200px;
+    height: 800px;
+    top: calc(50% - 400px);
+    left: calc(50% - 600px);
+}
+.description-page{
+    height: 600px;
 }
 .error-alert{
     color: red;
