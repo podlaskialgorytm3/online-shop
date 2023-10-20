@@ -40,7 +40,7 @@
             </select>
         </label>
         <label for="submit">
-            <input type="submit" name="submit" value="Edytuj Dostawcę" class="page-submit">
+            <input type="submit" name="submit" value="Dodaj Stronę" class="page-submit">
         </label>
     </form>
 </div>
