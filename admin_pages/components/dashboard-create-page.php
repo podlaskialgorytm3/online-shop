@@ -56,7 +56,7 @@
     </div>
 </div>
 <div class="edit-page-panel add-panel">
-    <div class="exit exit-edit-page-"><img src="../../images/x.png" alt=""></div>
+    <div class="exit exit-edit-page"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
         <h2>Edytuj Stronę</h2>
         <label for="Tytuł">

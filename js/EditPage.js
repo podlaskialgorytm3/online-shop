@@ -1,10 +1,12 @@
+new FroalaEditor('.description-page-edit');
+
 exitPanelEdit  = document.querySelector(".exit-edit-page")
 pageSubmitEdit = document.querySelector(".page-submit-edit")
 editPagePanel = document.querySelector(".edit-page-panel")
 
 titlePageEdit = document.querySelector(".title-page-edit")
 descriptionPageEdit = document.querySelector(".description-page-edit")
-statusPageEdit = document.querySelector(".status-pag-edit")
+statusPageEdit = document.querySelector(".status-page-edit")
 
 titleErrorPageEdit = document.querySelector(".title-page-error-edit")
 descriptionErrorPageEdit = document.querySelector(".description-page-error-edit")
@@ -19,6 +21,8 @@ function getPages(){
         $('#page-body').html(data);
     })
 }
+
+
 
 showPagePanelEdit = () => {
     dashboard.style.display = "none"
@@ -76,13 +80,39 @@ const editPages = (id) => {
             }
         }))
 }
+const suplmenetingInput = (id) =>{
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-page.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            console.log(database)
+            for(let i = 0; i < database.length; i++){
+                if(database[i].id_strony == id){
+                    titlePageEdit.value = database[i].tytul
+                    descriptionPageEdit.value = database[i].opis
+                    statusPageEdit.value = database[i].status
+                } 
+            }
+    }}
+}
+
+
+
+
+exitPanelEdit.addEventListener("click",() => {
+    exitPagePanelEdit()
+})
 
 editPageBtn.forEach(button => {
     button.addEventListener("click",() => {
         showPagePanelEdit()
+        suplmenetingInput(button.dataset.id)
         pageSubmitEdit.addEventListener("click",(e) => {
             e.preventDefault()
             validationEdit(button.dataset.id)
+            
         })
     })
 })
