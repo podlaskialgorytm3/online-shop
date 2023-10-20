@@ -141,6 +141,10 @@ input[type="submit"]{
 input[type="submit"]:hover {
     background-color: rgb(131, 197, 241);
 }
+textarea{
+    width: 380px;
+    resize: vertical;
+}
 .error-alert{
     color: red;
     font-size: 18px;

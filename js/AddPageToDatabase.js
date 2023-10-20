@@ -23,10 +23,6 @@ function getPages(){
         $('#page-body').html(data);
     })
 }
-$(document).ready(function(){
-    getPages();
-});
-
 
 const showPagePanel = () => {
     dashboard.style.display = "none"
@@ -62,6 +58,7 @@ const validation = () => {
         addPages()
 }
 const addPages = () => {
+    console.log(
     $.ajax({
         url: "../admin_pages/pushData/add-page-to-database.php",
         type: "POST",
@@ -80,7 +77,7 @@ const addPages = () => {
                 successAdd.style.opacity = "0"
             },5000)
             }
-        })
+        }))
 }
 
 addPage.addEventListener("click",() => {
