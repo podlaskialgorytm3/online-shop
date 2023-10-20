@@ -1,5 +1,3 @@
-new FroalaEditor('.description-page-edit');
-
 exitPanelEdit  = document.querySelector(".exit-edit-page")
 pageSubmitEdit = document.querySelector(".page-submit-edit")
 editPagePanel = document.querySelector(".edit-page-panel")
@@ -40,7 +38,6 @@ isEmptyEdit = (text) => {
 validationEdit = (id) => {
     let stepValidation = 0
     let textError = "Podane pole jest puste!"
-    if(i == 0){
     if(isEmptyEdit(titlePageEdit.value)){
         titleErrorPageEdit.textContent = textError
     }
@@ -56,19 +53,17 @@ validationEdit = (id) => {
         stepValidation+=1
     }
     if(stepValidation == 2)
-        console.log("Zwalidowano poprawnie")
-    }i++
+        editPages(id)
 }
-const editPages = (id) => {
-    console.log(
+editPages = (id) => {
     $.ajax({
         url: "../admin_pages/pushData/edit-page-to-database.php",
         type: "POST",
         data: {
             id: id,
-            tytul: titlePage.value,
-            opis: descriptionPage.value,
-            status: statusPage.value
+            tytul: titlePageEdit.value,
+            opis: descriptionPageEdit.value,
+            status: statusPageEdit.value
         },
         cache: false,
         success: function(){
@@ -80,16 +75,15 @@ const editPages = (id) => {
                 successAdd.style.opacity = "0"
             },5000)
             }
-        }))
+        })
 }
-const suplmenetingInput = (id) =>{
+suplmenetingInput = (id) =>{
     const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-page.php" , true);
     ajax.send();
     ajax.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let database = JSON.parse(this.responseText);
-            console.log(database)
             for(let i = 0; i < database.length; i++){
                 if(database[i].id_strony == id){
                     titlePageEdit.value = database[i].tytul
@@ -102,15 +96,21 @@ const suplmenetingInput = (id) =>{
 exitPanelEdit.addEventListener("click",() => {
     exitPagePanelEdit()
 })
-editPageBtn.forEach(button => {
-    button.addEventListener("click",() => {
-        showPagePanelEdit()
-        suplmenetingInput(button.dataset.id)
-        i = 0
-        pageSubmitEdit.addEventListener("click",(e) => {
-            e.preventDefault()
-            validationEdit(button.dataset.id)
-            
+
+selectionButton = () => {
+    for(let j = 0; j < editPageBtn.length; j++){
+        editPageBtn[j].addEventListener("click",() => {
+            showPagePanelEdit()
+            suplmenetingInput(editPageBtn[j].dataset.id)
+            let i = 0
+            document.querySelector(".page-submit-edit").addEventListener("click",(e) => {
+                if(i == 0){
+                e.preventDefault()
+                validationEdit(editPageBtn[j].dataset.id)
+                }i++
+            })
         })
-    })
-})
+    }
+}
+
+selectionButton()
