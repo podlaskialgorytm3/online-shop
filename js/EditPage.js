@@ -40,6 +40,7 @@ isEmptyEdit = (text) => {
 validationEdit = (id) => {
     let stepValidation = 0
     let textError = "Podane pole jest puste!"
+    if(i == 0){
     if(isEmptyEdit(titlePageEdit.value)){
         titleErrorPageEdit.textContent = textError
     }
@@ -56,6 +57,7 @@ validationEdit = (id) => {
     }
     if(stepValidation == 2)
         console.log("Zwalidowano poprawnie")
+    }i++
 }
 const editPages = (id) => {
     console.log(
@@ -97,18 +99,14 @@ const suplmenetingInput = (id) =>{
             }
     }}
 }
-
-
-
-
 exitPanelEdit.addEventListener("click",() => {
     exitPagePanelEdit()
 })
-
 editPageBtn.forEach(button => {
     button.addEventListener("click",() => {
         showPagePanelEdit()
         suplmenetingInput(button.dataset.id)
+        i = 0
         pageSubmitEdit.addEventListener("click",(e) => {
             e.preventDefault()
             validationEdit(button.dataset.id)
