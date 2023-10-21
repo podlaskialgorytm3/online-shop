@@ -53,7 +53,7 @@ validationEdit = (id) => {
         stepValidation+=1
     }
     if(stepValidation == 2)
-        editPages(id)
+        return true
 }
 editPages = (id) => {
     $.ajax({
@@ -98,19 +98,23 @@ exitPanelEdit.addEventListener("click",() => {
 })
 
 selectionButton = () => {
-    for(let j = 0; j < editPageBtn.length; j++){
-        editPageBtn[j].addEventListener("click",() => {
-            showPagePanelEdit()
-            suplmenetingInput(editPageBtn[j].dataset.id)
-            let i = 0
-            document.querySelector(".page-submit-edit").addEventListener("click",(e) => {
-                if(i == 0){
+    let i = 0
+    editPageBtn.forEach(button => {
+        button.addEventListener("click", async () => {
+            showPagePanelEdit();
+            suplmenetingInput(button.dataset.id);
+            pageSubmitEdit.addEventListener('click', (e) =>{
                 e.preventDefault()
-                validationEdit(editPageBtn[j].dataset.id)
-                }i++
-            })
-        })
-    }
+                if(validationEdit(button.dataset.id) && i == 0){
+                    editPages(button.dataset.id)
+                    i++
+                }
+            });
+        });
+    });
 }
+
+
+
 
 selectionButton()

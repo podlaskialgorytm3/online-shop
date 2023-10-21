@@ -35,6 +35,6 @@ echo $html;
 <body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/DeletePage.js"></script>
-<script src="../../js/EditPage.js"></script>
+<script src="../../js/EditPageValue.js"></script>
 </body>
 </html>
