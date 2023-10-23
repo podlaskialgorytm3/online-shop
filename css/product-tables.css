@@ -129,6 +129,9 @@ select{
     font-size: 18px;
     height: 50px ;
 }
+select.category-to-product{
+    height: 100px;
+}
 input[type="submit"]{
     background-color: #007bff;
     color: #fff;

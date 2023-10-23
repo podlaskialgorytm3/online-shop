@@ -27,6 +27,8 @@ const successAddProduct = document.querySelector(".success-add")
 
 const successTextProduct = document.querySelector(".success-text")
 
+let categories = []
+
 addProductBtn.addEventListener("click",() => {
     addProductPanel.style.display = "flex"
     dashboard.style.display = "none"
@@ -42,9 +44,17 @@ const exitHandlingProduct = () => {
     sideBar.style.display = "block"
 }
 
+
+
+
 submitProduct.addEventListener("click",(e) => {
     e.preventDefault()
     stepValidation = 0
+    optionsArray = Array.from(categoryToProduct.options);
+    optionsArray.forEach(category => {
+        if(category.selected)
+            categories.push(parseInt(category.value))
+    })
     if(nameProduct.value == ""){
         nameProductError.textContent = "Podano puste pole!"
     }
@@ -126,7 +136,7 @@ addDataProduct = () => {
 		type: "POST",
 		data: {
 			nazwa_produktu: nameProduct.value,
-            id_kategorii: categoryToProduct.value,
+            id_kategorii: categories,
             id_parametru: tagToProduct.value,
             cena: priceProduct.value,
             stan_magazynowy: stockProduct.value,

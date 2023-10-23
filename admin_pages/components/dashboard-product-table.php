@@ -100,7 +100,7 @@
             <span class="name-product-error error-alert"></span>
         </label>
         <label for="Kategoria">
-            <select name="kategoria" class="category-to-product"></select>
+            <select name="kategoria" class="category-to-product" multiple></select>
         </label>
         <label for="Parametr">
             <select name="parametr" class="tag-to-product"></select>
