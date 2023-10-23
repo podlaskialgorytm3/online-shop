@@ -29,6 +29,7 @@ const successTextProduct = document.querySelector(".success-text")
 
 let categories = []
 
+
 addProductBtn.addEventListener("click",() => {
     addProductPanel.style.display = "flex"
     dashboard.style.display = "none"
@@ -131,12 +132,12 @@ function getTagToProduct(){
 }
 
 addDataProduct = () => {
+    console.log(
     $.ajax({
 		url: "../admin_pages/pushData/add-product-to-database.php",
 		type: "POST",
 		data: {
 			nazwa_produktu: nameProduct.value,
-            id_kategorii: categories,
             id_parametru: tagToProduct.value,
             cena: priceProduct.value,
             stan_magazynowy: stockProduct.value,
@@ -153,7 +154,27 @@ addDataProduct = () => {
                 successAddProduct.style.opacity = "0"
             },5000)
             }
-	    })
+	    }))
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET","../components/fetch-product.php" , true);
+        ajax.send();
+        ajax.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let database = JSON.parse(this.responseText);
+                console.log(database[database.length - 1].Id_produktu)
+                categories.forEach(category => {
+                    $.ajax({
+                        url: "../admin_pages/pushData/add-product-category-to-database.php",
+                        type: "POST",
+                        data: {
+                            Id_produktu: database[database.length - 1].Id_produktu,
+                            Id_kategorii: category
+                         },
+                        cache: false,
+                     })
+                })
+        }}
+        
 }
 
 $(document).ready(function(){
