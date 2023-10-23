@@ -152,8 +152,10 @@ addDataProduct = () => {
             setInterval(() => {
                 successAddProduct.style.opacity = "0"
             },5000)
+            addCategoriesToProduct()
             }
 	    })
+       const addCategoriesToProduct = () => {
         const ajax = new XMLHttpRequest();
         ajax.open("GET","../components/fetch-product.php" , true);
         ajax.send();
@@ -166,13 +168,17 @@ addDataProduct = () => {
                         url: "../admin_pages/pushData/add-product-category-to-database.php",
                         type: "POST",
                         data: {
-                            Id_produktu: database[database.length - 1].Id_produktu,
+                            Id_produktu: database[database.length-1].Id_produktu,
                             Id_kategorii: category
                          },
                         cache: false,
+                        success: function(){
+                            getProduct()
+                        }
                      })
                 })
         }}
+       }
         
 }
 
