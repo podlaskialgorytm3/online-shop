@@ -132,7 +132,6 @@ function getTagToProduct(){
 }
 
 addDataProduct = () => {
-    console.log(
     $.ajax({
 		url: "../admin_pages/pushData/add-product-to-database.php",
 		type: "POST",
@@ -154,7 +153,7 @@ addDataProduct = () => {
                 successAddProduct.style.opacity = "0"
             },5000)
             }
-	    }))
+	    })
         const ajax = new XMLHttpRequest();
         ajax.open("GET","../components/fetch-product.php" , true);
         ajax.send();
