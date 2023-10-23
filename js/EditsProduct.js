@@ -43,6 +43,9 @@ editProductBtn.forEach(button => {
 
 exitProductEdit.addEventListener("click",() => {
     exitHandlingProductEdit()
+    for(let j = 0; j <= categoryToProductEdit.options.length - 1; j++){
+        categoryToProductEdit.options[j].selected = false
+    }
 })
 
 exitHandlingProductEdit = () => {
@@ -79,8 +82,7 @@ submitCategoryToProduct = (id) => {
             let database = JSON.parse(this.responseText);
             for(let i = 0; i < database.length; i++){
                 if(database[i].Id_produktu == id){
-                    console.log(database[i].id_kategorii)
-                    for(let j = 0; j <= categoryToProductEdit.options.length; j++){
+                    for(let j = 0; j <= categoryToProductEdit.options.length - 1; j++){
                         if(categoryToProductEdit.options[j].value == database[i].id_kategorii){
                             categoryToProductEdit.options[j].selected = true
                         }
