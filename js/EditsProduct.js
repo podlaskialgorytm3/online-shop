@@ -38,7 +38,7 @@ editProductBtn.forEach(button => {
     })
 })
 
-
+categories = []
 
 
 exitProductEdit.addEventListener("click",() => {
@@ -73,7 +73,6 @@ suplementingProduct = (id) => {
     }} 
 }
 submitCategoryToProduct = (id) => {
-    optionsArray = Array.from(categoryToProductEdit.options);
     const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-product-category.php" , true);
     ajax.send();
@@ -183,7 +182,6 @@ editDataProduct = (id) => {
 		data: {
             id: id,
 			nazwa_produktu: nameProductEdit.value,
-            id_kategorii: categoryToProductEdit.value,
             id_parametru: tagToProductEdit.value,
             cena: priceProductEdit.value,
             stan_magazynowy: stockProductEdit.value,
@@ -201,6 +199,35 @@ editDataProduct = (id) => {
             },5000)
             }
 	    })
+        optionsArray = Array.from(categoryToProductEdit.options);
+        optionsArray.forEach(category => {
+        if(category.selected)
+            categories.push(parseInt(category.value))
+        })
+        $.ajax({
+            url: "../admin_pages/removeData/remove-product-category-from-database.php",
+            type: "POST",
+            data: {
+                id: id
+             },
+            cache: false,
+        })
+        categories.forEach(category => {
+            $.ajax({
+            url: "../admin_pages/pushData/add-product-category-to-database.php",
+            type: "POST",
+            data: {
+                Id_produktu: id,
+                Id_kategorii: category
+            },
+            cache: false,
+            success: function(){
+                getProductEdit()
+            }
+        })
+    })
+
+        
 }
 
 $(document).ready(function(){
