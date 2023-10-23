@@ -129,7 +129,7 @@ select{
     font-size: 18px;
     height: 50px ;
 }
-select.category-to-product{
+select.category-to-product,.category-to-product-edit{
     height: 100px;
 }
 input[type="submit"]{

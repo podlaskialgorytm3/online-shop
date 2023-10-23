@@ -33,6 +33,7 @@ editProductBtn.forEach(button => {
         dashboard.style.display = "none"
         sideBar.style.display = "none"
         suplementingProduct(button.dataset.id)
+        submitCategoryToProduct(button.dataset.id)
         validationProduct(button.dataset.id)
     })
 })
@@ -59,7 +60,6 @@ suplementingProduct = (id) => {
             for(let i = 0; i < database.length; i++){
                 if(database[i].Id_produktu == id){
                     nameProductEdit.value = database[i].nazwa_produktu
-                    categoryToProductEdit.value = database[i].id_kategorii
                     tagToProductEdit.value = database[i].id_parametru
                     priceProductEdit.value = database[i].cena
                     stockProductEdit.value = database[i].stan_magazynowy
@@ -67,10 +67,28 @@ suplementingProduct = (id) => {
                     URL_ProductEdit.value = database[i].URL
                 } 
             }
+    }} 
+}
+submitCategoryToProduct = (id) => {
+    optionsArray = Array.from(categoryToProductEdit.options);
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-product-category.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].Id_produktu == id){
+                    console.log(database[i].id_kategorii)
+                    for(let j = 0; j <= categoryToProductEdit.options.length; j++){
+                        if(categoryToProductEdit.options[j].value == database[i].id_kategorii){
+                            categoryToProductEdit.options[j].selected = true
+                        }
+                    }
+                } 
+            }
     }}
 }
-
-
 
 validationProduct = (id) => {
     let i = 0

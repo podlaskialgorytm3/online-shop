@@ -53,6 +53,6 @@ echo $html;
 <body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/DeleteProduct.js"></script>
-<script src="../../js/EditProduct.js"></script>
+<script src="../../js/EditsProduct.js"></script>
 </body>
 </html>

@@ -193,7 +193,7 @@
             <span class="name-product-error-edit error-alert"></span>
         </label>
         <label for="Kategoria">
-            <select name="kategoria" class="category-to-product-edit"></select>
+            <select name="kategoria" class="category-to-product-edit" multiple></select>
         </label>
         <label for="Parametr">
             <select name="parametr" class="tag-to-product-edit"></select>
