@@ -6,3 +6,6 @@
 
 <h2>Jeśli chcesz sprawdzić stronkę kliknij link poniżej!</h2>
 <a target="_blank" href="http://podlaskialgorytm.ct8.pl/">Strona Michał i Dawid</a>
+<h3>Jeśli chcesz zalogować się na admina w aplikacji to:</h3>
+e-mail: u19_michalkozak@zsp1.siedlce.pl
+hasło: Polak123
