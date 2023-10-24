@@ -70,7 +70,7 @@ addDataTag = () => {
             exitHandlingTag()
             getTag()
             successAddTag.style.opacity = "1"
-            successTextTag.textContent = "Udało się dodać parametr!"
+            successTextTag.textContent = "Udało się dodać rozmiar!"
             setInterval(() => {
                 successAddTag.style.opacity = "0"
             },5000)

@@ -52,7 +52,7 @@ function editDataTag(id){
 		cache: false,
 		success: function(){
             getTag()
-            successText.textContent = "Udało się zedytować parametr!"
+            successText.textContent = "Udało się zedytować rozmiar!"
             nameTagEdit.value = ""
             descriptionTagEdit.value = ""
             exitEditPanelHandlerTag()
