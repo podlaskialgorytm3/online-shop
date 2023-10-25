@@ -18,6 +18,10 @@ div.admin-dash{
     display: flex;
     justify-content: start;
     align-items: start;
+    overflow: scroll;
+}
+div.admin-dash::-webkit-scrollbar{
+    display: none;
 }
 div.admin-information{
     margin: 50px;
