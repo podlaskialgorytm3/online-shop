@@ -2,17 +2,17 @@
  <link rel="stylesheet" href="../../css/dashboard.css">
  <link rel="stylesheet" href="../../css/main-admin.css">
 </head>
-<div class="dashboard">
+<div class="dashboard admin-dash">
     <div class="admin-information">
-        <div class="header-info">
+        <div class="header-info p-data">
             <img src="../../images/admin-img.png" alt="" class="admin-img">
-            <h2>nick: <h2 class="nick"></h2></h2>
         </div>
-        <p><b>Imię: </b><p class="name"></p></p>
-        <p><b>Nazwisko </b><p class="surname"></p></p>
-        <p><b>Adres e-mail: </b><p class="email"></p></p>
-        <p><b>Adres zamieszaknia: </b><p class="address"></p></p>
-        <p><b>Notatka: </b><p class="note"></p></p>
+        <p class="p-data"><b>Nick: </b><span class="nick">ada</span></p>
+        <p class="p-data"><b>Imię: </b><span class="name"></span></p>
+        <p class="p-data"><b>Nazwisko: </b><span class="surname"></span></p>
+        <p class="p-data"><b>Adres e-mail: </b><span class="email"></span></p>
+        <p class="p-data"><b>Adres zamieszaknia: </b><span class="address"></span></p>
+        <p class="p-data"><b>Notatka: </b><span class="note"></span></p>
     </div>
 </div>
 <input type="hidden" value="<?php echo $_SESSION['user_admin']; ?>">

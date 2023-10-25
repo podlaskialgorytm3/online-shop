@@ -8,3 +8,34 @@ body {
     justify-content: center;
     align-items: center;
 }
+img.admin-img{
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+div.admin-dash{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+div.admin-information{
+    margin: 50px;
+}
+div.header-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p-data{
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 11px -7px rgba(62, 62, 68, 1);
+}
+p{
+    font-size: 18px;
+}
