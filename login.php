@@ -14,11 +14,11 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result) > 0){
     $row = mysqli_fetch_array($result);
     if($row['typ'] == 'admin'){
-        $_SESSION['user_admin'] = $row['username'];
+        $_SESSION['user_admin'] = $row['ID_USER'];
         header('location:admin_pages/admin.php');
     }
     elseif($row['typ'] == 'user'){
-        $_SESSION['user_name'] = $row['username'];
+        $_SESSION['user_name'] = $row['ID_USER'];
         header('location:user_pages/user.php');
     }}
     else{
