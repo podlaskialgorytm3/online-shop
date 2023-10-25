@@ -15,7 +15,6 @@ if(!isset($_SESSION['user_admin'])){
 <body>
     <?php @include "components/header.php" ?>
     <?php @include '../admin_pages/components/side-panel.php' ?>
-    <h1>STRONA DLA ADMINISTRATORA</h1>
-    <h3>Witaj <?php echo $_SESSION['user_admin']; ?></h3>
+    <?php @include '../admin_pages/components/dashboard-admin.php' ?>
 </body>
 </html>
