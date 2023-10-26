@@ -6,6 +6,8 @@ const getAndFill = (value,text) => {
 
 const elements = [".nick",".name",".surname",".email",".address",".note"]
 
+let fullPrice = 0
+
 const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-data.php" , true);
     ajax.send();
@@ -23,3 +25,15 @@ const ajax = new XMLHttpRequest();
                 } 
             }
     }}
+const ajax2 = new XMLHttpRequest();
+ajax2.open("GET","../components/fetch-revenues.php" , true);
+ajax2.send();
+ajax2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        let database = JSON.parse(this.responseText);
+         for(let i = 0; i < database.length; i++){
+            fullPrice += parseFloat(database[i].cena_zamowienia)
+        }
+        getAndFill(".revanues",`  ${fullPrice}zł`)
+}}
+

@@ -14,6 +14,11 @@
         <p class="p-data"><b>Adres zamieszaknia: </b><span class="address"></span></p>
         <p class="p-data"><b>Notatka: </b><span class="note"></span></p>
     </div>
+    <div class="revanues-dash">
+        <p class="p-data rev">
+            <b>Przychody ogólne:</b><span class="revanues"></span>
+        </p>
+    </div>
 </div>
 <input type="hidden" value="<?php echo $_SESSION['user_admin']; ?>">
 <script src="../../js/GetDataToAdmin.js"></script>
