@@ -251,3 +251,8 @@ table.product-table{
 .order-table>tbody>tr>td,.detail-table>tbody>tr>td{
     text-align: center;
 }
+
+input.description-page-edit{
+    width: 70%;
+    height: 40%;
+}

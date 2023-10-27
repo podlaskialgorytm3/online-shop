@@ -23,7 +23,6 @@ addCategoryBtn.addEventListener("click",() => {
 exit.addEventListener("click",() => {
     exitHandling()
 })
-
 const exitHandling = () => {
     addCategoryPanel.style.display = "none"
     dashboard.style.display = "block"

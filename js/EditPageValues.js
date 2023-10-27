@@ -21,7 +21,6 @@ function getPages(){
 }
 
 
-
 showPagePanelEdit = () => {
     dashboard.style.display = "none"
     sideBar.style.display = "none"
@@ -87,7 +86,7 @@ suplmenetingInput = (id) =>{
             for(let i = 0; i < database.length; i++){
                 if(database[i].id_strony == id){
                     titlePageEdit.value = database[i].tytul
-                    descriptionPageEdit.value = database[i].opis
+                    
                     statusPageEdit.value = database[i].status
                 } 
             }

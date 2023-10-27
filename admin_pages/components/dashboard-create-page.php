@@ -64,7 +64,7 @@
             <span class="title-page-error-edit error-alert"></span>
         </label>
         <label for="Opis">
-            <textarea name="opis_strony" class="description-page-edit" cols="30" rows="10" placeholder="Wpisz opis strony"></textarea>
+            <textarea name="opis_strony" class="description-page-edit" cols="30" rows="10" placeholder="Wpisz opis strony" id="WYS"></textarea>
             <span class="description-page-error-edit error-alert"></span>
         </label>
         <label for="Status">
@@ -79,12 +79,12 @@
     </form>
 </div>
 
-
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>  	
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetPage.js"></script>
 <script src="../../js/AddPageToDatabase.js"></script>
-<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>  	
 <script>
 	let editor = new FroalaEditor('.description-page');	
-    let editorToEdit = new FroalaEditor('.description-page-edit');	
+    let editorToEdit = new FroalaEditor('.description-page-edit',{},function(){ 
+    });
 </script>	
