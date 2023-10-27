@@ -18,6 +18,12 @@
         <p class="p-data rev">
             <b>Przychody ogólne:</b><span class="revanues"></span>
         </p>
+        <p class="p-data rev">
+            <b>Przychody z tego miesiąca:</b><span class="revanues-month"></span>
+        </p>
+        <p class="p-data rev">
+            <b>Przychody z tego dnia:</b><span class="revanues-day"></span>
+        </p>
     </div>
 </div>
 <input type="hidden" value="<?php echo $_SESSION['user_admin']; ?>">
