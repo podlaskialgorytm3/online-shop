@@ -85,6 +85,4 @@
 <script src="../../js/AddPageToDatabase.js"></script>
 <script>
 	let editor = new FroalaEditor('.description-page');	
-    let editorToEdit = new FroalaEditor('.description-page-edit',{},function(){ 
-    });
 </script>	

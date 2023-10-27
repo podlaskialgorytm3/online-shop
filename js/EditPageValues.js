@@ -19,7 +19,8 @@ function getPages(){
         $('#page-body').html(data);
     })
 }
-
+let editorToEdit = new FroalaEditor('.description-page-edit',{},function(){
+});
 
 
 
@@ -89,6 +90,7 @@ suplmenetingInput = (id) =>{
                 if(database[i].id_strony == id){
                     titlePageEdit.value = database[i].tytul
                     
+                    editorToEdit.html.set(database[i].opis)
                     statusPageEdit.value = database[i].status
                 } 
             }
