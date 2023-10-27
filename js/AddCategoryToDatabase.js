@@ -28,7 +28,6 @@ const exitHandling = () => {
     dashboard.style.display = "block"
     sideBar.style.display = "block"
 }
-
 submit.addEventListener("click",(e) => {
     e.preventDefault()
     stepValidation = 0

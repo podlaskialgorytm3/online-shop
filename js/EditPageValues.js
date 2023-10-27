@@ -21,6 +21,8 @@ function getPages(){
 }
 
 
+
+
 showPagePanelEdit = () => {
     dashboard.style.display = "none"
     sideBar.style.display = "none"

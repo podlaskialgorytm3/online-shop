@@ -8,7 +8,6 @@ if(!isset($_SESSION['user_admin'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include '../components/meta.php' ?>
     <?php @include '../admin_pages/components/meta.php' ?>
     <title>SKLEP M&D | ADMIN</title>
 </head>
