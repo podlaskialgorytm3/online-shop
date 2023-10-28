@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="../css/header.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <div id="header">
     <div class="header-left-side">
