@@ -6,15 +6,12 @@
         <a href="index.php"><img src="../images/shop_icon.png" alt="Icon our shop!" style="width: 80px">  </a>          
     </div>
     <div class="header-right-side">
-        <div class="shoping-cart">
-        <!-- <img src="images/shopping_cart.png" alt="Shopping cart." style="width: 60px">  -->
-        </div>
         <div id="simple-pages">
             
         </div>
         <div class="accounts">
-            <a href="login.php">Zaloguj się!</a>
-            <a href="register.php">Zarejestruj się!</a>
+            <img src="../images/my-account-5.png" alt="">
+            <img src="../images/shopping_cart.png" alt="">
         </div>
     </div>
 </div>

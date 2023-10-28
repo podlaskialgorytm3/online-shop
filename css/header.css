@@ -6,29 +6,32 @@
 div#header{
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 150px;
-    background-color: rgb(131, 197, 241);;
-    box-shadow: 8px 8px 29px 0px rgb(131, 197, 241);
+    height: 100px;
+    background-color: rgb(255, 255, 255);;
+    box-shadow: 8px 8px 29px 0px rgb(241, 241, 241);
     color: white;
-}
-div#header>div{
-    margin: 100px;
 }
 div#header>div.header-left-side{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 10%;
+    border-right: 1px solid black;
+    margin-right: 20px;
 }
 div#header>div.header-right-side{
     display: flex;
     flex-direction: row;
+    width: 90%;
     justify-content: space-between;
 }
 div#header>div.header-right-side>div.accounts{
-    width: 250px;
+    border-left: 1px solid black;
+    margin-left: 30px;
+    width: 150px;
+    margin-right: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -36,9 +39,16 @@ div#header>div.header-right-side>div.accounts{
 }
 div#header>div.header-right-side>div.accounts>a{
     text-decoration: none;
-    font-size: 18px;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+    background-color:  rgb(3, 79, 194);
+    font-size: 16px;
     color: white;
     transition: 0.5s;
+    border-radius: 30px;
 }
 div#header>div.header-right-side>div.accounts>a:hover{
     color: black;
@@ -61,9 +71,13 @@ div#simple-pages>a{
     margin-right: 20px;
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: black;
     transition: 0.5s;
 }
 div#simple-pages>a:hover{
-    color: black;
+    font-weight: 900;
+    color: rgb(131, 197, 241);
+}
+.accounts>img{
+    width: 50px;
 }

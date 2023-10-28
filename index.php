@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php include 'components/meta.php'?>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>SKLEP M&D</title>
 </head>
 <body>
