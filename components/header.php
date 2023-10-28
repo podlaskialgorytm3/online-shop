@@ -11,6 +11,11 @@
         </div>
         <div class="accounts">
             <img src="../images/my-account-5.png" alt="">
+            <div class="login--wrapper">
+                    <a href="login.php">Zaloguj się!</a>
+                    <p>Nie masz konta?</p>
+                    <a href="register.php">Zarejestruj się!</a>
+                </div>
             <img src="../images/shopping_cart.png" alt="">
         </div>
     </div>

@@ -81,3 +81,33 @@ div#simple-pages>a:hover{
 .accounts>img{
     width: 50px;
 }
+
+.login--wrapper{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    background-color: white;
+    box-shadow: -1px 66px 100px 5px rgba(224, 224, 224, 1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login--wrapper>a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+.login--wrapper>p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
+}
