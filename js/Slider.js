@@ -1,11 +1,9 @@
-const splide = new Splide('.splide',{
-    type: 'slide',
-    perPage: 1,
-    pagination: false,
-    wheel: true,
-    autoplay:true,
-    interval: 3800,
-    start: 4,
-    speed: 500,
-    permove: 2
-}).move()
+new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 1,
+    focusAt: 'center',
+    gap: 0,
+    autoplay: 3000,
+    hoverpasue: true
+}).mount();
