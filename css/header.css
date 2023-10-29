@@ -96,6 +96,7 @@ div#simple-pages>a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 .login--wrapper>a{
     display: block;
