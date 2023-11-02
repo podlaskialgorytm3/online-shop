@@ -19,7 +19,7 @@ function getPages(){
         $('#page-body').html(data);
     })
 }
-let editorToEdit = new FroalaEditor('.description-page-edit',{},function(){
+editorToEdit = new FroalaEditor('.description-page-edit',{},function(){
 });
 
 
