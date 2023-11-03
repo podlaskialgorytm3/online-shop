@@ -13,6 +13,7 @@ $stmt = $pdo->query('SELECT * FROM produkty');
 
 $html = '';
 foreach ($stmt as $row){
+    $html .= '<a href="../../product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'">';
     $html .= '<div class="product-card">';
     $html .= '    <div class="product-image" style="background-image: url('.$row["URL"].')">';
     $html .= '    </div>';
@@ -28,9 +29,10 @@ foreach ($stmt as $row){
     $html .= '            <p class="price">';
     $html .=       $row["cena"]." zł";
     $html .= '            </p>';
-    $html .= '            <button class="add-to-cart"><img src="../../images/addtocard.png" style="width: 50px;" /></button>';
+    $html .= '            <button class="add-to-cart" data-id='.$row["Id_produktu"].'><img src="../../images/addtocard.png" style="width: 50px;" /></button>';
     $html .= '    </div>';
     $html .= '</div>';
+    $html .= '</a>';
 }
 
 sleep(1);
