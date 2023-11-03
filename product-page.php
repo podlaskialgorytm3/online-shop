@@ -5,6 +5,7 @@
     <title><?php echo $_GET['name']; ?></title>
 </head>
 <body>
+    <?php include 'components/header.php' ?>
     <div class="content">
         <?php
         require_once 'config.php';
@@ -28,7 +29,7 @@
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $name = $row["nazwa_produktu"];
             $description = $row["opis_produktu"];
-            echo '<h1>'.$name.'</h1>';
+            echo '<h1 style="font-size: 48px;">'.$name.'</h1>';
             echo '<p>'.$description.'</p>';
         } else {
             echo 'Nie znaleziono rekordu o ID: ' . $id;
