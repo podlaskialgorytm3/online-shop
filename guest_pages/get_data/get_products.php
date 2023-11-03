@@ -13,21 +13,22 @@ $stmt = $pdo->query('SELECT * FROM produkty');
 
 $html = '';
 foreach ($stmt as $row){
-    $html .= '    <div class="product-image">';
+    $html .= '<div class="product-card">';
+    $html .= '    <div class="product-image" style="background-image: url('.$row["URL"].')">';
     $html .= '    </div>';
     $html .= '    <div class="product-info">';
     $html .= '        <h2 class="product-title">';
-    $html .=    $row["nazwa_produktu"];
+    $html .=        $row["nazwa_produktu"];
     $html .= '        </h2>';
     $html .= '        <p class="product-description">';
-    $html .= '            <!-- Opis produktu -->';
+    $html .=       $row["opis_produktu"];
     $html .= '        </p>';
+    $html .= '        </div>';
     $html .= '        <div class="footer">';
     $html .= '            <p class="price">';
-    $html .= '                <!-- Cena produktu -->';
+    $html .=       $row["cena"]." zł";
     $html .= '            </p>';
-    $html .= '            <button class="add-to-cart">DODAJ DO KOSZYKA</button>';
-    $html .= '        </div>';
+    $html .= '            <button class="add-to-cart"><img src="../../images/addtocard.png" style="width: 50px;" /></button>';
     $html .= '    </div>';
     $html .= '</div>';
 }
