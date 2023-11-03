@@ -7,5 +7,6 @@
 <body>
     <?php include 'components/header.php' ?>
     <?php include 'components/slider.php' ?>
+    <?php include 'guest_pages/product-container.php'?>
 </body>
 </html>

@@ -8,3 +8,6 @@ body {
     justify-content: center;
     align-items: center;
 }
+body::-webkit-scrollbar{
+    display: none;
+}
