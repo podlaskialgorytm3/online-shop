@@ -20,10 +20,12 @@ function findCategory($id,$pdo){
     return $categories;
  }
  function findTag($id,$pdo){
-    $connect = $pdo->query('SELECT parametry.wartosc_parametru FROM parametry WHERE id_parametru = '. $id);
+    $tags = "";
+    $connect = $pdo->query('SELECT p.wartosc_parametru FROM parametry p JOIN produkty_parametry pp ON p.id_parametru = pp.Id_parametru WHERE pp.Id_produktu ='. $id);
     while($rows = $connect->fetch()){
-       return $rows["wartosc_parametru"];
+        $tags = $rows["wartosc_parametru"]." ".$tags;
     }
+    return $tags;
  }
 
 
@@ -33,7 +35,7 @@ foreach ($stmt as $row){
     $html .=  '<td>' . $row['Id_produktu'] . '</td>';
     $html .=  '<td>' . $row['nazwa_produktu'] . '</td>';
     $html .=  '<td>' . findCategory($row['Id_produktu'],$pdo) . '</td>';
-    $html .=  '<td>' . findTag($row['id_parametru'],$pdo) . '</td>';
+    $html .=  '<td>' . findTag($row['Id_produktu'],$pdo) . '</td>';
     $html .=  '<td>' . $row['cena'] . '</td>';
     $html .=  '<td>' . $row['stan_magazynowy'] . '</td>';
     $html .=  '<td>' . $row['opis_produktu'] . '</td>';
