@@ -24,6 +24,7 @@ deleteBtnProduct.forEach(button => {
             exitDeletePopupProduct()
         })
         confirmProduct.addEventListener("click",() =>{
+            console.log(
             $.ajax({
                 url: "../admin_pages/removeData/remove-product-from-database.php",
                 type: "POST",
@@ -35,7 +36,7 @@ deleteBtnProduct.forEach(button => {
                     getProduct()
                     exitDeletePopupProduct()
                     }
-                })
+                }))
         })
     })
 })
