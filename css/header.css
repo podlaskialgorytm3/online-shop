@@ -112,3 +112,26 @@ div#simple-pages>a:hover{
     margin-bottom: 10px;
     color: gray;
 }
+div.user-pages{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+div.user-pages>a{
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    transition: 0.5s;
+}
+div.user-pages>a:hover{
+    font-weight: 900;
+    color: rgb(131, 197, 241);
+}
+div.left{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}

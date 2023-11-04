@@ -7,8 +7,13 @@
         <a href="index.php"><img src="../images/shop_icon.png" alt="Icon our shop!" style="width: 80px">  </a>          
     </div>
     <div class="header-right-side">
+        <div class="left">
         <div id="simple-pages">
-            
+
+        </div>
+        <div class="user-pages">
+            <a href="../produtcs.php">Produkty</a>
+        </div>
         </div>
         <div class="accounts">
             <img src="../images/my-account-5.png" alt="" class="account">
