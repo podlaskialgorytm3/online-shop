@@ -20,9 +20,9 @@ function findCategory($id,$pdo){
     return $categories;
  }
  function findTag($id,$pdo){
-    $connect = $pdo->query('SELECT parametry.nazwa_parametru FROM parametry WHERE id_parametru = '. $id);
+    $connect = $pdo->query('SELECT parametry.wartosc_parametru FROM parametry WHERE id_parametru = '. $id);
     while($rows = $connect->fetch()){
-       return $rows["nazwa_parametru"];
+       return $rows["wartosc_parametru"];
     }
  }
 

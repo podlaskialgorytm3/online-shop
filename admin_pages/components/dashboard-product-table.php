@@ -5,7 +5,7 @@
 <div class="dashboard">
     <div class="select-tables">
         <div class="select-table product">Produkty</div>
-        <div class="select-table tag">Rozmiary</div>
+        <div class="select-table tag">Parametry</div>
         <div class="select-table category">Kategoria</div>
     </div>
     <table class="product-table table">
@@ -13,7 +13,7 @@
             <th>Id_Produktu</th>
             <th>Nazwa Produktu</th>
             <th>Kategoria</th>
-            <th>Rozmiar</th>
+            <th>Parametry</th>
             <th>Cena</th>
             <th>Stan magazynowy</th>
             <th>Opis Produktu</th>
@@ -25,9 +25,9 @@
     </table>
     <table class="tag-table table">
         <thead>
-            <th>Id_rozmiaru</th>
-            <th>Rozmiar</th>
-            <th>Opis Rozmiaru</th>
+            <th>Id_parametru</th>
+            <th>Typ Parametru</th>
+            <th>Wartość Parametru</th>
             <th>Edytuj</th>
             <th>Usuń</th>
         </thead>
@@ -77,17 +77,19 @@
 <div class="add-tag-panel add-panel">
     <div class="exit exit-add-tag"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
-        <h2>Dodaj Rozmiar</h2>
+        <h2>Dodaj Parametr</h2>
         <label for="nazwa_parametru">
-            <input type="text" name="nazwa_parametru" placeholder="Wpisz rozmiar." class="name-tag">
-            <span class="name-tag-error error-alert"></span>
+            <select name="typ_parametru" placeholder="Wpisz ." class="name-tag">
+                <option value="kolor">Kolor</option>
+                <option value="rozmiar">Rozmiar</option>
+            </select>
         </label>
-        <label for="opis_kategorii">
-            <input type="text" name="opis_parametru" placeholder="Wpisz opis rozmiaru." class="description-tag">
+        <label for="wartosc_parametru">
+            <input type="text" name="wartosc_parametru" placeholder="Wpisz wartość parametru." class="description-tag">
             <span class="description-tag-error error-alert"></span>
         </label>
         <label for="submit">
-            <input type="submit" name="submit" value="Dodaj Rozmiar" class="tag-submit">
+            <input type="submit" name="submit" value="Dodaj Parametr" class="tag-submit">
         </label>
     </form>
 </div>
@@ -137,7 +139,7 @@
     </div>
 </div>
 <div class="confirm-delete-tag cf">
-    <p>Czy na pewno chcesz usunąc rozmiar?</p>
+    <p>Czy na pewno chcesz usunąc parametr?</p>
     <div>
         <button class="confirm confirm-tag">Tak</button>
         <button class="reject reject-tag">Nie</button>
@@ -170,17 +172,19 @@
 <div class="edit-tag-panel add-panel">
     <div class="exit exit-edit-tag"><img src="../../images/x.png" alt=""></div>
     <form action="" method="POST">
-        <h2>Edytuj rozmiar</h2>
+        <h2>Edytuj Parametr</h2>
         <label for="Nazwa parametru">
-            <input type="text" name="nazwa_parametru" placeholder="Wpisz rozmiar." class="name-tag-edit">
-            <span class="name-tag-error-edit error-alert"></span>
+            <select name="typ_parametru" class="name-tag-edit">
+                <option value="kolor">Kolor</option>
+                <option value="rozmiar">Rozmiar</option>
+            </select>
         </label>
         <label for="Opis Parametru">
-            <input type="text" name="opis_parametru" placeholder="Wpisz opis rozmiaru." class="description-tag-edit">
+            <input type="text" name="wartość_parametru" placeholder="Wpisz wartość parametru." class="description-tag-edit">
             <span class="description-tag-error-edit error-alert"></span>
         </label>
         <label for="submit">
-            <input type="submit" name="submit" value="Edytuj rozmiar" class="tag-edit-submit">
+            <input type="submit" name="submit" value="Edytuj Parametr" class="tag-edit-submit">
         </label>
     </form>
 </div>

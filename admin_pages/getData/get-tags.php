@@ -15,8 +15,8 @@ $html = '';
 foreach ($stmt as $row){
     $html .=  '<tr>';
     $html .=  '<td>' . $row['id_parametru'] . '</td>';
-    $html .=  '<td>' . $row['nazwa_parametru'] . '</td>';
-    $html .=  '<td>' . $row['opis_parametru'] . '</td>';
+    $html .=  '<td>' . $row['typ_parametru'] . '</td>';
+    $html .=  '<td>' . $row['wartosc_parametru'] . '</td>';
     $html .=  '<td><button class="edit edit-tag" data-id="'.$row['id_parametru'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
     $html .=  '<td><button class="delete delete-tag" data-id="'.$row['id_parametru'].'"><img src="../../images/delete.png" style="width: 30px"  alt=""></button></td>';
     $html .=  '</tr>';
