@@ -36,7 +36,7 @@ foreach ($stmt as $row){
     $html .=  '<td>' . $row['nazwa_produktu'] . '</td>';
     $html .=  '<td>' . findCategory($row['Id_produktu'],$pdo) . '</td>';
     $html .=  '<td>' . findTag($row['Id_produktu'],$pdo) . '</td>';
-    $html .=  '<td>' . $row['cena'] . '</td>';
+    $html .=  '<td>' . $row['cena'] . ' zł</td>';
     $html .=  '<td>' . $row['stan_magazynowy'] . '</td>';
     $html .=  '<td>' . $row['opis_produktu'] . '</td>';
     $html .=  '<td><button class="edit edit-product" data-id="'.$row['Id_produktu'].'"><img src="../../images/edit.png" style="width: 30px" alt=""></button></td>';
