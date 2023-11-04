@@ -3,6 +3,7 @@
 <head>
     <?php include __DIR__ . '/components/meta.php' ?>
     <title><?php echo $_GET['name']; ?></title>
+    <link rel="stylesheet" href="/css/product-page.css">
 </head>
 <body>
     <?php include 'components/header.php' ?>
@@ -60,7 +61,7 @@
             $colors = findColor($row['Id_produktu'],$pdo);
             $sizes = findSize($row['Id_produktu'],$pdo);
             echo '<div class="product-page">';
-            echo '    <div class="left-side" style="backround-image: url('.$URL.');">';
+            echo '    <div class="left-side" style="background-image: url('.$URL.');">';
             echo '    ';
             echo '    </div>';
             echo '    <div class="right-side">';
@@ -68,6 +69,7 @@
             echo '            <h1 class="title">'.$name.'</h1>';
             echo '            <p class="price">'.$price.' zł</p>';
             echo '        </div>';
+            echo '        <p class="cutsom-info">Wybierz kolor i rozmiar.</p>';
             echo '        <div class="center">';
             echo '            <select name="" id="" class="colors">';
             echo                $colors;
@@ -76,17 +78,15 @@
             echo                $sizes;
             echo '            </select>';
             echo '        </div>';
-            echo '        <div class="add-card">';
             echo '            <button class="add-to-card">';
             echo '                Dodaj do koszyka';
             echo '            </button>';
-            echo '        </div>';
             echo '        <div class="desc">';
             echo '            <h3>Opis</h3>';
             echo '            <p class="description">';
             echo                $description;
             echo '            </p>';
-            echo '            <h3>Kategorie</h3>';
+            echo '            <h3 class="cat">Kategorie</h3>';
             echo '            <p class="category">';
             echo                $categories;
             echo '            </p>';
