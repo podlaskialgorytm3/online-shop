@@ -3,7 +3,6 @@ const addTagPanel = document.querySelector(".add-tag-panel")
 const nameTag = document.querySelector(".name-tag")
 const descriptionTag = document.querySelector(".description-tag")
 const submitTag = document.querySelector(".tag-submit")
-const nameTagError = document.querySelector(".name-tag-error")
 const descriptionTagError = document.querySelector(".description-tag-error")
 
 const exitTag = document.querySelector(".exit-add-tag")
@@ -29,13 +28,6 @@ const exitHandlingTag = () => {
 submitTag.addEventListener("click",(e) => {
     e.preventDefault()
     stepValidation = 0
-    if(nameTag.value == ""){
-        nameTagError.textContent = "Pole jest wymagane!"
-    }
-    else{
-        stepValidation++
-        nameTagError.textContent = ""
-    }
     if(descriptionTag.value == ""){
         descriptionTagError.textContent = "Pole jest wymagane!"
     }
@@ -43,7 +35,7 @@ submitTag.addEventListener("click",(e) => {
         stepValidation++
         descriptionTagError.textContent = ""
     }
-    if(stepValidation == 2){
+    if(stepValidation == 1){
         addDataTag()
     }
 })
