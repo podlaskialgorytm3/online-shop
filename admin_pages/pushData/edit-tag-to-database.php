@@ -12,8 +12,8 @@ $description_tag = mysqli_real_escape_string($conn,$_POST['opis_parametru']);
 
 
 $sql = "UPDATE parametry SET
-        nazwa_parametru = '$name_tag',
-        opis_parametru = '$description_tag'
+        typ_parametru = '$name_tag',
+        wartosc_parametru = '$description_tag'
         WHERE id_parametru = $id";
 $conn = mysqli_connect($hostname, $login, $password,$database);
 

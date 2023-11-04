@@ -1,7 +1,6 @@
 editButtonTag = document.querySelectorAll(".edit-tag")
 nameTagEdit = document.querySelector(".name-tag-edit")
 descriptionTagEdit = document.querySelector(".description-tag-edit")
-nameTagErrorEdit = document.querySelector(".name-tag-error-edit")
 descriptionTagErrorEdit = document.querySelector(".description-tag-error-edit")
 submitTagEdit = document.querySelector(".tag-edit-submit")
 exitEditTag = document.querySelector(".exit-edit-tag")
@@ -23,7 +22,6 @@ exitEditTag.addEventListener("click",() => {
     exitEditPanelHandlerTag()
 })
 
-
 supplementingInputTag = (id) =>{
     const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-tag.php" , true);
@@ -33,8 +31,8 @@ supplementingInputTag = (id) =>{
             let database = JSON.parse(this.responseText);
             for(let i = 0; i < database.length; i++){
                 if(database[i].id_parametru == id){
-                    nameTagEdit.value = database[i].nazwa_parametru
-                    descriptionTagEdit.value = database[i].opis_parametru
+                    nameTagEdit.value = database[i].typ_parametru
+                    descriptionTagEdit.value = database[i].wartosc_parametru
                 } 
             }
     }}
@@ -75,13 +73,6 @@ validationTag = (id) => {
         e.preventDefault()
         if(i == 0){
         stepValidation = 0
-        if(nameTagEdit.value == ""){
-            nameTagErrorEdit.textContent = "Pole jest wymagane!"
-        }
-        else{
-            stepValidation++
-            nameTagErrorEdit.textContent = ""
-        }
         if(descriptionTagEdit.value == ""){
             descriptionTagErrorEdit.textContent = "Pole jest wymagane!"
         }
@@ -89,7 +80,7 @@ validationTag = (id) => {
             stepValidation++
             descriptionTagErrorEdit.textContent = ""
         }
-        if(stepValidation == 2){
+        if(stepValidation == 1){
             editDataTag(id)
         }}
         i++
