@@ -10,7 +10,7 @@ try {
         $html .= '<option value="';
         $html .= $row['id_parametru'];
         $html .= '">';
-        $html .= $row['nazwa_parametru'];
+        $html .= $row['wartosc_parametru'];
         $html .= '</option>';
     }
 } catch (PDOException $e) {
