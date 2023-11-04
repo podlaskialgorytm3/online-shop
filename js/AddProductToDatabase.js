@@ -28,7 +28,7 @@ const successAddProduct = document.querySelector(".success-add")
 const successTextProduct = document.querySelector(".success-text")
 
 let categories = []
-
+let tags = []
 
 addProductBtn.addEventListener("click",() => {
     addProductPanel.style.display = "flex"
@@ -55,6 +55,11 @@ submitProduct.addEventListener("click",(e) => {
     optionsArray.forEach(category => {
         if(category.selected)
             categories.push(parseInt(category.value))
+    })
+    optionsArray2 = Array.from(tagToProduct.options);
+    optionsArray2.forEach(tag => {
+        if(tag.selected)
+            tags.push(parseInt(tag.value))
     })
     if(nameProduct.value == ""){
         nameProductError.textContent = "Podano puste pole!"
@@ -137,7 +142,6 @@ addDataProduct = () => {
 		type: "POST",
 		data: {
 			nazwa_produktu: nameProduct.value,
-            id_parametru: tagToProduct.value,
             cena: priceProduct.value,
             stan_magazynowy: stockProduct.value,
             opis_produktu: descriptionProduct.value,
@@ -153,6 +157,7 @@ addDataProduct = () => {
                 successAddProduct.style.opacity = "0"
             },5000)
             addCategoriesToProduct()
+            addTagsToProduct()
             }
 	    })
        const addCategoriesToProduct = () => {
@@ -179,7 +184,30 @@ addDataProduct = () => {
                 })
         }}
        }
-        
+       const addTagsToProduct = () => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET","../components/fetch-product.php" , true);
+        ajax.send();
+        ajax.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let database = JSON.parse(this.responseText);
+                console.log(database[database.length - 1].Id_produktu)
+                tags.forEach(tag => {
+                    $.ajax({
+                        url: "../admin_pages/pushData/add-product-tag-to-database.php",
+                        type: "POST",
+                        data: {
+                            Id_produktu: database[database.length-1].Id_produktu,
+                            Id_parametru: tag
+                         },
+                        cache: false,
+                        success: function(){
+                            getProduct()
+                        }
+                     })
+                })
+        }}
+       }
 }
 
 $(document).ready(function(){
