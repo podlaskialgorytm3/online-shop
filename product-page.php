@@ -95,7 +95,7 @@
             echo '</div>';
             
         } else {
-            echo 'Nie znaleziono rekordu o ID: ' . $id;
+            echo 'Nie znaleziono produktu o ID: ' . $id;
         }
 
         $pdo = null;
