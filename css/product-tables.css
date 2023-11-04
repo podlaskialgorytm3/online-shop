@@ -130,7 +130,7 @@ select{
     height: 50px ;
 }
 select.category-to-product,.category-to-product-edit,.tag-to-product,.tag-to-product-edit{
-    height: 80px;
+    height: 100px;
 }
 input[type="submit"]{
     background-color: #007bff;
