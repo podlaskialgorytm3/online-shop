@@ -8,7 +8,7 @@
 <body>
     <?php include 'components/header.php' ?>
     <div class="container">
-        <input type="text" placeholder="Szukaj..." id="search">
+        <input type="text" placeholder="Parametr lub nazwa." id="search" >
         <div class="search"></div>
     </div>
     <div class="main">
