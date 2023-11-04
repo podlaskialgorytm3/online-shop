@@ -8,7 +8,6 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $id = $_POST['id'];
 $name_product = mysqli_real_escape_string($conn,$_POST['nazwa_produktu']);
-$tag = $_POST['id_parametru'];
 $price_product = $_POST['cena'];
 $stock_product = $_POST['stan_magazynowy'];
 $description_product = mysqli_real_escape_string($conn,$_POST['opis_produktu']);
@@ -16,7 +15,6 @@ $URL = $_POST['URL'];
 
 $sql = "UPDATE produkty SET 
     nazwa_produktu = '$name_product',
-    id_parametru = $tag,
     cena = $price_product,
     stan_magazynowy = $stock_product,
     opis_produktu = '$description_product',

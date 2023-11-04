@@ -34,12 +34,13 @@ editProductBtn.forEach(button => {
         sideBar.style.display = "none"
         suplementingProduct(button.dataset.id)
         submitCategoryToProduct(button.dataset.id)
+        submitTagToProduct(button.dataset.id)
         validationProduct(button.dataset.id)
     })
 })
 
 categories = []
-
+tags = []
 
 exitProductEdit.addEventListener("click",() => {
     exitHandlingProductEdit()
@@ -63,7 +64,6 @@ suplementingProduct = (id) => {
             for(let i = 0; i < database.length; i++){
                 if(database[i].Id_produktu == id){
                     nameProductEdit.value = database[i].nazwa_produktu
-                    tagToProductEdit.value = database[i].id_parametru
                     priceProductEdit.value = database[i].cena
                     stockProductEdit.value = database[i].stan_magazynowy
                     descriptionProductEdit.value = database[i].opis_produktu
@@ -90,7 +90,24 @@ submitCategoryToProduct = (id) => {
             }
     }}
 }
-
+submitTagToProduct = (id) => {
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-product-tag.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].Id_produktu == id){
+                    for(let j = 0; j <= tagToProductEdit.options.length - 1; j++){
+                        if(tagToProductEdit.options[j].value == database[i].Id_parametru){
+                            tagToProductEdit.options[j].selected = true
+                        }
+                    }
+                } 
+            }
+    }}
+}
 validationProduct = (id) => {
     let i = 0
     submitProductEdit.addEventListener("click",(e) => {
@@ -182,7 +199,6 @@ editDataProduct = (id) => {
 		data: {
             id: id,
 			nazwa_produktu: nameProductEdit.value,
-            id_parametru: tagToProductEdit.value,
             cena: priceProductEdit.value,
             stan_magazynowy: stockProductEdit.value,
             opis_produktu: descriptionProductEdit.value,
@@ -226,7 +242,34 @@ editDataProduct = (id) => {
             }
         })
     })
-
+    optionsArray2 = Array.from(tagToProductEdit.options);
+    optionsArray2.forEach(tag => {
+    if(tag.selected)
+        tags.push(parseInt(tag.value))
+    })
+    $.ajax({
+        url: "../admin_pages/removeData/remove-product-tag-from-database.php",
+        type: "POST",
+        data: {
+            id: id
+         },
+        cache: false,
+    })
+    
+    tags.forEach(tag => {
+        $.ajax({
+        url: "../admin_pages/pushData/add-product-tag-to-database.php",
+        type: "POST",
+        data: {
+            Id_produktu: id,
+            Id_parametru: tag
+        },
+        cache: false,
+        success: function(){
+            getProductEdit()
+        }
+    })
+})
         
 }
 
