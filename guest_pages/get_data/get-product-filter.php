@@ -8,8 +8,13 @@ try {
     echo 'Połączenie nie mogło zostać utworzone: ' . $e->getMessage();
     exit();
 }
-$stmt = $pdo->prepare("SELECT * FROM produkty WHERE nazwa_produktu LIKE :nazwa_produktu");
+
+$stmt = $pdo->prepare("SELECT * FROM produkty p JOIN produkty_parametry pp ON pp.Id_produktu = p.Id_produktu
+                        JOIN parametry pr ON pr.Id_parametru = pp.id_parametru 
+                        WHERE p.nazwa_produktu LIKE :nazwa_produktu OR pr.wartosc_parametru LIKE :wartosc_parametru
+                        GROUP BY p.Id_produktu");
 $stmt -> bindValue(':nazwa_produktu', '%'.$_POST['search'].'%', PDO::PARAM_STR);
+$stmt -> bindValue(':wartosc_parametru', '%'.$_POST['search'].'%', PDO::PARAM_STR);
 $stmt->execute();
 
 $html = '';
