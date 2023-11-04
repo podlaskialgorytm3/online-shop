@@ -61,3 +61,14 @@ div.desc>h3{
 div.desc>h3.cat{
     margin-top: 20px;
 }
+p.cutsom-info{
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+select{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+}
