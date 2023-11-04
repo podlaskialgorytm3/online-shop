@@ -129,8 +129,8 @@ select{
     font-size: 18px;
     height: 50px ;
 }
-select.category-to-product,.category-to-product-edit{
-    height: 100px;
+select.category-to-product,.category-to-product-edit,.tag-to-product,.tag-to-product-edit{
+    height: 80px;
 }
 input[type="submit"]{
     background-color: #007bff;
@@ -146,8 +146,8 @@ input[type="submit"]:hover {
 }
 .add-page-panel,.edit-page-panel{
     width: 1200px;
-    height: 800px;
-    top: calc(50% - 400px);
+    height: 900px;
+    top: calc(50% - 450px);
     left: calc(50% - 600px);
 }
 .description-page,.description-page-edit{

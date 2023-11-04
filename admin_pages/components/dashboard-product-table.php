@@ -105,7 +105,7 @@
             <select name="kategoria" class="category-to-product" multiple></select>
         </label>
         <label for="Parametr">
-            <select name="parametr" class="tag-to-product"></select>
+            <select name="parametr" class="tag-to-product" multiple></select>
         </label>
         <label for="Cena">
             <input type="number" name="cena" placeholder="Wpisz cenę produktu." class="price-product">
@@ -200,7 +200,7 @@
             <select name="kategoria" class="category-to-product-edit" multiple></select>
         </label>
         <label for="Parametr">
-            <select name="parametr" class="tag-to-product-edit"></select>
+            <select name="parametr" class="tag-to-product-edit" multiple></select>
         </label>
         <label for="Cena">
             <input type="number" name="cena" placeholder="Wpisz cenę produktu." class="price-product-edit">
