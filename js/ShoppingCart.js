@@ -8,6 +8,7 @@ exit.addEventListener("click",() => {
 })
 entry.addEventListener("click",() => {
     shoppingCart.style.display = "flex"
+    entry.style.cursor = "pointer"
 })
 let cart1 = JSON.parse(localStorage.getItem('cart5')) || []
 
