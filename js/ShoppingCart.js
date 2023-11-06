@@ -9,7 +9,7 @@ exit.addEventListener("click",() => {
 entry.addEventListener("click",() => {
     shoppingCart.style.display = "flex"
 })
-let cart1 = JSON.parse(localStorage.getItem('cart4')) || []
+let cart1 = JSON.parse(localStorage.getItem('cart5')) || []
 
 const addItemToShopCart = () => {
     while (items.firstChild) {
@@ -47,6 +47,7 @@ const addItemToShopCart = () => {
                             <p><b>Cena: </b>${cartItem.price} zł</p>
                             <p><b>Kolor: </b>${colorName}</p>
                             <p><b>Rozmiar: </b>${sizeName}</p>
+                            <p><b>Ilość: </b>${cartItem.quanity}</p>
                         </div>
                     </div>
                 </div>
