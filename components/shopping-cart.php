@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="../css/shopping-cart.css">
 </head>
 <div class="shopping-cart">
-    <img src='../images/x.png' style="width: 50px;" />
+    <img src='../images/x.png' style="width: 50px;" class="exit-shop-cart x" />
     <h1>Koszyk</h1>
     <div id="items">
 
