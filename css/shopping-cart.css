@@ -27,23 +27,6 @@ h1{
     margin-top: 10px;
     font-size: 24px;
 }
-.go-to-delivery{
-    width: 200px;
-    height: 50px;
-    padding: 5px;
-    background-color: #007bff;
-    border-radius: 20px;
-    line-height: 40px;
-    text-align: center;
-    color: white;
-    transition: .5s;
-    margin-top: 20px;
-}
-.go-to-delivery:hover{
-    border: 1px solid #007bff;
-    background-color: white;
-    color: #007bff;
-}
 div.container{
     margin-top: 10px;
     height: 150px;
@@ -65,4 +48,20 @@ div.image{
     background-size: 65%;
     background-position: center;
     background-repeat: no-repeat;
+}
+button>a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 20px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    transition: .5s;
+}
+button>a:hover{
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
 }

@@ -10,7 +10,7 @@
     <div class="total-cost">
     </div>
     <button class="go-to-delivery">
-        Przejdź do koszyka!
+        <a href="../shopping-card-page.php">Przejdź do koszyka.</a>
     </button>
 </div>
 <script src="../js/ShoppingCart.js"></script>
