@@ -9,7 +9,7 @@ exit.addEventListener("click",() => {
 entry.addEventListener("click",() => {
     shoppingCart.style.display = "flex"
 })
-let cart1 = JSON.parse(localStorage.getItem('cart2')) || []
+let cart1 = JSON.parse(localStorage.getItem('cart4')) || []
 
 const addItemToShopCart = () => {
     while (items.firstChild) {

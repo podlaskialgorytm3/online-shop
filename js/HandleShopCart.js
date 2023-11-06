@@ -4,7 +4,7 @@ const buttonCard = document.querySelector(".add-to-card")
 
 let nameValue = ""
 let priceValue = ""
-let cart = JSON.parse(localStorage.getItem('cart1')) || [];
+let cart = JSON.parse(localStorage.getItem('cart4')) || [];
 
 const getProductInfo = (buttonCard, color, size) => {
     return new Promise((resolve, reject) => {
@@ -22,9 +22,10 @@ const getProductInfo = (buttonCard, color, size) => {
                             price: database[i].cena,
                             color: color.value,
                             size: size.value,
-                            URL: database[i].URL
+                            URL: database[i].URL,
+                            quanity: 1
                         };
-                        resolve(productInformation);
+                        resolve(productInformation)
                     }
                 }
             }
@@ -32,55 +33,49 @@ const getProductInfo = (buttonCard, color, size) => {
     });
 };
 
-const getTagsName = (id) => {
-    return new Promise((resolve, reject) => {
-        const ajax = new XMLHttpRequest();
-        ajax.open("GET", "../components/fetch-tag.php", true);
-        ajax.send();
-        ajax.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                let database = JSON.parse(this.responseText);
-                for (let i = 0; i < database.length; i++) {
-                    if (database[i].id_parametru == id) {
-                        resolve(database[i].wartosc_parametru);
-                        return;
-                    }
-                }
-                resolve("Brak parametru.");
-            }
-        };
+function countSameProducts(cart, productInformation) {
+    let count = 0;
+    cart.forEach(item => {
+        if (
+            item.id === productInformation.id &&
+            item.color === productInformation.color &&
+            item.size === productInformation.size
+        ) {
+            count++;
+        }
     });
+    return count;
 }
 
 buttonCard.addEventListener("click", () => {
     getProductInfo(buttonCard, color, size).then((productInfo) => {
-        if(typeof Storage !== 'undifinded'){
-            let cart = JSON.parse(localStorage.getItem('cart2')) || []
-            cart.push(productInfo)
-            localStorage.setItem('cart2', JSON.stringify(cart));
-            console.log(cart)
-            let div = document.createElement("div")
-            getTagsName(cart[cart.length -1].color).then(colorName => {
-            getTagsName(cart[cart.length -1].size).then(sizeName => {
-                div.innerHTML = `
-                <div class="container">
-                    <h2 class="product-name">${cart[cart.length -1].name}</h2>
-                    <div class="center-container">
-                        <div class="image" style="background-image: url(${cart[cart.length -1].URL})"></div>
-                        <div class="infomration-container">
-                            <p><b>Cena: </b>${cart[cart.length -1].price} zł</p>
-                            <p><b>Kolor: </b>${colorName}</p>
-                            <p><b>Rozmiar: </b>${sizeName}</p>
-                        </div>
-                    </div>
-                </div>
-                `
-                items.appendChild(div);
-            });
-        });
-        }
-        else{
+        if (typeof Storage !== 'undefined') {
+            let cart = JSON.parse(localStorage.getItem('cart4')) || [];
+            const count = countSameProducts(cart, productInfo);
+            if (count > 0) {
+                // Znaleziono produkty o tych samych parametrach
+                // Aktualizuj ilość w pierwszym znalezionym elemencie
+                for (let i = 0; i < cart.length; i++) {
+                    if (
+                        cart[i].id === productInfo.id &&
+                        cart[i].color === productInfo.color &&
+                        cart[i].size === productInfo.size
+                    ) {
+                        cart[i].quanity += 1;
+                        break;
+                    }
+                }
+            } else {
+                // Nie znaleziono produktów o tych samych parametrach
+                productInfo.quanity = 1;
+                cart.push(productInfo);
+            }
 
+            localStorage.setItem('cart4', JSON.stringify(cart))
+            console.log(cart)
+            // Tworzenie nowego elementu w koszyku...
+        } else {
+            // Obsługa, gdy localStorage nie jest dostępne
         }
     }).catch((error) => {
         console.error("Wystąpił błąd: ", error);
