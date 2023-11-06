@@ -8,7 +8,6 @@
 
     </div>
     <div class="total-cost">
-        Koszt całkowity: xxx zł 
     </div>
     <button class="go-to-delivery">
         Przejdź do dostawy!
