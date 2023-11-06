@@ -22,7 +22,7 @@
                     <p>Nie masz konta?</p>
                     <a href="register.php">Zarejestruj się!</a>
                 </div>
-            <img src="../images/shopping_cart.png" alt="">
+            <img src="../images/shopping_cart.png" alt="" class="entry-shop-cart">
         </div>
     </div>
 </div>
