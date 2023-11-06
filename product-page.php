@@ -78,7 +78,7 @@
             echo                $sizes;
             echo '            </select>';
             echo '        </div>';
-            echo '            <button class="add-to-card">';
+            echo '            <button class="add-to-card" data-id='.$row["Id_produktu"].'>';
             echo '                Dodaj do koszyka';
             echo '            </button>';
             echo '        <div class="desc">';
@@ -103,5 +103,5 @@
     </div>
 </body>
 </html>
-
+<script src="js/HandleShopCart.js"></script>
 
