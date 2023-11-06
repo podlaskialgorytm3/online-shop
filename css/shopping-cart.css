@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 25vw;
+    width: 40vw;
     padding-bottom: 100px;
     height: auto;
     background-color: rgb(255, 255, 255);
@@ -12,6 +12,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: none;
+    overflow: scroll;
+}
+.shopping-cart::-webkit-scrollbar{
     display: none;
 }
 .x{
@@ -33,9 +37,32 @@ h1{
     text-align: center;
     color: white;
     transition: .5s;
+    margin-top: 20px;
 }
 .go-to-delivery:hover{
     border: 1px solid #007bff;
     background-color: white;
     color: #007bff;
+}
+div.container{
+    margin-top: 10px;
+    height: 120px;
+    width: 100%;
+}
+h2.product-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+div.center-container{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+div.image{
+    width: 50%;
+    height: 100%;
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
