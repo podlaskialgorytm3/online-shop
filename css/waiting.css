@@ -1,0 +1,49 @@
+div.waiting-container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+div.login-side,div.waiting-right-side{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.without-login,div.register-side{
+    width: 80%;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+div.without-login,div.register-side{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.login{
+    height: 600px;
+}
+.without-login>a,.register-side>a{
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    width: 250px;
+    text-align: center;
+}
+.without-login>a:hover,.register-side>a:hover{
+    background-color: rgb(131, 197, 241);
+}
