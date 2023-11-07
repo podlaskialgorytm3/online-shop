@@ -12,7 +12,7 @@
         <div class="shop-cart-items">
 
         </div>
-        <a href="/waiting.php" class="go-to-delivery">Przejdź do dostawy!</a>
+        <div class="button-area"></div>
     </div>
     <script src="/js/GetShoppingCart.js"></script>
 </body>

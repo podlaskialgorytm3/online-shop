@@ -1,9 +1,7 @@
 let cart2 = JSON.parse(localStorage.getItem('cart5')) || [];
 
 const itemContainer = document.querySelector(".shop-cart-items")
-
-
-console.log(cart2)
+const buttonArea = document.querySelector(".button-area")
 
 const getTagsName = (id) => {
     return new Promise((resolve, reject) => {
@@ -58,7 +56,6 @@ const getShoppingCart = () => {
         const deleteButton = document.querySelectorAll(".delete-product");
         deleteButton.forEach(btn => {
             btn.addEventListener("click", () => {
-                console.log(btn.dataset.id)
                 let index = btn.dataset.id
                 if (index !== -1) {
                  // Usuń produkt z koszyka
@@ -67,6 +64,14 @@ const getShoppingCart = () => {
                 // Zapisz zaktualizowany koszyk z powrotem do Local Storage
                 localStorage.setItem('cart5', JSON.stringify(cart2));
                 getShoppingCart()
+                if(cart2){
+                    if(cart2.length == 0){
+                        buttonArea.removeChild(buttonArea.firstChild)
+                    }
+                    else{
+                        buttonArea.innerHTML = `<a href="/waiting.php" class="go-to-delivery">Przejdź do dostawy!</a>`
+                    }
+            }
             }
             })
         })
@@ -80,4 +85,14 @@ const getShoppingCart = () => {
 
 document.addEventListener("DOMContentLoaded",() => {
     getShoppingCart()
+    if(cart2){
+            if(cart2.length == 0){
+                if(buttonArea.firstChild){
+                    buttonArea.removeChild(buttonArea.firstChild)
+                }
+            }
+            else{
+                buttonArea.innerHTML = `<a href="/waiting.php" class="go-to-delivery">Przejdź do dostawy!</a>`
+            }
+    }
 })
