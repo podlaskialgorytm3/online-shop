@@ -70,10 +70,8 @@ const getShoppingCart = () => {
                 totalPrice-=minus
                 priceContainer.textContent = `Łączna kwota: ${totalPrice.toFixed(2)} zł`
                 if (index !== -1) {
-                console.log(cart2[index].price)
                  // Usuń produkt z koszyka
                 cart2.splice(index, 1);
-                console.log(cart2)
                 // Zapisz zaktualizowany koszyk z powrotem do Local Storage
                 localStorage.setItem('cart5', JSON.stringify(cart2));
                 getShoppingCart()

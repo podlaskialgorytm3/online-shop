@@ -93,7 +93,6 @@ buttonCard.addEventListener("click", () => {
             }
 
             localStorage.setItem('cart5', JSON.stringify(cart))
-            console.log(cart)
             // Tworzenie nowego elementu w koszyku...
             let div = document.createElement("div")
             getTagsName(cart[cart.length -1].color).then(colorName => {
