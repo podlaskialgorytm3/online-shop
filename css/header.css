@@ -80,6 +80,7 @@ div#simple-pages>a:hover{
 }
 .accounts>img{
     width: 50px;
+    cursor: pointer;
 }
 
 .login--wrapper{
