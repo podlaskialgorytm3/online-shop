@@ -103,7 +103,7 @@ buttonCard.addEventListener("click", () => {
                     <h2 class="product-name">${cart[cart.length -1].name}</h2>
                     <div class="center-container">
                         <div class="image" style="background-image: url(${cart[cart.length -1].URL})"></div>
-                        <div class="infomration-container">
+                        <div class="infomration-container ic-scp">
                             <p><b>Cena: </b>${cart[cart.length -1].price} zł</p>
                             <p><b>Kolor: </b>${colorName}</p>
                             <p><b>Rozmiar: </b>${sizeName}</p>
