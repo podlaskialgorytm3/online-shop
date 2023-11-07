@@ -32,3 +32,24 @@
     font-size: 32px;
     font-weight: bold;
 }
+.infomration-container{
+    font-size: 20px;
+}
+.go-to-delivery{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: block;
+    width: 250px;
+    height: 70px;
+    border: #007bff 1px solid;
+    border-radius: 20px;
+    line-height: 70px;
+    text-align: center;
+    color: #007bff;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.go-to-delivery:hover{
+    background-color: #007bff;
+    color: white;
+}
