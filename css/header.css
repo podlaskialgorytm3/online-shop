@@ -135,3 +135,10 @@ div.left{
     display: flex;
     flex-direction: row;
 }
+div.accounts>a>img{
+    width: 50px;
+}
+div.accounts>a{
+    width: 50px;
+    height: auto;
+}

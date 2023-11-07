@@ -7,8 +7,9 @@ exit.addEventListener("click",() => {
     shoppingCart.style.display = "none"
 })
 entry.addEventListener("click",() => {
-    shoppingCart.style.display = "flex"
+    shoppingCart.style.display = "none"
     entry.style.cursor = "pointer"
+    window.location.href = '../shopping-card-page.php'
 })
 let cart1 = JSON.parse(localStorage.getItem('cart5')) || []
 
