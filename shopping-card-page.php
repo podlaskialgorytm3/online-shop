@@ -8,8 +8,9 @@
 <body>
     <?php include __DIR__ . '/components/header.php' ?>
     <div class="shopping-cart-page">
+        <h1 class="shopping__title">Twój koszyk!</h1>
         <div class="shop-cart-items">
-            
+
         </div>
     </div>
     <script src="/js/GetShoppingCart.js"></script>
