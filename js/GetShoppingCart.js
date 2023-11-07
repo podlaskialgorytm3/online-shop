@@ -4,7 +4,7 @@ const itemContainer = document.querySelector(".shop-cart-items")
 const buttonArea = document.querySelector(".button-area")
 const priceContainer = document.querySelector(".total-price")
 
-let totalPrice = 0
+let totalPrice = JSON.parse(localStorage.getItem('price')) || 0;
 
 
 const getTagsName = (id) => {
