@@ -122,3 +122,14 @@ buttonCard.addEventListener("click", () => {
         console.error("Wystąpił błąd: ", error);
     });
 });
+
+const successAdd = document.querySelector(".add-product-to-card")
+const successText = document.querySelector(".success-text")
+
+buttonCard.addEventListener("click", () => {
+    successAdd.style.opacity = "1"
+    successText.textContent = "Dodałeś produkt do koszyka!"
+            setInterval(() => {
+                successAdd.style.opacity = "0"
+            },2000)
+})

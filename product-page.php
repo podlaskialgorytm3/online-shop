@@ -101,6 +101,9 @@
         $pdo = null;
         ?>
     </div>
+    <div class="success-add add-product-to-card">
+    <img src="/images/checked.png" alt=""><p class="success-text"></p>
+</div>
 </body>
 </html>
 <script src="js/HandleShopCart.js"></script>
