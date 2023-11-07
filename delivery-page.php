@@ -5,7 +5,7 @@
     <title>Dostawa</title>
 </head>
 <body>
-    <?php include __DIR__ . '/components/header.php' ?>
+    
     
 </body>
 </html>

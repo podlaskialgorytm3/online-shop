@@ -2,6 +2,10 @@ let cart2 = JSON.parse(localStorage.getItem('cart5')) || [];
 
 const itemContainer = document.querySelector(".shop-cart-items")
 const buttonArea = document.querySelector(".button-area")
+const priceContainer = document.querySelector(".total-price")
+
+let totalPrice = 0
+
 
 const getTagsName = (id) => {
     return new Promise((resolve, reject) => {
@@ -30,6 +34,7 @@ const getShoppingCart = () => {
         itemContainer.removeChild(itemContainer.firstChild); // Usuń wszystkie dzieci rodzica
     }
     cart2.forEach((cartItem,index) => {
+        totalPrice = totalPrice + parseFloat(cartItem.price) * parseInt(cart2[index].quanity)
         let div = document.createElement("div");
         const colorPromise = getTagsName(cartItem.color);
         const sizePromise = getTagsName(cartItem.size);
@@ -58,6 +63,9 @@ const getShoppingCart = () => {
             btn.addEventListener("click", () => {
                 let index = btn.dataset.id
                 if (index !== -1) {
+                console.log(cart2[index].price)
+                totalPrice = totalPrice - parseFloat(cart2[index].price) * parseInt(cart2[index].quanity)
+                priceContainer.textContent = `Łączna kwota: ${totalPrice} zł`
                  // Usuń produkt z koszyka
                 cart2.splice(index, 1);
                 console.log(cart2)
@@ -67,6 +75,7 @@ const getShoppingCart = () => {
                 if(cart2){
                     if(cart2.length == 0){
                         buttonArea.removeChild(buttonArea.firstChild)
+                        priceContainer.textContent = `Łączna kwota: 0 zł`
                     }
                     else{
                         buttonArea.innerHTML = `<a href="/waiting.php" class="go-to-delivery">Przejdź do dostawy!</a>`
@@ -85,10 +94,12 @@ const getShoppingCart = () => {
 
 document.addEventListener("DOMContentLoaded",() => {
     getShoppingCart()
+    priceContainer.textContent = `Łączna kwota: ${totalPrice} zł`
     if(cart2){
             if(cart2.length == 0){
                 if(buttonArea.firstChild){
                     buttonArea.removeChild(buttonArea.firstChild)
+                    priceContainer.textContent = `Łączna kwota: 0 zł`
                 }
             }
             else{
