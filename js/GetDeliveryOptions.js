@@ -28,8 +28,7 @@ function getDeliveryOptions(){
             getPaymentId()
             getDeliveryId()
             endBtn.addEventListener("click",() => {
-                checkDelivery()
-                checkPayment()
+               
             })
         })
     })
@@ -58,7 +57,11 @@ const checkDelivery = () => {
         errorText.textContent = "Nie zanzaczyłeś dostawcy!"
         setInterval(() => {
             errorPopup.style.opacity = "0"
-        },2000)
+        },3500)
+        return false
+    }
+    else{
+        return true
     }
 }
 const getPaymentId = () => {
@@ -82,7 +85,11 @@ const checkPayment = () => {
         errorText.textContent = "Nie zanzaczyłeś płatności!"
         setInterval(() => {
             errorPopup.style.opacity = "0"
-        },2000)
+        },3500)
+        return false
+    }
+    else{
+        return true
     }
 }
 const isEmpty = (text) => {
