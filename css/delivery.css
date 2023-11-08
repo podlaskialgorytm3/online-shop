@@ -25,7 +25,7 @@ div.delivery-container{
     justify-content: center;
     align-items: center;
 }
-div.delivery-container>div{
+div.delivery-container>.delivery-option,.user-data-option,.payment-option{
     width: 600px;
     height: 600px;
     background-color: white;
