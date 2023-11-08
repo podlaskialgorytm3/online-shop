@@ -13,10 +13,14 @@
 
         </div>
         <div class="user-data-option">
-
+            <h2>Podaj swoje dane.</h2>
+            <input type="text" placeholder="Podaj imię i nazwisko.">
+            <input type="text" placeholder="Podaj swój adres zamieszkania.">
+            <input type="email" placeholder="Podaj swój adres e-mail.">
+            <input type="number" placeholder="Podaj swój numer telefonu.">
         </div>
         <div class="payment-option">
-
+            
         </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

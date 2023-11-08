@@ -27,7 +27,6 @@ div.delivery-container{
 }
 div.delivery-container>.delivery-option,.user-data-option,.payment-option{
     width: 600px;
-    height: 600px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -59,4 +58,23 @@ div.supplier:hover{
 }
 .delivery-name{
     font-weight: bold;
+}
+.user-data-option{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"]
+{
+    width: 70%;
+    height: 25px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 10px;
 }
