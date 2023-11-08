@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
     <?php include __DIR__ . '/components/meta.php' ?>
-    <title>Dostawa</title>
+    <link rel="stylesheet" href="/css/delivery.css">
+    <title>Dostawa i płatność</title>
 </head>
 <body>
     <?php include __DIR__ . '/components/bookmark.php' ?>
-    <h1>Dostawa i płatność</h1>
+    <div class="title-text"><h1>Dostawa i płatność</h1></div>
+    <div class="delivery-container">
+        <div class="delivery-option">
+
+        </div>
+        <div class="user-data-option">
+            
+        </div>
+        <div class="payment-option">
+
+        </div>
+    </div>
 </body>
 </html>

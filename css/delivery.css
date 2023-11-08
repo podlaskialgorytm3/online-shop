@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(131, 197, 241);
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+div.title-text{
+    position: absolute;
+    top: 30px;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+div.delivery-container{
+    margin-top: 200px;
+    width: 100%;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.delivery-container>div{
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 30px;
+}
