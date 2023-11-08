@@ -8,7 +8,10 @@ const addressError = document.querySelector(".address-error")
 const emailError = document.querySelector(".email-error")
 const numberError = document.querySelector(".number-error")
 
+const errorPopup = document.querySelector(".error-add")
+const errorText = document.querySelector(".error-text")
 
+const endBtn = document.querySelector(".end-btn")
 
 function getDeliveryOptions(){
     $.ajax({
@@ -24,6 +27,10 @@ function getDeliveryOptions(){
             validation()
             getPaymentId()
             getDeliveryId()
+            endBtn.addEventListener("click",() => {
+                checkDelivery()
+                checkPayment()
+            })
         })
     })
 }
@@ -38,6 +45,22 @@ const getDeliveryId = () =>{
         })
     })
 }
+const checkDelivery = () => {
+    const deliveryInputs = document.querySelectorAll("input[name=delivery]")
+    let amount = 0
+    deliveryInputs.forEach(input => {
+        if(input.checked){
+            amount++
+        }
+    })
+    if(amount == 0){
+        errorPopup.style.opacity = "1"
+        errorText.textContent = "Nie zanzaczyłeś dostawcy!"
+        setInterval(() => {
+            errorPopup.style.opacity = "0"
+        },2000)
+    }
+}
 const getPaymentId = () => {
     const paymentInputs = document.querySelectorAll("input[name=payment]")
     paymentInputs.forEach(input => {
@@ -45,6 +68,22 @@ const getPaymentId = () => {
             console.log(input.value)
         })
     })
+}
+const checkPayment = () => {
+    const paymentInputs = document.querySelectorAll("input[name=payment]")
+    let amount = 0
+    paymentInputs.forEach(input => {
+        if(input.checked){
+            amount++
+        }
+    })
+    if(amount == 0){
+        errorPopup.style.opacity = "1"
+        errorText.textContent = "Nie zanzaczyłeś płatności!"
+        setInterval(() => {
+            errorPopup.style.opacity = "0"
+        },2000)
+    }
 }
 const isEmpty = (text) => {
     text == "" ? true : false

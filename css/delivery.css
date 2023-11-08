@@ -102,15 +102,15 @@ button:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: white;
 }
-div.erorr-add{
-    position: absolute;
+div.error-add{
+    position: fixed;
+    display: flex;
     top: 2%;
     left: 2%;
     width: 350px;
     height: 70px;
     background-color: #717171d6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
     opacity: 0;
     transition: 1s;
     justify-content: space-around;
@@ -118,9 +118,9 @@ div.erorr-add{
     border-radius: 15px;
     color: white;
 }
-div.erorr-add>img{
+div.error-add>img{
     width: 40px;
 }
-div.erorr-add>p{
+div.error-add>p{
     font-size: 18px;
 }
