@@ -59,5 +59,5 @@ const isPhoneNumber = (text) => {
 }
 
 const validation = () => {
-
+    let stepValidation =  0
 }
