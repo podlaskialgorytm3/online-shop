@@ -13,6 +13,15 @@ const errorText = document.querySelector(".error-text")
 
 const endBtn = document.querySelector(".end-btn")
 
+let userData = JSON.parse(localStorage.getItem('user-data')) || {
+    name: "",
+    address: "",
+    email: "",
+    number: "",
+    idDelivery: 0,
+    idPayment: 0
+};
+
 function getDeliveryOptions(){
     $.ajax({
         url: "/guest_pages/get_data/get-delivery-option.php",
@@ -28,7 +37,9 @@ function getDeliveryOptions(){
             getPaymentId()
             getDeliveryId()
             endBtn.addEventListener("click",() => {
-                validation()
+                if(validation() && checkDelivery && checkPayment){
+                    
+                }
             })
         })
     })
@@ -41,6 +52,7 @@ const getDeliveryId = () =>{
     deliveryInputs.forEach(input => {
         input.addEventListener("click",() => {
             console.log(input.value)
+            userData.idDelivery = input.value
         })
     })
 }
@@ -69,6 +81,7 @@ const getPaymentId = () => {
     paymentInputs.forEach(input => {
         input.addEventListener("click",() => {
             console.log(input.value)
+            userData.idPayment = input.value
         })
     })
 }
@@ -102,11 +115,22 @@ const isEmpty = (text) => {
 }
 const isEmail = (text) => {
     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-    regex.test(text) ? true : false
+    if(regex.test(text)){
+        return true
+    }
+    else{
+        return false
+    }
 }
 const isPhoneNumber = (text) => {
     let regex = /^[0-9]{9}$/;
-    regex.test(text) ? true : false
+    if(regex.test(text)){
+        return true
+    }
+    else{
+        return false
+    }
+    
 }
 
 const validation = () => {
@@ -150,7 +174,10 @@ const validation = () => {
         numberError.textContent = "Puste pole!"
     }
     if(stepValidation == 4){
-        console.log("Poprawnio zwalidowano!")
+        userData.name = name.value
+        userData.address = address.value
+        userData.email = email.value
+        userData.number = number.value
         return true
     }
 }
