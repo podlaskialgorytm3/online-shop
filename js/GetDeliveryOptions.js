@@ -1,9 +1,9 @@
 function getDeliveryOptions(){
     $.ajax({
-        url: "",
+        url: "/guest_pages/get_data/get-delivery-option.php",
         method: 'POST'
     }).done(function( data ) {
-        $('').html(data);
+        $('.delivery-option').html(data);
     })
 }
 $(document).ready(function(){

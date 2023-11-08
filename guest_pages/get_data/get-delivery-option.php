@@ -15,7 +15,11 @@ $stmt = $pdo->query('SELECT * FROM dostawcy');
 
 $html = '';
 foreach ($stmt as $row){
-   
+   $html .= '<div class="supplier">';
+   $html .= '<input type="radio" name="delivery" value="'.$row['Id_dostawcy'].'">';
+   $html .= '<p class="delivery-name">'.$row["Nazwa"].'</p>';
+   $html .= '<p class="delivery-price">'.$row["Cena"].'zł</p>';
+   $html .= '</div>';
 }
 
 sleep(1);
