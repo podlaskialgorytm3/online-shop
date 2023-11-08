@@ -21,15 +21,16 @@ function getDeliveryOptions(){
             method: 'POST'
         }).done(function( data ) {
             $('.payment-option').html(data);
-            getPaymentId(data)
-            getDeliveryId(data)
+            validation()
+            getPaymentId()
+            getDeliveryId()
         })
     })
 }
 $(document).ready(function(){
     getDeliveryOptions();
 });
-const getDeliveryId = (data) =>{
+const getDeliveryId = () =>{
     const deliveryInputs = document.querySelectorAll("input[name=delivery]")
     deliveryInputs.forEach(input => {
         input.addEventListener("click",() => {
@@ -37,11 +38,26 @@ const getDeliveryId = (data) =>{
         })
     })
 }
-const getPaymentId = (data) => {
+const getPaymentId = () => {
     const paymentInputs = document.querySelectorAll("input[name=payment]")
     paymentInputs.forEach(input => {
         input.addEventListener("click",() => {
             console.log(input.value)
         })
     })
+}
+const isEmpty = (text) => {
+    text == "" ? true : false
+}
+const isEmail = (text) => {
+    let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    regex.test(text) ? true : false
+}
+const isPhoneNumber = (text) => {
+    let regex = /^[0-9]{9}$/;
+    regex.test(text) ? true : false
+}
+
+const validation = () => {
+
 }
