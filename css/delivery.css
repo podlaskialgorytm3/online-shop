@@ -64,7 +64,7 @@ div.supplier:hover,div.payment:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 550px;
 }
 input[type="text"],
 input[type="email"],
@@ -77,4 +77,8 @@ input[type="number"]
     border-radius: 5px;
     font-size: 18px;
     margin: 10px;
+}
+.error{
+    color: red;
+    font-size: 18px;
 }
