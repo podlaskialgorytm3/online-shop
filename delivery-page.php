@@ -27,6 +27,9 @@
 
         </div>
         <button class="end-btn">Podsumuj zamówienie</button>
+        <div class="error-add">
+             <img src="/images/x.png" alt=""><p class="error-text"></p>
+        </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/GetDeliveryOptions.js"></script>
