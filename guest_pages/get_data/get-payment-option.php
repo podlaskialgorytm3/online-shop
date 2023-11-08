@@ -18,7 +18,7 @@ foreach ($stmt as $row){
    $html .= '<div class="payment">';
    $html .= '<input type="radio" name="payment" value="'.$row['Id_platnosci'].'">';
    $html .= '<p class="payment-type">'.$row["typ_platnosci"].'</p>';
-   $html .= '<p class="payment-company">'.$row["firma"].'zł</p>';
+   $html .= '<p class="payment-company">'.$row["firma"].'</p>';
    $html .= '</div>';
 }
 

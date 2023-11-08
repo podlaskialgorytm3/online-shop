@@ -19,7 +19,7 @@ div.title-text{
 div.delivery-container{
     margin-top: 200px;
     width: 100%;
-    height: 200vh;
+    height: 220vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@ div.delivery-container>.delivery-option,.user-data-option,.payment-option{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 30px;
 }
-div.supplier{
+div.supplier,div.payment{
     width: 100%;
     height: 100px;
     display: flex;
@@ -41,22 +41,22 @@ div.supplier{
     align-items: center;
     position: relative;
 }
-div.supplier:nth-child(even){
+div.supplier:nth-child(even),div.payment:nth-child(even){
     background-color: rgb(240, 240, 240);
 }
-div.supplier>input{
+div.supplier>input,div.payment>input{
     display: block;
     margin-left: 50px;
     width: 30px;
     height: 30px;
 }
-div.supplier:hover{
+div.supplier:hover,div.payment:hover{
     background-color: rgb(131, 197, 241);
 }
-.delivery-price{
+.delivery-price,.payment-company{
     margin-right: 50px;
 }
-.delivery-name{
+.delivery-name,.payment-type{
     font-weight: bold;
 }
 .user-data-option{
