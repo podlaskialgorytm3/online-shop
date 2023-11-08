@@ -40,6 +40,7 @@ function getDeliveryOptions(){
                 checkPayment()
                 if(validation() && checkDelivery() && checkPayment()){
                     console.log(userData)
+                    window.location.href = '../summary-page.php'
                 }
             })
         })
@@ -54,6 +55,7 @@ const getDeliveryId = () =>{
         input.addEventListener("click",() => {
             console.log(input.value)
             userData.idDelivery = input.value
+            localStorage.setItem('user-data', JSON.stringify(userData));
         })
     })
 }
@@ -83,6 +85,7 @@ const getPaymentId = () => {
         input.addEventListener("click",() => {
             console.log(input.value)
             userData.idPayment = input.value
+            localStorage.setItem('user-data', JSON.stringify(userData));
         })
     })
 }
@@ -179,6 +182,7 @@ const validation = () => {
         userData.address = address.value
         userData.email = email.value
         userData.number = number.value
+        localStorage.setItem('user-data', JSON.stringify(userData));
         return true
     }
 }
