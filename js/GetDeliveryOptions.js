@@ -24,11 +24,11 @@ function getDeliveryOptions(){
             method: 'POST'
         }).done(function( data ) {
             $('.payment-option').html(data);
-            validation()
+            
             getPaymentId()
             getDeliveryId()
             endBtn.addEventListener("click",() => {
-               
+                validation()
             })
         })
     })
@@ -93,7 +93,12 @@ const checkPayment = () => {
     }
 }
 const isEmpty = (text) => {
-    text == "" ? true : false
+    if(text == ""){
+        return false
+    }
+    else{
+        return true
+    }
 }
 const isEmail = (text) => {
     let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -106,4 +111,46 @@ const isPhoneNumber = (text) => {
 
 const validation = () => {
     let stepValidation =  0
+    if(isEmpty(name.value)){
+        nameError.textContent = ""
+        stepValidation++
+    }
+    else{
+        nameError.textContent = "Puste pole!"
+    }
+    if(isEmpty(address.value)){
+        addressError.textContent = ""
+        stepValidation++
+    }
+    else{
+        addressError.textContent = "Puste pole!"
+    }
+    if(isEmpty(email.value)){
+        if(isEmail(email.value)){
+            emailError.textContent = ""
+            stepValidation++
+        }
+        else{
+            emailError.textContent = "Niepoprawny format e-mail!"
+        }
+    }
+    else{
+        emailError.textContent = "Puste pole!"
+    }
+    if(isEmpty(number.value)){
+        if(isPhoneNumber(number.value)){
+            numberError.textContent = ""
+            stepValidation++
+        }
+        else{
+            numberError.textContent = "Niepoprawny format numeru telefonu!"
+        }
+    }
+    else{
+        numberError.textContent = "Puste pole!"
+    }
+    if(stepValidation == 4){
+        console.log("Poprawnio zwalidowano!")
+        return true
+    }
 }
