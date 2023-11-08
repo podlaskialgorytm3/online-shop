@@ -33,12 +33,13 @@ function getDeliveryOptions(){
             method: 'POST'
         }).done(function( data ) {
             $('.payment-option').html(data);
-            
             getPaymentId()
             getDeliveryId()
             endBtn.addEventListener("click",() => {
-                if(validation() && checkDelivery && checkPayment){
-                    
+                checkDelivery()
+                checkPayment()
+                if(validation() && checkDelivery() && checkPayment()){
+                    console.log(userData)
                 }
             })
         })
