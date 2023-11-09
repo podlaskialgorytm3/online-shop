@@ -27,7 +27,8 @@ div.simple-block{
     height: 300px;
     margin: 30px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     background-color: white;
     border-radius: 5px;

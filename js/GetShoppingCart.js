@@ -1,10 +1,10 @@
 let cart2 = JSON.parse(localStorage.getItem('cart5')) || [];
+let totalPrice = JSON.parse(localStorage.getItem('price1')) || 0;
 
 const itemContainer = document.querySelector(".shop-cart-items")
 const buttonArea = document.querySelector(".button-area")
 const priceContainer = document.querySelector(".total-price")
 
-let totalPrice = JSON.parse(localStorage.getItem('price')) || 0;
 
 
 const getTagsName = (id) => {
@@ -68,6 +68,7 @@ const getShoppingCart = () => {
                 let index = btn.dataset.id
                 let minus = parseFloat(cart2[index].price) * parseInt(cart2[index].quanity)
                 totalPrice-=minus
+                localStorage.setItem('price1', JSON.stringify(totalPrice))
                 priceContainer.textContent = `Łączna kwota: ${totalPrice.toFixed(2)} zł`
                 if (index !== -1) {
                  // Usuń produkt z koszyka
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded",() => {
                 }
             }
             else{
+                localStorage.setItem('price1', JSON.stringify(totalPrice))
                 buttonArea.innerHTML = `<a href="/waiting.php" class="go-to-delivery">Przejdź do dostawy!</a>`
             }
     }
