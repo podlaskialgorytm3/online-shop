@@ -34,3 +34,18 @@ div.simple-block{
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+div.delivery{
+    height: 180px;
+}
+.supplier{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.supplier>span>a{
+    text-decoration: none;
+    color: rgb(131, 197, 241);
+    font-weight: bold;
+}

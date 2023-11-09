@@ -11,7 +11,7 @@
     <div class="summary-container">
             <div class="delivery simple-block">
                 <h2>Dostawa</h2>
-                <div class="delivery-tip"></div>
+                <div class="supplier"></div>
             </div>
             <div class="address-data simple-block">
 
@@ -33,6 +33,7 @@
                 <button class="buy-and-pay">Kupuje i płacę!</button>
             </div>
     </div>
-<script src="/js/SummaryData.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="/js/SummaryData.js"></script>
 </body>
 </html>
