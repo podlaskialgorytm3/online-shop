@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(131, 197, 241);
+}
+h1.page-title{
+    position: absolute;
+    top: 30px;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+div.summary-container{
+    margin-top: 200px;
+    width: 100vw;
+    height: 1700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div.simple-block{
+    width: 500px;
+    height: 300px;
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

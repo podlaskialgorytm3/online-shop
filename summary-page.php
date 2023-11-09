@@ -2,29 +2,26 @@
 <html lang="en">
 <head>
     <?php include __DIR__ . '/components/meta.php' ?>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/summary-page.css">
     <title>Podsumowanie zamówienia.</title>
 </head>
 <body>
     <?php include __DIR__ . '/components/bookmark.php' ?>
     <h1 class="page-title">Podsumowanie zamówienia.</h1>
     <div class="summary-container">
-            <div class="order-value">
+            <div class="delivery simple-block">
 
             </div>
-            <div class="delivery">
+            <div class="address-data simple-block">
 
             </div>
-            <div class="address-data">
+            <div class="payment simple-block">
 
             </div>
-            <div class="payment">
+            <div class="shop-cart simple-block">
 
             </div>
-            <div class="shop-cart">
-
-            </div>
-            <div class="summary">
+            <div class="summary simple-block">
                 <p class="cart-value">
                     <p>Koszyk</p><p class="cart-value-number"></p>
                 </p>
