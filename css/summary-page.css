@@ -16,7 +16,7 @@ h1.page-title{
 div.summary-container{
     margin-top: 200px;
     width: 100vw;
-    height: 1700px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
