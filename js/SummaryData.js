@@ -2,6 +2,7 @@ let shopCart = JSON.parse(localStorage.getItem('cart5'))
 let userData = JSON.parse(localStorage.getItem('user-data'))
 
 const supplierContainer = document.querySelector(".supplier")
+const addressElement = document.querySelector(".address-data-element")
 
 const getSupplier = (id) => {
     const ajax = new XMLHttpRequest();
@@ -18,8 +19,15 @@ const getSupplier = (id) => {
             }
     }}
 }
-
-
+const getAddressDetails = () => {
+    addressElement.innerHTML = `
+    <p>${userData.name}</p>
+    <p>${userData.address}</p>
+    <p>e-mail: ${userData.email}</p>
+    <p>tel: ${userData.number}</p>
+    `
+}
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
+    getAddressDetails()
 })

@@ -14,7 +14,10 @@
                 <div class="supplier"></div>
             </div>
             <div class="address-data simple-block">
-
+                <h2>Adres dostawy</h2>
+                <div class="address-data-element">
+                    
+                </div>
             </div>
             <div class="payment simple-block">
 
