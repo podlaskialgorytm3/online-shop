@@ -3,6 +3,7 @@ let userData = JSON.parse(localStorage.getItem('user-data'))
 
 const supplierContainer = document.querySelector(".supplier")
 const addressElement = document.querySelector(".address-data-element")
+const paymentContainer = document.querySelector(".payment-data-element")
 
 const getSupplier = (id) => {
     const ajax = new XMLHttpRequest();
@@ -27,7 +28,24 @@ const getAddressDetails = () => {
     <p>tel: ${userData.number}</p>
     `
 }
+const getPaymentDetails = (id) => {
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-payment.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].Id_platnosci == id){
+                    paymentContainer.innerHTML = `<b>${database[i].firma}</b></br>
+                                                    <span>Typ płatności: ${database[i].typ_platnosci} </span>`
+                } 
+            }
+    }}
+}
+
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
     getAddressDetails()
+    getPaymentDetails(parseInt(userData.idPayment))
 })

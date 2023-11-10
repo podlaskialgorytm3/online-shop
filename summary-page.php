@@ -20,7 +20,10 @@
                 </div>
             </div>
             <div class="payment simple-block">
-
+                <h2>Płatność</h2>
+                <div class="payment-data-element">
+                    
+                </div>
             </div>
             <div class="shop-cart simple-block">
 
