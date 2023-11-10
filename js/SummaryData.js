@@ -5,6 +5,10 @@ const supplierContainer = document.querySelector(".supplier")
 const addressElement = document.querySelector(".address-data-element")
 const paymentContainer = document.querySelector(".payment-data-element")
 const shopCartContainer = document.querySelector(".shop-cart-container")
+const totalCartValue = document.querySelector(".total-cart-value")
+const deliveryValue = document.querySelector(".delivery-value")
+const totalValue = document.querySelector(".total-value")
+
 
 const getSupplier = (id) => {
     const ajax = new XMLHttpRequest();
@@ -84,10 +88,46 @@ const getShopCart = async () => {
         shopCartContainer.appendChild(div);
     }
 }
-console.log(shopCart)
+
+const getTotalCartValue = () => {
+    let fullValue = 0
+    shopCart.forEach(item => {
+        fullValue = fullValue + parseInt(item.quanity) * parseFloat(item.price)
+    });
+    return fullValue
+} 
+const getDeliveryValue = (id) => {
+    return new Promise((resolve,reject) => {
+        const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-delivery.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].Id_dostawcy == id){
+                    resolve(database[i].Cena)
+                    return
+                } 
+            }
+    }}
+    })
+}
+const getTotalValue = async () => {
+    let shopCartValue = getTotalCartValue()
+    let supplierValue = await getDeliveryValue(parseInt(userData.idDelivery))
+
+    totalCartValue.textContent = `${shopCartValue} zł`
+    deliveryValue.textContent = `${supplierValue} zł`
+    totalValue.textContent = `${parseFloat(shopCartValue) + parseFloat(supplierValue)} zł`
+}
+
+
+console.log(getTotalCartValue())
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
     getAddressDetails()
     getPaymentDetails(parseInt(userData.idPayment))
     getShopCart()
+    getTotalValue()
 })
