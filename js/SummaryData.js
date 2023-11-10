@@ -4,6 +4,7 @@ let userData = JSON.parse(localStorage.getItem('user-data'))
 const supplierContainer = document.querySelector(".supplier")
 const addressElement = document.querySelector(".address-data-element")
 const paymentContainer = document.querySelector(".payment-data-element")
+const shopCartContainer = document.querySelector(".shop-cart-container")
 
 const getSupplier = (id) => {
     const ajax = new XMLHttpRequest();
@@ -43,9 +44,51 @@ const getPaymentDetails = (id) => {
             }
     }}
 }
+const getTagsName = (id) => {
+    return new Promise((resolve, reject) => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", "../components/fetch-tag.php", true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let database = JSON.parse(this.responseText);
+                for (let i = 0; i < database.length; i++) {
+                    if (database[i].id_parametru == id) {
+                        resolve(database[i].wartosc_parametru);
+                        return;
+                    }
+                }
+                resolve("Brak parametru.");
+            }
+        };
+    });
+}
+const getShopCart = async () => {
+    for (const item of shopCart) {
+        const div = document.createElement("div");
+        div.setAttribute("class", "shop-cart-item");
 
+        const tagName = await getTagsName(parseInt(item.size));
+        const tagColor = await getTagsName(parseInt(item.color));
+
+        div.innerHTML = `
+            <div class="image" style="background-image: url(${item.URL})"></div>
+            <div class="element-information">
+                <p>${item.name} ${tagName} ${tagColor}</p>
+                <div class="right-side">
+                    <p>${item.quanity}</p>
+                    <p>${item.price} zł</p>
+                </div>
+            </div>
+        `;
+
+        shopCartContainer.appendChild(div);
+    }
+}
+console.log(shopCart)
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
     getAddressDetails()
     getPaymentDetails(parseInt(userData.idPayment))
+    getShopCart()
 })

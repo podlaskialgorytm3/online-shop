@@ -22,11 +22,14 @@
             <div class="payment simple-block">
                 <h2>Płatność</h2>
                 <div class="payment-data-element">
-                    
+
                 </div>
             </div>
             <div class="shop-cart simple-block">
+                <h2>Koszyk</h2>
+                <div class="shop-cart-container">
 
+                </div>
             </div>
             <div class="summary simple-block">
                 <p class="cart-value">
