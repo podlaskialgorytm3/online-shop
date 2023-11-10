@@ -119,7 +119,7 @@ const getTotalValue = async () => {
 
     totalCartValue.textContent = `${shopCartValue} zł`
     deliveryValue.textContent = `${supplierValue} zł`
-    totalValue.textContent = `${parseFloat(shopCartValue) + parseFloat(supplierValue)} zł`
+    totalValue.textContent = `${(parseFloat(shopCartValue) + parseFloat(supplierValue)).toFixed(2)} zł`
 }
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))

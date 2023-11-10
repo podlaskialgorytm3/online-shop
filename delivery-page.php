@@ -15,7 +15,7 @@
         <div class="delivery-option">
 
         </div>
-        <div class="user-data-option">
+        <form class="user-data-option" action="">
             <h2>Podaj swoje dane.</h2>
             <input type="text" placeholder="Podaj imię i nazwisko." class="name">
             <span class="name-error error"></span>
@@ -25,7 +25,7 @@
             <span class="email-error error"></span>
             <input type="number" placeholder="Podaj swój numer telefonu." class="number">
             <span class="number-error error"></span>
-        </div>
+        </form>
         <div class="payment-option">
 
         </div>
