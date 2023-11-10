@@ -31,14 +31,20 @@
 
                 </div>
             </div>
-            <div class="summary simple-block">
-                <p class="cart-value">
-                    <p>Koszyk</p><p class="cart-value-number"></p>
-                </p>
-                <p class="delivery-value">
-                    <p>Dostawa</p><p class="delivery-value-number"></p>
-                </p>
-                <p><p>Do zapłaty</p><b class="full-price"></b></p>
+            <div class="summary">
+                <h2>Podsumowanie</h2>
+                <div class="cart-value">
+                    <span>Koszyk:</span>
+                    <p class="total-cart-value"></p>
+                </div>
+                <div class="cart-value">
+                    <span>Dostawa:</span>
+                    <p class="delivery-value"></p>
+                </div>
+                <div class="cart-value dash">
+                    <span>Do zapłaty:</span>
+                    <b class="total-value"></b>
+                </div>
                 <button class="buy-and-pay">Kupuje i płacę!</button>
             </div>
     </div>
