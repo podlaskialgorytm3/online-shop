@@ -74,10 +74,9 @@ const getShopCart = async () => {
         div.innerHTML = `
             <div class="image" style="background-image: url(${item.URL})"></div>
             <div class="element-information">
-                <p>${item.name} ${tagName} ${tagColor}</p>
+                <p>${item.name}        <b> ${tagName} ${tagColor} </b></p>
                 <div class="right-side">
-                    <p>${item.quanity}</p>
-                    <p>${item.price} zł</p>
+                    <p><span class="amount">${item.quanity} szt.</span>   ${item.price} zł</p>
                 </div>
             </div>
         `;

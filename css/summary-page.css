@@ -23,7 +23,7 @@ div.summary-container{
     justify-content: center;
 }
 div.simple-block{
-    width: 500px;
+    width: 700px;
     height: 300px;
     margin: 30px;
     display: flex;
@@ -60,4 +60,44 @@ div.address-data{
     border-radius: 10px;
     padding: 10px;
     width: 60%;
+}
+div.shop-cart{
+    height: auto;
+    padding-bottom: 20px;
+}
+div.shop-cart-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+div.shop-cart-item{
+    margin-top: 5px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100px;
+}
+div.image{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+div.element-information{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+div.right-side{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+span.amount{
+    color: grey;
+    font-size: 14px;
 }
