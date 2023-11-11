@@ -8,7 +8,7 @@ if(!isset($_SESSION['user_worker'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <<?php @include '../worker_pages/components/meta.php' ?>
+    <?php @include '../worker_pages/components/meta.php' ?>
     <title>Zarządzanie Produktami | SKLEP M&D</title>
 </head>
 <body>
