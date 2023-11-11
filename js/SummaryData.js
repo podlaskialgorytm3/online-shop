@@ -142,7 +142,7 @@ finishCash.addEventListener("click", () => {
 
 const addOrderToDatabase = () => {
     $.ajax({
-		url: "",
+		url: "../guest_pages/push_data/add-order-to-database.php",
 		type: "POST",
 		data: {
             id_order: randomNum,
@@ -153,7 +153,7 @@ const addOrderToDatabase = () => {
 		success: function(){
             shopCart.forEach(item => {
                 $.ajax({
-                    url: "",
+                    url: "../guest_pages/push_data/add-deatil-order-to-database.php",
                     type: "POST",
                     data: {
                         id_order: randomNum,
