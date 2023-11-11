@@ -97,7 +97,9 @@
         </label>
     </form>
 </div>
-
+<div class="add-element add-worker" style="display: flex; position:absolute; right: 5px; bottom: 40px;">
+        +
+</div>
 <div class="success-add success-add-category">
     <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
