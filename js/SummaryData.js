@@ -148,6 +148,19 @@ buyAndPay.addEventListener("click",() => {
         creditCardModal.style.display = "flex"
         addOrderToDatabase()
     }
+    if(parseInt(userData.idPayment) == 1){
+       paypal.Buttons({
+            createOrder: function(data,actions){
+                return actions.order.create({
+                    purchase_units:[{
+                        amount: {
+                            value: '299.99'
+                        }
+                    }]
+                })
+            }
+       }).render('#paypall')
+    }
 })
 finishCash.addEventListener("click", () => {
     window.location.href = "../index.php"
@@ -195,6 +208,7 @@ const addOrderToDatabase = () => {
             }
 	    })
 }
+
 
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
