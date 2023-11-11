@@ -90,7 +90,6 @@
         </label>
         <label for="notatka">
             <input type="text" name="notatka" placeholder="Wpisz notatkę użytkownikowi." class="note-add">
-            <span class="note-error-add error-alert"></span>
         </label>
         <label for="submit">
             <input type="submit" name="submit" value="Dodaj użytkownika" class="user-submit-add">
@@ -105,3 +104,4 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/GetDataToClients.js"></script>
+<script src="../../js/AddUsersToDatabase.js"></script>
