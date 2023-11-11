@@ -135,6 +135,7 @@ const cashOnDeliveryModal = document.querySelector(".cash-on-delivery")
 const creditCardModal = document.querySelector(".credit-cart")
 const finishCash = document.querySelector(".finish")
 const finishCart = document.querySelector(".finish-cart")
+const paypalModal = document.querySelector("#paypall")
 
 buyAndPay.addEventListener("click",() => {
     if(parseInt(userData.idPayment) == 2){
@@ -149,17 +150,25 @@ buyAndPay.addEventListener("click",() => {
         addOrderToDatabase()
     }
     if(parseInt(userData.idPayment) == 1){
-       paypal.Buttons({
+        paypalModal.style.display = "flex"
+        summaryContainer.style.display = "none"
+        const paypalFunc = async () => {
+            let valueOfDelivery = await getDeliveryValue(parseInt(userData.idDelivery))
+            let valueOfCart = getTotalCartValue()
+            let valueOfOrder = parseFloat((parseFloat(valueOfCart) + parseFloat(valueOfDelivery)).toFixed(2))
+            paypal.Buttons({
             createOrder: function(data,actions){
                 return actions.order.create({
                     purchase_units:[{
                         amount: {
-                            value: '299.99'
+                            value: valueOfOrder
                         }
                     }]
                 })
             }
-       }).render('#paypall')
+        }).render('#paypall')
+        }
+        paypalFunc()
     }
 })
 finishCash.addEventListener("click", () => {

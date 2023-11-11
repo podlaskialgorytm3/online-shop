@@ -195,7 +195,7 @@ span.amount{
     padding: 15px;
 }
 #paypall{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
