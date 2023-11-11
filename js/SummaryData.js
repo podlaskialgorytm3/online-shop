@@ -165,6 +165,10 @@ buyAndPay.addEventListener("click",() => {
                         }
                     }]
                 })
+            },
+            onApprove: function (data, actions) {
+                addOrderToDatabase()
+                window.location.href = '../index.php';
             }
         }).render('#paypall')
         }
