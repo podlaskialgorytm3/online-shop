@@ -194,3 +194,17 @@ span.amount{
     border-radius: 20px;
     padding: 15px;
 }
+#paypall{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    min-height: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 200px;
+}

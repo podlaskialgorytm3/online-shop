@@ -77,10 +77,11 @@
         </div>
         <button class="finish-cart finish-shopping">Zakończ zakupy!</button>
     </div>
-
+    <div id="paypall"><h2>Wybierz sposób płatności</h2></div>
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="https://www.paypal.com/sdk/js?client-id=Aft1LBlXi7w3d8W5AHHNYvdQL4qtHc_nGw-jnNdskLA2iAXT9mXF1rDPXwFtIjR3FEStbMnr1p722fiQ"></script>
     <script src="/js/SummaryData.js"></script>
 </body>
 </html>
