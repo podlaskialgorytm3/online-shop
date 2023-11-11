@@ -34,6 +34,29 @@ exitShowing.addEventListener("click",() => {
         detailBody.removeChild(detailBody.firstChild);
     }
 })
+
+getTagsName = (id) => {
+    return new Promise((resolve, reject) => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", "../components/fetch-tag.php", true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let database = JSON.parse(this.responseText);
+                for (let i = 0; i < database.length; i++) {
+                    if (database[i].id_parametru == id) {
+                        resolve(database[i].wartosc_parametru);
+                        return;
+                    }
+                }
+                resolve("Brak parametru.");
+            }
+        };
+    });
+}
+
+
+
 showDeliveryButton.forEach(button => {
     button.addEventListener("click", async () => {
 
@@ -42,21 +65,31 @@ showDeliveryButton.forEach(button => {
         let products = []
         let prices = []
         let amount = []
+        let sizes = []
+        let colors = []
 
         await fetchData(idProduct, "../components/fetch-product.php", products, prices);
-        await fetchDataAmount(idOrderProduct, "../components/fetch-order-product.php", amount);
+        await fetchDataAmount(idOrderProduct, "../components/fetch-order-product.php", amount,sizes,colors);
 
         for(let i = 0; i < idProduct.length; i++){
+            sizeName = await getTagsName(parseInt(sizes[i]))
+            colorName = await getTagsName(parseInt(colors[i]))
             let tr = document.createElement("tr")
             let productColumn = document.createElement("td")
+            let sizeColumn = document.createElement("td")
+            let colorColumn = document.createElement("td")
             let priceColumn = document.createElement("td")
             let amountColumn = document.createElement("td")
             let fullPriceColumn = document.createElement("td")
             productColumn.textContent = products[i]
+            sizeColumn.textContent = sizeName
+            colorColumn.textContent = colorName
             priceColumn.textContent = prices[i] + " zł"
             amountColumn.textContent = amount[i] + " szt."
             fullPriceColumn.textContent = (parseInt(amount[i]) * parseFloat(prices[i])).toFixed(2) + " zł"
             tr.appendChild(productColumn)
+            tr.appendChild(sizeColumn)
+            tr.appendChild(colorColumn)
             tr.appendChild(priceColumn)
             tr.appendChild(amountColumn)
             tr.appendChild(fullPriceColumn)
@@ -107,8 +140,19 @@ function fetchDataAmount(ids, url, ...arrays) {
                         let database = JSON.parse(this.responseText);
                         for (let i = 0; i < database.length; i++) {
                             if (database[i].id_zamowienie_produkt == id) {
-                                arrays.forEach((arr) => {
-                                    arr.push(database[i].ilość);
+                                arrays.forEach((arr, index) => {
+                                    switch (index) {
+                                        case 0:
+                                            arr.push(database[i].ilość);
+                                            break;
+                                        case 1:
+                                            arr.push(database[i].Id_rozmiaru);
+                                            break;
+                                        case 2:
+                                            arr.push(database[i].Id_koloru);
+                                            break;
+                                        // Add more cases if needed
+                                    }
                                 });
                             }
                         }

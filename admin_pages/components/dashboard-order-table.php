@@ -24,6 +24,8 @@
 <table class="detail-table table">
     <thead>
             <th>Produkt</th>
+            <th>Rozmiar</th>
+            <th>Kolor</th>
             <th>Cena detaliczna</th>
             <th>Ilość</th>
             <th>Cena</th>
