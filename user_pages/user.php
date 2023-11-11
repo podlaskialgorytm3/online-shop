@@ -8,12 +8,12 @@ if(!isset($_SESSION['user_name'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include '../components/meta.php' ?>
+    <?php include '../user_pages/components/meta.php' ?>
     <title>SKLEP M&D | USER</title>
 </head>
 <body>
-    <h1>STRONA DLA USERA</h1>
-    <h3>Witaj <?php echo $_SESSION['user_name']; ?></h3>
-    <a href="../logout.php">Wyloguj się!</a>
+    <?php include '../user_pages/components/header.php'?>
+    <?php include '../components/slider.php' ?>
+    <?php include '../guest_pages/product-container.php'?>
 </body>
 </html>
