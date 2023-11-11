@@ -53,6 +53,30 @@
         <p>Płacisz przy odbiorze paczki!</p>
         <button class="finish finish-shopping">Zakończ zakupy!</button>
     </div>
+    <div class="payment-modal credit-cart">
+        <p>Dane do przelewu:</p>
+        <div class="data-transfer">
+            <div class="data-trasfer-element">
+                <b>Numer konta:</b>
+                <p class="number-account">25 2161 2253 2111 1101 7785 8978</p>
+            </div>
+            <div class="data-trasfer-element">
+                <b>Odbiorca:</b>
+                <p class="recipient">sklep m&d sp.zoo</p>
+                <p class="street">ul. Konarskiego 11</p>
+                <p class="address-and-zip-code">08-110 Siedlce</p>
+            </div>
+            <div class="data-trasfer-element">
+                <b>Tytuł przelewu:</b>
+                <p class="title-transfer"></p>
+            </div>
+            <div class="data-trasfer-element">
+                <b>Kwota do zapłaty:</b>
+                <p class="price-to-pay"></p>
+            </div>
+        </div>
+        <button class="finish finish-shopping">Zakończ zakupy!</button>
+    </div>
 
 
 
