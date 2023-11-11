@@ -9,6 +9,7 @@ const totalCartValue = document.querySelector(".total-cart-value")
 const deliveryValue = document.querySelector(".delivery-value")
 const totalValue = document.querySelector(".total-value")
 
+const buyAndPay = document.querySelector(".buy-and-pay")
 
 const getSupplier = (id) => {
     const ajax = new XMLHttpRequest();
@@ -121,6 +122,12 @@ const getTotalValue = async () => {
     deliveryValue.textContent = `${supplierValue} zł`
     totalValue.textContent = `${(parseFloat(shopCartValue) + parseFloat(supplierValue)).toFixed(2)} zł`
 }
+
+buyAndPay.addEventListener("click",() => {
+    
+})
+
+
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
     getAddressDetails()
