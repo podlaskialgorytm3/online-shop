@@ -54,7 +54,7 @@
         <button class="finish finish-shopping">Zakończ zakupy!</button>
     </div>
     <div class="payment-modal credit-cart">
-        <p>Dane do przelewu:</p>
+        <h2>Dane do przelewu:</h2>
         <div class="data-transfer">
             <div class="data-trasfer-element">
                 <b>Numer konta:</b>
@@ -75,7 +75,7 @@
                 <p class="price-to-pay"></p>
             </div>
         </div>
-        <button class="finish finish-shopping">Zakończ zakupy!</button>
+        <button class="finish-cart finish-shopping">Zakończ zakupy!</button>
     </div>
 
 

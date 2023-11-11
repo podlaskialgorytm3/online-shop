@@ -148,8 +148,6 @@ span.amount{
 
 
 .payment-modal{
-    top: 0;
-    left: 0;
     width: 400px;
     height: 600px;
     position: fixed;
@@ -184,4 +182,10 @@ span.amount{
 .finish-shopping:hover{
     background-color: #007bff;
     color: #fff;
+}
+.credit-cart{
+    display: none;
+    height: 600px;
+    top: calc(200px);
+    left: calc(50%-200px);
 }

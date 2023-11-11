@@ -11,6 +11,8 @@ const totalValue = document.querySelector(".total-value")
 
 const buyAndPay = document.querySelector(".buy-and-pay")
 
+let randomNum = Math.floor(Math.random() * (1000000 - 100 + 1) + 100);
+
 const getSupplier = (id) => {
     const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-delivery.php" , true);
@@ -117,17 +119,22 @@ const getDeliveryValue = (id) => {
 const getTotalValue = async () => {
     let shopCartValue = getTotalCartValue()
     let supplierValue = await getDeliveryValue(parseInt(userData.idDelivery))
-
+    const priceToPay = document.querySelector(".price-to-pay")
+    const titleTransfer = document.querySelector(".title-transfer")
     totalCartValue.textContent = `${shopCartValue} zł`
     deliveryValue.textContent = `${supplierValue} zł`
     totalValue.textContent = `${(parseFloat(shopCartValue) + parseFloat(supplierValue)).toFixed(2)} zł`
+    priceToPay.textContent = `${(parseFloat(shopCartValue) + parseFloat(supplierValue)).toFixed(2)} zł`
+    titleTransfer.textContent = randomNum
 }
 
-let randomNum = Math.floor(Math.random() * (1000000 - 100 + 1) + 100);
+
 
 const summaryContainer = document.querySelector(".summary-container")
 const cashOnDeliveryModal = document.querySelector(".cash-on-delivery")
+const creditCardModal = document.querySelector(".credit-cart")
 const finishCash = document.querySelector(".finish")
+const finishCart = document.querySelector(".finish-cart")
 
 buyAndPay.addEventListener("click",() => {
     if(parseInt(userData.idPayment) == 2){
@@ -136,8 +143,16 @@ buyAndPay.addEventListener("click",() => {
         addOrderToDatabase()
         
     }
+    if(parseInt(userData.idPayment) == 3){
+        summaryContainer.style.display = "none"
+        creditCardModal.style.display = "flex"
+        addOrderToDatabase()
+    }
 })
 finishCash.addEventListener("click", () => {
+    window.location.href = "../index.php"
+})
+finishCart.addEventListener("click", () => {
     window.location.href = "../index.php"
 })
 
