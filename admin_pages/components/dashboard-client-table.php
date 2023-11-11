@@ -47,6 +47,7 @@
             <select name="typ" class="type-edit">
                 <option value="admin">Admin</option>
                 <option value="user">Klient</option>
+                <option value="worker">Pracownik</option>
             </select>
         </label>
         <label for="notatka">

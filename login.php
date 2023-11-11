@@ -20,10 +20,16 @@ if(isset($_POST['submit'])){
     elseif($row['typ'] == 'user'){
         $_SESSION['user_name'] = $row['ID_USER'];
         header('location:user_pages/user.php');
-    }}
+    }
+    elseif($row['typ'] == 'worker'){
+        $_SESSION['user_worker'] = $row['ID_USER'];
+        header('location:worker_pages/worker.php');
+    }
+    }
     else{
     $error = "Nieprawidłowy e-mail lub hasło!";
-    }}
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
