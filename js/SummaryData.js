@@ -166,7 +166,8 @@ const addOrderToDatabase = () => {
                     cache: false,
                     })
             })
-            console.log("Zamówienie znajduje się w bazie danych.")
+            localStorage.removeItem('cart5');
+            localStorage.removeItem('user-data');
             }
 	    })
 }
