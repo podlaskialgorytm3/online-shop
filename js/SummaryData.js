@@ -165,6 +165,15 @@ const addOrderToDatabase = () => {
                      },
                     cache: false,
                     })
+                    $.ajax({
+                        url: "../guest_pages/push_data/update-quanity-product.php",
+                        type: "POST",
+                        data: {
+                            id_product: parseInt(item.id),
+                            quanity: item.quanity
+                         },
+                        cache: false,
+                        })
             })
             localStorage.removeItem('cart5');
             localStorage.removeItem('user-data');
