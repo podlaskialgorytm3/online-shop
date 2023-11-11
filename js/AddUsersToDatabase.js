@@ -20,6 +20,9 @@ const lastnameError = document.querySelector(".lastname-error-add")
 const addressError = document.querySelector(".address-error-add")
 const emailError = document.querySelector(".email-error-add")
 
+const success = document.querySelector(".success-add")
+const successText = document.querySelector(".success-text")
+
 const turnOnModal = () => {
     addUserModal.style.display = "flex"
     dashboard.style.display = "none"
@@ -96,7 +99,31 @@ const validation = () => {
         console.log("Poprawno zwalidowano!")
     }
 }
-
+const addUser = () => {
+    $.ajax({
+		url: "../admin_pages/pushData/add-user-to-database.php",
+		type: "POST",
+		data: {
+            username: username.value,
+            imie: name.value,
+            nazwisko: lastname.value,
+            adres: address.value,
+            email: email.value,
+            typ: type.value,
+            notatka: note.value
+		 },
+		cache: false,
+		success: function(){
+            getClients()
+            exitEditPopup()
+            success.style.opacity = "1"
+            successText.textContent = "Udało się dodać pracownika!"
+            setInterval(() => {
+                success.style.opacity = "0"
+            },5000)
+            }
+	    })
+}
 
 addWorkerBtn.addEventListener("click",() => {
     turnOnModal()
