@@ -123,9 +123,27 @@ const getTotalValue = async () => {
     totalValue.textContent = `${(parseFloat(shopCartValue) + parseFloat(supplierValue)).toFixed(2)} zł`
 }
 
+const summaryContainer = document.querySelector(".summary-container")
+const cashOnDeliveryModal = document.querySelector(".cash-on-delivery")
+const finishCash = document.querySelector(".finish")
+
 buyAndPay.addEventListener("click",() => {
-    
+    if(parseInt(userData.idPayment) == 2){
+        summaryContainer.style.display = "none"
+        cashOnDeliveryModal.style.display = "flex"
+    }
 })
+finishCash.addEventListener("click", () => {
+    window.location.href = "../index.php"
+})
+
+const addOrderToDatabase = () => {
+
+}
+const addOrderDetailToDatabase = () => {
+
+}
+
 
 
 document.addEventListener("DOMContentLoaded",() => {

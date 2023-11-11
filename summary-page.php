@@ -48,6 +48,14 @@
                 <button class="buy-and-pay">Kupuje i płacę!</button>
             </div>
     </div>
+
+    <div class="payment-modal cash-on-delivery">
+        <p>Płacisz przy odbiorze paczki!</p>
+        <button class="finish finish-shopping">Zakończ zakupy!</button>
+    </div>
+
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
     <script src="/js/SummaryData.js"></script>
 </body>

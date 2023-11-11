@@ -145,3 +145,43 @@ span.amount{
     background-color: #007bff;
     color: #fff;
 }
+
+
+.payment-modal{
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 600px;
+    position: fixed;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.cash-on-delivery{
+    height: 200px;
+    top: calc(50% - 100px);
+    left:  calc(50% - 200px);
+}
+.cash-on-delivery>p{
+    font-size: 20px;
+}
+.finish-shopping{
+    margin-top: 10px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: .5s;
+}
+.finish-shopping:hover{
+    background-color: #007bff;
+    color: #fff;
+}
