@@ -123,6 +123,8 @@ const getTotalValue = async () => {
     totalValue.textContent = `${(parseFloat(shopCartValue) + parseFloat(supplierValue)).toFixed(2)} zł`
 }
 
+let randomNum = Math.floor(Math.random() * (1000000 - 100 + 1) + 100);
+
 const summaryContainer = document.querySelector(".summary-container")
 const cashOnDeliveryModal = document.querySelector(".cash-on-delivery")
 const finishCash = document.querySelector(".finish")
@@ -131,6 +133,7 @@ buyAndPay.addEventListener("click",() => {
     if(parseInt(userData.idPayment) == 2){
         summaryContainer.style.display = "none"
         cashOnDeliveryModal.style.display = "flex"
+        
     }
 })
 finishCash.addEventListener("click", () => {
@@ -138,13 +141,37 @@ finishCash.addEventListener("click", () => {
 })
 
 const addOrderToDatabase = () => {
-
+    $.ajax({
+		url: "",
+		type: "POST",
+		data: {
+            id_order: randomNum,
+			email: userData.email,
+            id_delivery: parseInt(userData.idDelivery),
+		 },
+		cache: false,
+		success: function(){
+            shopCart.forEach(item => {
+                $.ajax({
+                    url: "",
+                    type: "POST",
+                    data: {
+                        id_order: randomNum,
+                        id_product: parseInt(item.id),
+                        quanity: item.quanity,
+                        id_color: parseInt(item.color),
+                        id_size: parseInt(item.size)
+                     },
+                    cache: false,
+                    })
+            })
+            console.log("Zamówienie znajduje się w bazie danych.")
+            }
+	    })
 }
-const addOrderDetailToDatabase = () => {
 
-}
-
-
+console.log(userData)
+console.log(shopCart)
 
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
