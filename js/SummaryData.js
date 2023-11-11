@@ -172,9 +172,6 @@ const addOrderToDatabase = () => {
 	    })
 }
 
-console.log(userData)
-console.log(shopCart)
-
 document.addEventListener("DOMContentLoaded",() => {
     getSupplier(parseInt(userData.idDelivery))
     getAddressDetails()
