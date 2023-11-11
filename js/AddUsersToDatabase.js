@@ -12,6 +12,7 @@ const address = document.querySelector(".address-add")
 const email = document.querySelector(".email-add")
 const type = document.querySelector(".type-add")
 const note = document.querySelector(".note-add")
+const password = document.querySelector(".password-add")
 
 
 const usernameError = document.querySelector(".username-error-add")
@@ -19,6 +20,7 @@ const nameError = document.querySelector(".name-error-add")
 const lastnameError = document.querySelector(".lastname-error-add")
 const addressError = document.querySelector(".address-error-add")
 const emailError = document.querySelector(".email-error-add")
+const passwordError = document.querySelector(".password-error-add")
 
 const success = document.querySelector(".success-add")
 const successText = document.querySelector(".success-text")
@@ -77,7 +79,6 @@ const validation = () => {
         stepValidation++
     }
     if(email.value == ""){
-        console.log(email.value)
         emailError.textContent = "Wprowadzono puste pole!"
     }
     else{
@@ -95,6 +96,18 @@ const validation = () => {
             emailError.textContent = "Zły format e-mail!"
         }
     }
+    if(password.value == ""){
+        passwordError.textContent = "Wprowadzono puste pole!"
+    }
+    else{
+        if(password.length < 8){
+            passwordError.textContent = "Hasło ma mniej niż 8 znaków."
+        }
+        else{
+            passwordError.textContent = ""
+            stepValidation++
+        }
+    }
     if(stepValidation == 5){
         console.log("Poprawno zwalidowano!")
     }
@@ -110,7 +123,7 @@ const addUser = () => {
             adres: address.value,
             email: email.value,
             typ: type.value,
-            notatka: note.value
+            notatka: note.value || ""
 		 },
 		cache: false,
 		success: function(){

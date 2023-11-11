@@ -79,6 +79,10 @@
             <input type="text" name="adres" placeholder="Wpisz adres zamieszkania." class="address-add">
             <span class="address-error-add error-alert"></span>
         </label>
+        <label for="haslo">
+            <input type="password" name="haslo" placeholder="Wpisz hasło." class="password-add">
+            <span class="password-error-add error-alert"></span>
+        </label>
         <label for="email">
             <input type="text" name="email" placeholder="Wpisz email." class="email-add">
             <span class="email-error-add error-alert"></span>
