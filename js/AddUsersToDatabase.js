@@ -19,3 +19,22 @@ const nameError = document.querySelector(".name-error-add")
 const lastnameError = document.querySelector(".lastname-error-add")
 const addressError = document.querySelector(".address-error-add")
 const emailError = document.querySelector(".email-error-add")
+
+const turnOnModal = () => {
+    addUserModal.style.display = "flex"
+    dashboard.style.display = "none"
+    sidePanel.style.display = "none"
+}
+const turnOffModal = () => {
+    addUserModal.style.display = "none"
+    dashboard.style.display = "block"
+    sidePanel.style.display = "block"
+}
+
+addWorkerBtn.addEventListener("click",() => {
+    turnOnModal()
+})
+
+exit.addEventListener("click",() => {
+    turnOffModal()
+})
