@@ -8,7 +8,7 @@
     <div class="manage-panel">
         <h2>Zarządzanie</h2>
         <a href="../../worker_pages/product-manage.php">Produkty</a>
-        <a href="">Zamówienia</a>
+        <a href="../../worker_pages/order-manage.php">Zamówienia</a>
     </div>
 </div>
 <div class="logout">
