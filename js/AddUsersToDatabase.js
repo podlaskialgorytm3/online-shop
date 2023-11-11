@@ -27,12 +27,12 @@ const successText = document.querySelector(".success-text")
 
 const turnOnModal = () => {
     addUserModal.style.display = "flex"
-    dashboard.style.display = "none"
+    document.querySelector(".dashboard").style.display = "none"
     sidePanel.style.display = "none"
 }
 const turnOffModal = () => {
     addUserModal.style.display = "none"
-    dashboard.style.display = "block"
+    document.querySelector(".dashboard").style.display = "block"
     sidePanel.style.display = "block"
 }
 let emails = []
@@ -108,8 +108,8 @@ const validation = () => {
             stepValidation++
         }
     }
-    if(stepValidation == 5){
-        console.log("Poprawno zwalidowano!")
+    if(stepValidation == 6){
+        addUser()
     }
 }
 const addUser = () => {
@@ -122,6 +122,7 @@ const addUser = () => {
             nazwisko: lastname.value,
             adres: address.value,
             email: email.value,
+            haslo: password.value,
             typ: type.value,
             notatka: note.value || ""
 		 },
@@ -131,6 +132,7 @@ const addUser = () => {
             exitEditPopup()
             success.style.opacity = "1"
             successText.textContent = "Udało się dodać pracownika!"
+            turnOffModal()
             setInterval(() => {
                 success.style.opacity = "0"
             },5000)
