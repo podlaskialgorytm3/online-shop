@@ -133,6 +133,7 @@ buyAndPay.addEventListener("click",() => {
     if(parseInt(userData.idPayment) == 2){
         summaryContainer.style.display = "none"
         cashOnDeliveryModal.style.display = "flex"
+        addOrderToDatabase()
         
     }
 })
