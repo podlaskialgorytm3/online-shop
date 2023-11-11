@@ -7,7 +7,7 @@
     </div>
     <div class="manage-panel">
         <h2>Zarządzanie</h2>
-        <a href="">Produkty</a>
+        <a href="../../worker_pages/product-manage.php">Produkty</a>
         <a href="">Zamówienia</a>
     </div>
 </div>
