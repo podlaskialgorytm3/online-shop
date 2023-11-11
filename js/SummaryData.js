@@ -167,8 +167,7 @@ buyAndPay.addEventListener("click",() => {
                 })
             },
             onApprove: function (data, actions) {
-                addOrderToDatabase()
-                window.location.href = '../index.php';
+                addOrderToDatabaseWithPaypal()
             }
         }).render('#paypall')
         }
@@ -218,6 +217,47 @@ const addOrderToDatabase = () => {
             })
             localStorage.removeItem('cart5');
             localStorage.removeItem('user-data');
+            }
+	    })
+}
+
+const addOrderToDatabaseWithPaypal = () => {
+    $.ajax({
+		url: "../guest_pages/push_data/add-order-to-database.php",
+		type: "POST",
+		data: {
+            id_order: randomNum,
+			email: userData.email,
+            id_delivery: parseInt(userData.idDelivery),
+		 },
+		cache: false,
+		success: function(){
+            shopCart.forEach(item => {
+                $.ajax({
+                    url: "../guest_pages/push_data/add-deatil-order-to-database.php",
+                    type: "POST",
+                    data: {
+                        id_order: randomNum,
+                        id_product: parseInt(item.id),
+                        quanity: item.quanity,
+                        id_color: parseInt(item.color),
+                        id_size: parseInt(item.size)
+                     },
+                    cache: false,
+                    })
+                    $.ajax({
+                        url: "../guest_pages/push_data/update-quanity-product.php",
+                        type: "POST",
+                        data: {
+                            id_product: parseInt(item.id),
+                            quanity: item.quanity
+                         },
+                        cache: false,
+                        })
+            })
+            localStorage.removeItem('cart5');
+            localStorage.removeItem('user-data');
+            window.location.href = "../index.php"
             }
 	    })
 }
