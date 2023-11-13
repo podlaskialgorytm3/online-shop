@@ -13,5 +13,4 @@
         <a href="../shopping-card-page.php">Przejdź do koszyka.</a>
     </button>
 </div>
-<script src="../js/ShoppingCart.js"></script>
 

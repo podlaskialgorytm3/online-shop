@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="../css/header.css">
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <div id="header">
     <div class="header-left-side">
@@ -16,9 +16,9 @@
         </div>
         </div>
         <div class="accounts">
-            <img src="../images/shopping_cart.png" alt="" class="entry-shop-cart">
+            <a href="../../user_pages/shopping-cart-page.php" style="background-color: transparent;"><img src="../images/shopping_cart.png" alt="" class="entry-shop-cart"></a>
         </div>
-        <h1><?php echo $_SESSION['user_name']; ?></h1>
+        <h1>
     </div>
 </div>
 <?php include '../components/shopping-cart.php'; ?>
