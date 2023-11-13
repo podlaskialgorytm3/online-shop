@@ -12,7 +12,7 @@
         <div class="search"></div>
     </div>
     <div class="main">
-    <?php include '../guest_pages/product-container.php'?>
+    <?php include '../user_pages/product-container.php'?>
     </div>
 </body>
 </html>

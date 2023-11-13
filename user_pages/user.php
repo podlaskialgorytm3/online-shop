@@ -14,6 +14,6 @@ if(!isset($_SESSION['user_name'])){
 <body>
     <?php include '../user_pages/components/header.php'?>
     <?php include '../components/slider.php' ?>
-    <?php include '../guest_pages/product-container.php'?>
+    <?php include '../user_pages/product-container.php'?>
 </body>
 </html>
