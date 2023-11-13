@@ -12,7 +12,7 @@
 
         </div>
         <div class="user-pages">
-            <a href="../produtcs.php">Produkty</a>
+            <a href="../../user_pages/products.php">Produkty</a>
         </div>
         </div>
         <div class="accounts">
