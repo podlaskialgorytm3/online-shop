@@ -15,10 +15,10 @@
             <a href="../../user_pages/products.php">Produkty</a>
         </div>
         </div>
-        <div class="accounts">
+        <div class="accounts" style="width: 200px;">
             <a href="../../user_pages/shopping-cart-page.php" style="background-color: transparent;"><img src="../images/shopping_cart.png" alt="" class="entry-shop-cart"></a>
+            <a href="../../user_pages/my-account.php" style="background-color: transparent;"><img src="../../images/my-account-5.png" alt="Moje konto!"></a>
             <a href="../../logout.php" title="Wyloguj się!" style="background-color: transparent;"><img src="../../images/logout.png" style="" alt="Wyloguj się"></a>
-
         </div>
         <h1>
     </div>
