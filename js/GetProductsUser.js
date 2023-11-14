@@ -11,7 +11,7 @@ function getProductsFilter(){
         e.preventDefault();
         $('#product-container').html('<div> </div>');
         $.ajax({
-                url: "../user_pages/get_data/get-product-filter.php",
+                url: "../user_pages/get_data/get-products-filter.php",
                 method: 'POST',
                 data: {
                     search: $('#search').val()	
@@ -19,8 +19,7 @@ function getProductsFilter(){
             }).done(function( data ) {
                 $('#product-container').html(data);
             });
-    });
-
+    })
 }
 $(document).ready(function(){
     getProducts();
