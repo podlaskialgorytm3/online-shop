@@ -6,7 +6,7 @@
     <title>Dostawa i płatność</title>
 </head>
 <body>
-    <?php include __DIR__ . '/components/bookmark.php' ?>
+    <?php include '../components/bookmark.php' ?>
     <div class="error-add">
              <img src="/images/x.png" alt=""><p class="error-text"></p>
     </div>
