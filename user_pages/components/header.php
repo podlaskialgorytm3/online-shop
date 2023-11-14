@@ -17,6 +17,8 @@
         </div>
         <div class="accounts">
             <a href="../../user_pages/shopping-cart-page.php" style="background-color: transparent;"><img src="../images/shopping_cart.png" alt="" class="entry-shop-cart"></a>
+            <a href="../../logout.php" title="Wyloguj się!" style="background-color: transparent;"><img src="../../images/logout.png" style="" alt="Wyloguj się"></a>
+
         </div>
         <h1>
     </div>
