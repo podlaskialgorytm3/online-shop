@@ -19,7 +19,7 @@ $stmt->execute();
 
 $html = '';
 foreach ($stmt as $row){
-    $html .= '<a href="../../product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'">';
+    $html .= '<a href="../../user_pages/product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'">';
     $html .= '<div class="product-card">';
     $html .= '    <div class="product-image" style="background-image: url('.$row["URL"].')">';
     $html .= '    </div>';
