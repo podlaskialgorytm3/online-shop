@@ -6,4 +6,8 @@ div.dashboard{
     right: 7%;
     background-color: white;
     border-radius: 30px;
+    overflow: scroll;
+}
+div.dashboard::-webkit-scrollbar{
+    display: none;
 }

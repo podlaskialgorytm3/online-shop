@@ -3,7 +3,7 @@
  <link rel="stylesheet" href="../../css/product-tables.css">
 </head>
 <div class="dashboard">
-<table class="order-table table">
+<table class="table order-table">
     <thead>
             <th>Id_zamówienia</th>
             <th>Email</th>
