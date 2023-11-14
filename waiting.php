@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
     }
     elseif($row['typ'] == 'user'){
         $_SESSION['user_name'] = $row['ID_USER'];
-        header('location:user_pages/user.php');
+        header('location:user_pages/delivery-page.php');
     }}
     else{
     $error = "Nieprawidłowy e-mail lub hasło!";
