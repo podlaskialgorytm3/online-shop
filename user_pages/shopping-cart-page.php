@@ -22,6 +22,6 @@ if(!isset($_SESSION['user_name'])){
         <h2 class="total-price"></h2>
         <div class="button-area"></div>
     </div>
-    <script src="/js/GetShoppingCart.js"></script>
+    <script src="../js/GetShoppingCartUser.js"></script>
 </body>
 </html>
