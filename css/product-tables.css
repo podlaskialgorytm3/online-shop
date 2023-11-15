@@ -25,6 +25,9 @@ div.select-table:hover{
     background-color: rgba(131, 197, 241, 0.582);
     cursor: pointer;
 }
+thead>tr>td{
+    text-align: center;
+}
 .table{
     width: 100%;
     height: calc(100% - 50px);
