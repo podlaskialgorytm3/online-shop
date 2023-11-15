@@ -3,7 +3,7 @@
 </head>
 <div class="side-panel">
         <h2 class="greet">Cześć Michał</h2>
-        <a href="">
+        <a href="../../user_pages/order-page.php">
             <div class="order-link">
                 <img src="../images/manage_order.png" alt="">
                 <p>Zamówienia</p>
