@@ -14,26 +14,6 @@ if(!isset($_SESSION['user_name'])){
 </head>
 <body>
     <?php include '../user_pages/components/header.php' ?>
-    <div class="side-panel">
-        <h2 class="greet"></h2>
-        <a href="">
-            <div class="order-link">
-                
-            </div>
-        </a>
-        <a href="">
-            <div class="favourite-link"></div>
-        </a>
-        <a href="">
-            <div class="data-user-link">
-
-            </div>
-        </a>
-        <a href="">
-            <div class="settings-account-link">
-
-            </div>
-        </a>
-    </div>
+    <?php include '../user_pages/components/side-panel.php' ?>
 </body>
 </html>

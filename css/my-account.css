@@ -1,0 +1,29 @@
+.side-panel{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 20vw;
+    height: 70vh;
+    box-shadow: 7px 5px 18px 5px rgba(163, 163, 163, 1);
+    border-radius: 10px;
+}
+.side-panel>h2{
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+.side-panel>a>div>img{
+    width: 50px;
+}
+.side-panel>a>div{
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.side-panel>a>div:hover{
+    background-color: rgb(225, 225, 225);
+}
+.side-panel>a>div>p{
+    margin-left: 20px;
+}
