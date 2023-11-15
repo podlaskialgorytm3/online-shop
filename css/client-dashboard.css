@@ -1,0 +1,10 @@
+.client-dashboard{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    box-shadow: 7px 5px 18px 5px rgba(163, 163, 163, 1);
+    border-radius: 10px;
+}
