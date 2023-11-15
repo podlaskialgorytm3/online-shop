@@ -1,7 +1,7 @@
 <?php 
 @include '../config.php';
 session_start();
-$id_user = $_SESSION['user_name'];
+$id_user = json_decode($_SESSION['user_name']);
 if(!isset($_SESSION['user_name'])){
     header('location:login.php');
  }

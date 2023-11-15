@@ -1,6 +1,8 @@
 <?php
 
 require_once '../../config.php';
+session_start();
+$id_user = $_SESSION['user_name'];
 try {
     $pdo = new PDO('mysql:host='.$hostname.';dbname='.$database, $login, $password);
     $pdo->query('SET NAMES utf8');
@@ -51,7 +53,9 @@ function findIDZP($id,$pdo){
     return $tab;
  }
 
-$stmt = $pdo->query('SELECT * FROM zamowienia');
+$stmt = $pdo->query('SELECT * FROM zamowienia z
+                    JOIN user u ON u.email = z.email
+                    WHERE u.ID_USER = '.$id_user);
 
 $html = '';
 foreach ($stmt as $row){
