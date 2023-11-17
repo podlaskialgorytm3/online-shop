@@ -10,6 +10,7 @@ if(!isset($_SESSION['user_name'])){
 <html lang="en">
 <head>
     <?php include '../user_pages/components/meta.php' ?>
+    <link rel="shortcut icon" href="../images/shop_icon.png" type="image/x-icon">
     <title>Historia zamówień | USER</title>
 </head>
 <body>
