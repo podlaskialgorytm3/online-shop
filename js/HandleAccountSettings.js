@@ -20,6 +20,20 @@ const errorNewEmail = document.querySelector(".error-new-email")
 const errorConfirmEmailPassword = document.querySelector(".erorr-confirm-email-password")
 const submitEditEmail = document.querySelector(".submit-edit-email")
 
+
+let emails = []
+const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-data.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            database.forEach(element =>{
+                emails.push(element['email'])
+            })
+    }
+}
+
 const getID = () => {
     return new Promise((resolve, reject) => {
         let xmlhttp = new XMLHttpRequest();
@@ -180,6 +194,46 @@ const validationMainData = () => {
         return true
     }
 }
+
+
+const validationEmail = () => {
+    let stepValidation = 0
+    if(isEmpty(newEmail.value)){
+        errorNewEmail.textContent = "Pole jest puste!"
+    }
+    else{
+        if(isEmail(newEmail.value)){
+            if(emails.includes(newEmail.value)){
+                errorNewEmail.textContent = "Podany e-mail jest już zajęty!"
+            }
+            else{
+                errorNewEmail.textContent = ""
+                stepValidation++
+            }
+        }
+        else{
+            errorNewEmail.textContent = "Zły format mail!"
+        }
+    }
+    if(isEmpty(confirmEmailPassword.value)){
+        errorConfirmEmailPassword.textContent = "Pole jest puste!"
+    }
+    else{
+        if(checkCorrectValue(confirmEmailPassword.value)){
+            errorConfirmEmailPassword.textContent = ""
+            stepValidation++
+        }
+        else{
+            errorConfirmEmailPassword.textContent = "Wprowadzono nieprawidłowe hasło!"
+        }
+    }
+    if(stepValidation == 2){
+        return true
+    }
+}
+
+
+
 const editMainData = async () => {
     let id = await getID()
     $.ajax({
@@ -222,5 +276,10 @@ submitEditMain.addEventListener("click",() => {
     if(validationMainData()){
         editMainData()
         hideEditMainInfo()
+    }
+})
+submitEditEmail.addEventListener("click",() => {
+    if(validationEmail()){
+        
     }
 })
