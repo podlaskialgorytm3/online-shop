@@ -89,6 +89,6 @@ if(!isset($_SESSION['user_name'])){
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
     <script src="https://www.paypal.com/sdk/js?client-id=Aft1LBlXi7w3d8W5AHHNYvdQL4qtHc_nGw-jnNdskLA2iAXT9mXF1rDPXwFtIjR3FEStbMnr1p722fiQ&currency=PLN"></script>
-    <script src="../js/SummaryDataUser.js"></script>
+    <script src="../js/SummaryDataUsers.js"></script>
 </body>
 </html>

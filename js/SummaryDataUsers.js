@@ -180,8 +180,30 @@ finishCash.addEventListener("click", () => {
 finishCart.addEventListener("click", () => {
     window.location.href = "../user_pages/user.php"
 })
+const getID = () => {
+    return new Promise((resolve, reject) => {
+        let xmlhttp = new XMLHttpRequest();
+        let url = "../user_pages/get_data/get-id.php";
+        
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    let data = JSON.parse(this.responseText);
+                    resolve(data);
+                } else {
+                    reject(new Error('Request failed with status ' + this.status));
+                }
+            }
+        };
 
-const addOrderToDatabase = () => {
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    });
+}
+const addOrderToDatabase = async () => {
+    let id_user = await getID()
+    console.log(id_user)
+    console.log(
     $.ajax({
 		url: "../guest_pages/push_data/add-order-to-database.php",
 		type: "POST",
@@ -189,6 +211,7 @@ const addOrderToDatabase = () => {
             id_order: randomNum,
 			email: userData.email,
             id_delivery: parseInt(userData.idDelivery),
+            id_user: id_user
 		 },
 		cache: false,
 		success: function(){
@@ -218,10 +241,11 @@ const addOrderToDatabase = () => {
             localStorage.removeItem('cart5');
             localStorage.removeItem('user-data');
             }
-	    })
+	    }))
 }
 
-const addOrderToDatabaseWithPaypal = () => {
+const addOrderToDatabaseWithPaypal = async () => {
+    let id_user = await getID()
     $.ajax({
 		url: "../guest_pages/push_data/add-order-to-database.php",
 		type: "POST",
@@ -229,6 +253,7 @@ const addOrderToDatabaseWithPaypal = () => {
             id_order: randomNum,
 			email: userData.email,
             id_delivery: parseInt(userData.idDelivery),
+            id_user: id_user
 		 },
 		cache: false,
 		success: function(){
