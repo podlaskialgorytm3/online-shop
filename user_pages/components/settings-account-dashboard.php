@@ -32,3 +32,4 @@
 <div class="success-add">
     <img src="../../images/checked.png" alt=""><p class="success-text"></p>
 </div>
+<script src="../../js/HandleAccountSettings.js"></script>
