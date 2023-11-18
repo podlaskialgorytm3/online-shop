@@ -40,6 +40,28 @@ const getID = () => {
         xmlhttp.send();
     });
 }
+const checkCorrectValue = async (text) => {
+    let id = await getID()
+    let password = CryptoJS.MD5(text).toString();
+    return new Promise((resolve, reject) => {
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET","../components/fetch-data.php" , true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].ID_USER == id){
+                   if(database[i].haslo == password){
+                    resolve(true)
+                   }
+                   else{
+                    resolve(false)
+                   }
+                } 
+            }
+    }}})
+}
 const suplmenetingMainDataUser = async () =>{
     let id = await getID()
     const ajax = new XMLHttpRequest();
