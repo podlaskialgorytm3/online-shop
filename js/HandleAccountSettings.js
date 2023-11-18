@@ -44,3 +44,8 @@ const suplmenetingMainDataUser = async () =>{
 document.addEventListener("DOMContentLoaded",() => {
     suplmenetingMainDataUser()
 })
+
+const mainEdit = document.querySelector(".main-edit")
+const emailEdit = document.querySelector(".email-edit")
+const passwordEdit = document.querySelector(".password-edit")
+

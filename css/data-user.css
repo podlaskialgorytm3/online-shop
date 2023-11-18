@@ -1,6 +1,7 @@
 input[type="text"],
 input[type="email"],
-input[type="number"]
+input[type="number"],
+input[type="password"]
 {
     width: 300px;
     height: 40px;

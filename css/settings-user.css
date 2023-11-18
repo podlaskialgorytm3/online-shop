@@ -9,7 +9,7 @@ h2{
     width: 400px;
     text-align: center;
 }
-button{
+button.edit{
     width: 100px;
     position: absolute;
     right: 0px;
@@ -30,4 +30,18 @@ button{
 h4{
     font-size: 20px;
     margin-bottom: 20px;
+}
+.edit-panel{
+    position: absolute;
+    width: 400px;
+    height: calc(auto + 200px);
+    border-radius: 30px;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    background-color: white;
+    top: 100px;
+    left: calc(50% - 200px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
