@@ -36,6 +36,7 @@ const suplmenetingMainDataUser = async () =>{
                     <p><b>Nazwisko:</b> ${database[i].nazwisko}</p>
                     <p><b>Adres:</b> ${database[i].adres}</p>
                 `
+                    emailContent.innerHTML = `<p><b>Email:</b>  ${database[i].email}</p>`
                 } 
             }
     }}
