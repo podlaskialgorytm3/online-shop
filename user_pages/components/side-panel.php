@@ -21,7 +21,7 @@
                 <p>Dane do zamówień</p>
             </div>
         </a>
-        <a href="">
+        <a href="../../user_pages/settings-account-page.php">
             <div class="settings-account-link">
                 <img src="../images/settings.png" alt="">
                 <p>Ustawienia konta</p>
