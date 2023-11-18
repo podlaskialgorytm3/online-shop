@@ -1,4 +1,4 @@
-dashboard = document.querySelector(".dashboard")
+dashboard = document.querySelector(".client-dashboard")
 sideBar = document.querySelector(".side-panel")
 showDeliveryPanel = document.querySelector(".show-delivery-panel")
 
@@ -7,16 +7,18 @@ exitShowing = document.querySelector(".exit-showing")
 
 detailBody = document.querySelector("#detail-body")
 
-
+header = document.querySelector("#header")
 
 showPopup = () => {
     dashboard.style.display = "none"
     sideBar.style.display = "none"
+    header.style.display = "none"
     showDeliveryPanel.style.display = "flex"
 }
 exitPopup = () => {
     dashboard.style.display = "block"
     sideBar.style.display = "block"
+    header.style.display = "flex"
     showDeliveryPanel.style.display = "none"
 }
 getDataToArray = (text) => {

@@ -78,6 +78,6 @@ echo $html;
 </head>
 <body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../../js/ShowDetailOrderUser.js"></script>
+<script src="../../js/ShowDetailOrderUsers.js"></script>
 </body>
 </html>
