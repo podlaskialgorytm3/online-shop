@@ -22,7 +22,8 @@ const submitEditEmail = document.querySelector(".submit-edit-email")
 
 
 let emails = []
-const ajax = new XMLHttpRequest();
+const gettingEmails = () =>{
+    const ajax = new XMLHttpRequest();
     ajax.open("GET","../components/fetch-data.php" , true);
     ajax.send();
     ajax.onreadystatechange = function() {
@@ -33,6 +34,8 @@ const ajax = new XMLHttpRequest();
             })
     }
 }
+}
+gettingEmails()
 
 const getID = () => {
     return new Promise((resolve, reject) => {
@@ -53,28 +56,6 @@ const getID = () => {
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
     });
-}
-const checkCorrectValue = async (text) => {
-    let id = await getID()
-    let password = CryptoJS.MD5(text).toString();
-    return new Promise((resolve, reject) => {
-    const ajax = new XMLHttpRequest();
-    ajax.open("GET","../components/fetch-data.php" , true);
-    ajax.send();
-    ajax.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            let database = JSON.parse(this.responseText);
-            for(let i = 0; i < database.length; i++){
-                if(database[i].ID_USER == id){
-                   if(database[i].haslo == password){
-                    resolve(true)
-                   }
-                   else{
-                    resolve(false)
-                   }
-                } 
-            }
-    }}})
 }
 const suplmenetingMainDataUser = async () =>{
     let id = await getID()
@@ -219,18 +200,37 @@ const validationEmail = async () => {
         errorConfirmEmailPassword.textContent = "Pole jest puste!"
     }
     else{
-        let isTruePass = await checkCorrectValue(confirmEmailPassword.value)
-        if(isTruePass){
-            errorConfirmEmailPassword.textContent = ""
-            stepValidation++
+        let id = await getID()
+        const ajax = new XMLHttpRequest();
+        let password = CryptoJS.MD5(confirmEmailPassword.value).toString();
+        ajax.open("GET","../components/fetch-data.php" , true);
+        ajax.send();
+        ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].ID_USER == id){
+                   if(database[i].haslo == password){
+                        stepValidation++
+                        errorConfirmEmailPassword.textContent = ""
+                        if(stepValidation == 2){
+                            editEmailData()
+                            hideEditEmail()
+                            gettingEmails()
+                        }
+                        else{
+                            return false
+                        }
+                   }
+                   else{
+                    errorConfirmEmailPassword.textContent = "Niepoprawne hasło!"
+                   }
+                } 
+            }
         }
-        else{
-            errorConfirmEmailPassword.textContent = "Wprowadzono nieprawidłowe hasło!"
         }
-    }
-    if(stepValidation == 2){
-        return true
-    }
+    
+}
 }
 
 
@@ -298,9 +298,6 @@ submitEditMain.addEventListener("click",() => {
         hideEditMainInfo()
     }
 })
-submitEditEmail.addEventListener("click",() => {
-    if(validationEmail()){
-        editEmailData()
-        hideEditEmail()
-    }
+submitEditEmail.addEventListener("click",async () => {
+    await validationEmail()
 })
