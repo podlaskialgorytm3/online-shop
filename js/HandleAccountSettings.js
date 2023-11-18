@@ -14,6 +14,12 @@ const lastNameError = document.querySelector(".last-name-error")
 const addressError = document.querySelector(".address-error")
 const submitEditMain = document.querySelector(".submit-edit-main")
 
+const newEmail = document.querySelector(".new-email")
+const confirmEmailPassword = document.querySelector(".confirm-email-password")
+const errorNewEmail = document.querySelector(".error-new-email")
+const errorConfirmEmailPassword = document.querySelector(".erorr-confirm-email-password")
+const submitEditEmail = document.querySelector(".submit-edit-email")
+
 const getID = () => {
     return new Promise((resolve, reject) => {
         let xmlhttp = new XMLHttpRequest();
@@ -71,6 +77,8 @@ const editEmailInfo = document.querySelector(".edit-email-info")
 const editPasswordInfo = document.querySelector(".edit-password-info")
 
 const exitMainInfo = document.querySelector(".exit-main")
+const exitEmail = document.querySelector(".exit-email")
+const exitPassword = document.querySelector(".exit-password")
 
 const hideElements = () => {
     document.querySelector("#header").style.display = "none"
@@ -90,7 +98,14 @@ const hideEditMainInfo = () => {
     showElements()
     editMainInfo.style.display = "none"
 }
-
+const showEditEmail = () => {
+    hideElements()
+    editEmailInfo.style.display = "flex"
+}
+const hideEditEmail = () => {
+    showElements()
+    editEmailInfo.style.display = "none"
+}
 const isEmpty = (text) => {
     if(text == ""){
         return true
@@ -174,6 +189,12 @@ mainEdit.addEventListener("click",() => {
 })
 exitMainInfo.addEventListener("click",() => {
     hideEditMainInfo()
+})
+emailEdit.addEventListener("click",() => {
+    showEditEmail()
+})
+exitEmail.addEventListener("click",() => {
+    hideEditEmail()
 })
 submitEditMain.addEventListener("click",() => {
     if(validationMainData()){

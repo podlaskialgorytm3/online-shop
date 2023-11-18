@@ -68,5 +68,5 @@
     <p class="error does-not-match"></p>
     <button class="submit-edit-email">Edytuj</button>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script src="../../js/HandleAccountSettings.js"></script>
