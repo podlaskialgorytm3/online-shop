@@ -21,6 +21,7 @@ const errorConfirmEmailPassword = document.querySelector(".erorr-confirm-email-p
 const submitEditEmail = document.querySelector(".submit-edit-email")
 
 
+
 let emails = []
 const gettingEmails = () =>{
     const ajax = new XMLHttpRequest();
@@ -56,6 +57,30 @@ const getID = () => {
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
     });
+}
+const checkPassword = async (text) => {
+        let id = await getID()
+        return new Promise((resolve, reject) => {
+        const ajax = new XMLHttpRequest();
+        let password = CryptoJS.MD5(text).toString();
+        ajax.open("GET","../components/fetch-data.php" , true);
+        ajax.send();
+        ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let database = JSON.parse(this.responseText);
+            for(let i = 0; i < database.length; i++){
+                if(database[i].ID_USER == id){
+                   if(database[i].haslo == password){
+                        resolve(true)
+                   }
+                   else{
+                        resolve(false)
+                   }
+                } 
+            }
+        }
+        }
+    })
 }
 const suplmenetingMainDataUser = async () =>{
     let id = await getID()
@@ -122,6 +147,14 @@ const showEditEmail = () => {
 const hideEditEmail = () => {
     showElements()
     editEmailInfo.style.display = "none"
+}
+const showEditPassword = () => {
+    hideElements()
+    editPasswordInfo.style.display = "flex"
+}
+const hideEditPassword = () => {
+    showElements()
+    editPasswordInfo.style.display = "none"
 }
 const isEmpty = (text) => {
     if(text == ""){
@@ -232,7 +265,9 @@ const validationEmail = async () => {
     
 }
 }
+const validationPassword = () => {
 
+}
 
 
 const editMainData = async () => {
@@ -291,6 +326,12 @@ emailEdit.addEventListener("click",() => {
 })
 exitEmail.addEventListener("click",() => {
     hideEditEmail()
+})
+passwordEdit.addEventListener("click",() => {
+    showEditPassword()
+})
+exitPassword.addEventListener("click",() => {
+    hideEditPassword()
 })
 submitEditMain.addEventListener("click",() => {
     if(validationMainData()){
