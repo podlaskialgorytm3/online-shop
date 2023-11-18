@@ -257,7 +257,26 @@ const editMainData = async () => {
             }
 	    })
 }
-
+const editEmailData = async () => {
+    let id = await getID()
+    $.ajax({
+		url: "../user_pages/push_data/edit-email-info.php",
+		type: "POST",
+		data: {
+            id: id,
+            email: newEmail.value
+		 },
+		cache: false,
+		success: function(){
+            suplmenetingMainDataUser()
+            succcesAdd.style.opacity = "1"
+            successText.textContent = "Udało się edytować twój email!"
+            setInterval(() => {
+                succcesAdd.style.opacity = "0"
+            },5000)
+            }
+	    })
+}
 
 
 mainEdit.addEventListener("click",() => {
@@ -280,6 +299,7 @@ submitEditMain.addEventListener("click",() => {
 })
 submitEditEmail.addEventListener("click",() => {
     if(validationEmail()){
-        
+        editEmailData()
+        hideEditEmail()
     }
 })
