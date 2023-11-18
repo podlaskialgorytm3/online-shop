@@ -54,7 +54,8 @@ function findIDZP($id,$pdo){
  }
 
 $stmt = $pdo->query('SELECT * FROM zamowienia z
-                    JOIN user u ON u.ID_USER = z.ID_USER');
+                    JOIN user u ON u.ID_USER = z.ID_USER
+                    WHERE z.ID_USER ='.$id_user);
 
 $html = '';
 foreach ($stmt as $row){
