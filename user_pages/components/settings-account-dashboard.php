@@ -36,6 +36,7 @@
 
 <div class="edit-panel edit-main-info">
     <h2>Edytuj swoje dane</h2>
+    <img src="../../images/x.png" alt="" class="exit exit-main" style="width: 50px;">
     <input type="text" class="username" placeholder="Wpisz swój psudonim">
     <p class="error username-error"></p>
     <input type="text" class="first-name" placeholder="Wpisz swoje imię">
@@ -47,6 +48,7 @@
     <button class="submit-edit-main">Edytuj</button>
 </div>
 <div class="edit-panel edit-email-info">
+    <img src="../../images/x.png" alt="" class="exit exit-email" style="width: 50px;">
     <h2>Edytuj swój email</h2>
     <input type="email" placeholder="Nowy e-mail" class="new-email">
     <p class="error error-new-email"></p>
@@ -56,6 +58,7 @@
 </div>
 <div class="edit-panel edit-password-info">
     <h2>Edytuj swoje hasło</h2>
+    <img src="../../images/x.png" alt="" class="exit exit-password" style="width: 50px;">
     <input type="password" placeholder="Stare hasło" class="old-password">
     <p class="error error-old-password"></p>
     <input type="password" placeholder="Nowe hasło" class="new-password">
