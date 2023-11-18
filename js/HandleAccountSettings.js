@@ -196,7 +196,7 @@ const validationMainData = () => {
 }
 
 
-const validationEmail = () => {
+const validationEmail = async () => {
     let stepValidation = 0
     if(isEmpty(newEmail.value)){
         errorNewEmail.textContent = "Pole jest puste!"
@@ -219,7 +219,8 @@ const validationEmail = () => {
         errorConfirmEmailPassword.textContent = "Pole jest puste!"
     }
     else{
-        if(checkCorrectValue(confirmEmailPassword.value)){
+        let isTruePass = await checkCorrectValue(confirmEmailPassword.value)
+        if(isTruePass){
             errorConfirmEmailPassword.textContent = ""
             stepValidation++
         }
