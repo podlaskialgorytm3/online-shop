@@ -15,7 +15,7 @@
                 <p>Ulubione</p>
             </div>
         </a>
-        <a href="">
+        <a href="../../user_pages/data-user-page.php">
             <div class="data-user-link">
                 <img src="../images/address.png" alt="">
                 <p>Dane do zamówień</p>
