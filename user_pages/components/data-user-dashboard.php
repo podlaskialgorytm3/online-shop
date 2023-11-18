@@ -16,3 +16,4 @@
             <button class="submit-data">Zatwierdź dane</button>
     </div>
 </div>
+<script src="../../js/HandleDataUser.js"></script>
