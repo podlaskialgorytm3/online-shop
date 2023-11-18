@@ -20,7 +20,14 @@ const errorNewEmail = document.querySelector(".error-new-email")
 const errorConfirmEmailPassword = document.querySelector(".erorr-confirm-email-password")
 const submitEditEmail = document.querySelector(".submit-edit-email")
 
-
+const oldPassword = document.querySelector(".old-password")
+const newPassword = document.querySelector(".new-password")
+const confirmNewPassword = document.querySelector(".confirm-new-password")
+const errorOldPassword = document.querySelector(".error-old-password")
+const errorNewPassword = document.querySelector(".error-new-password")
+const errorConfirmNewPassword = document.querySelector(".error-confirm-new-password")
+const submitEditPassword = document.querySelector(".submit-edit-password")
+const doesNotMatch = document.querySelector(".does-not-match")
 
 let emails = []
 const gettingEmails = () =>{
@@ -265,8 +272,52 @@ const validationEmail = async () => {
     
 }
 }
-const validationPassword = () => {
-
+const validationPassword = async () => {
+    let stepValidation = 0
+    if(isEmpty(oldPassword.value)){
+        errorOldPassword.textContent = "Pole jest puste!"
+    }
+    else{
+        if(await checkPassword(oldPassword.value)){
+            stepValidation++
+            errorOldPassword.textContent = ""
+        }
+        else{
+            errorOldPassword.textContent = "Niepoprawne hasło!"
+        }
+    }
+    if(isEmpty(newPassword.value)){
+        errorNewPassword.textContent = "Pole jest puste!"
+    }
+    else{
+        if(newPassword.value.length > 7){
+            stepValidation++
+            errorNewPassword.textContent = ""
+        }
+        else{
+            errorNewPassword.textContent = "Hasło ma poniżej 8 znaków!"
+        }
+    }
+    if(isEmpty(confirmNewPassword.value)){
+        errorConfirmNewPassword.textContent = "Pole jest puste!"
+    }
+    else{
+        stepValidation++
+        errorConfirmNewPassword.textContent = ""
+    }
+    if(confirmNewPassword.value == newPassword.value){
+        stepValidation++
+        doesNotMatch.textContent = ""
+    }
+    else{
+        doesNotMatch.textContent = "Hasła się nie zgadzają."
+    }
+    if(stepValidation == 4){
+        return true
+    }
+    else{
+        return false
+    }
 }
 
 
@@ -342,3 +393,8 @@ submitEditMain.addEventListener("click",() => {
 submitEditEmail.addEventListener("click",async () => {
     await validationEmail()
 })
+submitEditPassword.addEventListener("click", async () => {
+    if(await validationPassword()){
+        
+    }
+} )

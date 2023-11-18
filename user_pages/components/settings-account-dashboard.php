@@ -66,7 +66,7 @@
     <input type="password" placeholder="Potwierdź hasło" class="confirm-new-password">
     <p class="error error-confirm-new-password"></p>
     <p class="error does-not-match"></p>
-    <button class="submit-edit-email">Edytuj</button>
+    <button class="submit-edit-password">Edytuj</button>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script src="../../js/HandleAccountSettings.js"></script>
