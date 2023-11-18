@@ -54,7 +54,7 @@
     <p class="error error-new-email"></p>
     <input type="password" placeholder="Potwierdź hasłem" class="confirm-email-password">
     <p class="error erorr-confirm-email-password"></p>
-    <button class="submit-edit-email">Edutuj</button>
+    <button class="submit-edit-email">Edytuj</button>
 </div>
 <div class="edit-panel edit-password-info">
     <h2>Edytuj swoje hasło</h2>
@@ -66,7 +66,7 @@
     <input type="password" placeholder="Potwierdź hasło" class="confirm-new-password">
     <p class="error error-confirm-new-password"></p>
     <p class="error does-not-match"></p>
-    <button class="submit-edit-email">Edutuj</button>
+    <button class="submit-edit-email">Edytuj</button>
 </div>
 
 <script src="../../js/HandleAccountSettings.js"></script>

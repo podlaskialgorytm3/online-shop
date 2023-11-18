@@ -5,6 +5,11 @@ const username = document.querySelector(".username")
 const firstName = document.querySelector(".first-name")
 const lastName = document.querySelector(".last-name")
 const address = document.querySelector(".address")
+const usernameError = document.querySelector(".username-error")
+const firstNameError = document.querySelector(".first-name-error")
+const lastNameError = document.querySelector(".last-name-error")
+const addressError = document.querySelector(".address-error")
+const submitEditMain = document.querySelector(".submit-edit-main")
 
 const getID = () => {
     return new Promise((resolve, reject) => {
@@ -74,8 +79,6 @@ const showElements = () => {
     document.querySelector(".side-panel").style.display = "block"
     document.querySelector(".client-dashboard").style.display = "flex"
 }
-
-
 const showEditMainInfo = () => {
     hideElements()
     editMainInfo.style.display = "flex"
@@ -85,9 +88,68 @@ const hideEditMainInfo = () => {
     editMainInfo.style.display = "none"
 }
 
+const isEmpty = (text) => {
+    if(text == ""){
+        return true
+    }
+    else{
+        return false
+    }
+}
+const isEmail = (text) => {
+    let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(regex.test(text)){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
+const validationMainData = () => {
+    let stepValidation = 0
+    if(isEmpty(username.value)){
+        usernameError.textContent = "Pseudonim jest pusty!"
+    }
+    else{
+        usernameError.textContent = ""
+        stepValidation++
+    }
+    if(isEmpty(firstName.value)){
+        firstNameError.textContent = "Imię jest puste!"
+    }
+    else{
+        firstNameError.textContent = ""
+        stepValidation++
+    }
+    if(isEmpty(lastName.value)){
+        lastNameError.textContent = "Nazwisko jest puste!"
+    }
+    else{
+        lastNameError.textContent = ""
+        stepValidation++
+    }
+    if(isEmpty(address.value)){
+        addressError.textContent = "Adres jest pusty"
+    }
+    else{
+        addressError.textContent = ""
+        stepValidation++
+    }
+    if(stepValidation == 4){
+        return true
+    }
+}
+
+
 mainEdit.addEventListener("click",() => {
     showEditMainInfo()
 })
 exitMainInfo.addEventListener("click",() => {
     hideEditMainInfo()
+})
+submitEditMain.addEventListener("click",() => {
+    if(validationMainData()){
+        console.log("SUPER")
+    }
 })
