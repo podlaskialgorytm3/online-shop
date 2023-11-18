@@ -10,6 +10,9 @@ const numberError = document.querySelector(".number-error")
 
 const submitButton = document.querySelector(".submit-data")
 
+const successAdd = document.querySelector(".success-add")
+const successText = document.querySelector(".success-text")
+
 const getID = () => {
     return new Promise((resolve, reject) => {
         let xmlhttp = new XMLHttpRequest();
@@ -134,6 +137,11 @@ const editUserData = async () => {
 		cache: false,
 		success: function(){
             suplmenetingUserData()
+            successAdd.style.opacity = "1"
+            successText.textContent = "Udało się edytować dane!"
+            setInterval(() => {
+                successAdd.style.opacity = "0"
+            },5000)
         }
 	    })
 }

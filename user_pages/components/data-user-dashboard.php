@@ -16,4 +16,7 @@
             <button class="submit-data">Zatwierdź dane</button>
     </div>
 </div>
+<div class="success-add">
+    <img src="../../images/checked.png" alt=""><p class="success-text"></p>
+</div>
 <script src="../../js/HandleDataUser.js"></script>
