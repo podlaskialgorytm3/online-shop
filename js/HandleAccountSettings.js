@@ -1,6 +1,9 @@
 const mainContent = document.querySelector(".main-content")
 const emailContent = document.querySelector(".email-content")
 
+const succcesAdd = document.querySelector(".success-add")
+const successText = document.querySelector(".success-text")
+
 const username = document.querySelector(".username")
 const firstName = document.querySelector(".first-name")
 const lastName = document.querySelector(".last-name")
@@ -140,6 +143,30 @@ const validationMainData = () => {
         return true
     }
 }
+const editMainData = async () => {
+    let id = await getID()
+    $.ajax({
+		url: "../user_pages/push_data/edit-user-info.php",
+		type: "POST",
+		data: {
+            id: id,
+            username: username.value,
+            first_name: firstName.value,
+            last_name: lastName.value,
+            address: address.value
+		 },
+		cache: false,
+		success: function(){
+            suplmenetingMainDataUser()
+            succcesAdd.style.opacity = "1"
+            successText.textContent = "Udało się edytować twoje dane!"
+            setInterval(() => {
+                succcesAdd.style.opacity = "0"
+            },5000)
+            }
+	    })
+}
+
 
 
 mainEdit.addEventListener("click",() => {
@@ -150,6 +177,7 @@ exitMainInfo.addEventListener("click",() => {
 })
 submitEditMain.addEventListener("click",() => {
     if(validationMainData()){
-        console.log("SUPER")
+        editMainData()
+        hideEditMainInfo()
     }
 })
