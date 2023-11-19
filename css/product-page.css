@@ -103,3 +103,9 @@ div.success-add>img{
 div.success-add>p{
     font-size: 18px;
 }
+.add-to-favourite{
+    cursor: pointer;
+}
+.add-to-favourite:hover{
+    background-color: #007bff;
+}

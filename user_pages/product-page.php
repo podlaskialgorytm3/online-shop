@@ -88,6 +88,7 @@ if(!isset($_SESSION['user_name'])){
             echo '            <button class="add-to-card" data-id='.$row["Id_produktu"].'>';
             echo '                Dodaj do koszyka';
             echo '            </button>';
+            echo '             <img src="../images/favourite.png" style="width:50px;" class="add-to-favourite" alt="Dodaj do ulubionych!"/>';
             echo '        <div class="desc">';
             echo '            <h3>Opis</h3>';
             echo '            <p class="description">';
