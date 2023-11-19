@@ -1,0 +1,22 @@
+div.success-add{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 350px;
+    height: 70px;
+    background-color: #717171d6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    opacity: 0;
+    transition: 1s;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    color: white;
+}
+div.success-add>img{
+    width: 40px;
+}
+div.success-add>p{
+    font-size: 18px;
+}

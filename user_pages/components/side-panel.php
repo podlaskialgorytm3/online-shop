@@ -9,7 +9,7 @@
                 <p>Zamówienia</p>
             </div>
         </a>
-        <a href="">
+        <a href="../../user_pages/favourite-page.php">
             <div class="favourite-link">
                 <img src="../images/heart.png" alt="">
                 <p>Ulubione</p>
