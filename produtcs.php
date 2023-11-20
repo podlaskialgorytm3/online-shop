@@ -16,18 +16,9 @@
         
     </select>
     <div class="price-range-container">
-        <label for="minPrice">Min Price:</label>
-        <input type="number" id="minPrice" min="0" step="1" value="0">
-        
-        <label for="maxPrice">Max Price:</label>
-        <input type="number" id="maxPrice" min="0" step="1" value="100">
-
-        <input type="range" id="priceSlider" min="0" max="100" value="0">
-
-        <div class="price-range-values">
-            <span id="minValue">0</span>
-            <span id="maxValue">100</span>
-        </div>
+        <input type="number" class="price-input price-from" placeholder="od">
+        <span>---</span>
+        <input type="number" class="price-input price-to" placeholder="do">
     </div>
     </div>
     <div class="main">
@@ -35,5 +26,6 @@
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/GetCategoriesToFind.js"></script>
+    <script src="/js/HandlePriceRange.js"></script>
 </body>
 </html>

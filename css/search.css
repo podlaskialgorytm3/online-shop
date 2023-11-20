@@ -141,19 +141,12 @@ div.search-options{
 .price-range-container{
   position: absolute;
   top: 190px;
-  right: 200px;
+  right: 100px;
+  width: 400px;
 }
-.price-range-container {
-  text-align: center;
-}
-
-input[type="range"] {
-  width: 80%;
-  margin: 10px;
-}
-
-.price-range-values {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+input[type="number"]{
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
 }
