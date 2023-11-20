@@ -111,7 +111,10 @@ if(!isset($_SESSION['user_name'])){
     </div>
     <div class="success-add add-product-to-card">
     <img src="/images/checked.png" alt=""><p class="success-text"></p>
-</div>
+    </div>
+    <div class="reject-info">
+    <img src="../../images/x.png" alt=""><p class="success-text"></p>
+    </div>
 </body>
 </html>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

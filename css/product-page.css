@@ -81,7 +81,7 @@ select{
     border-radius: 10px;
 }
 
-div.success-add{
+div.success-add,div.reject-info{
     position: absolute;
     top: 2%;
     left: 2%;
@@ -97,10 +97,10 @@ div.success-add{
     border-radius: 15px;
     color: white;
 }
-div.success-add>img{
+div.success-add>img,div.reject-info>img{
     width: 40px;
 }
-div.success-add>p{
+div.success-add>p,div.reject-info>p{
     font-size: 18px;
 }
 .add-to-favourite{
