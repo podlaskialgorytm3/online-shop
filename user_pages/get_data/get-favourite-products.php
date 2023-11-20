@@ -13,7 +13,7 @@ $stmt = $pdo->query('SELECT * FROM ulubione_produkty');
 
 $html = '';
 foreach ($stmt as $row){
-    $html = '
+    $html .= '
     <div class="favourite-item">
     <a href="../product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'" class="link-to-item" style="display: block;">
         <div class="image" style="background-image: url('.$row["URL"].')">
