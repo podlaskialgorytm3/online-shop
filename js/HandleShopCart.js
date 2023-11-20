@@ -6,6 +6,10 @@ let nameValue = ""
 let priceValue = ""
 let cart = JSON.parse(localStorage.getItem('cart5')) || [];
 
+
+const successAdd = document.querySelector(".add-product-to-card")
+const successText = document.querySelector(".success-text")
+
 const getProductInfo = (buttonCard, color, size) => {
     return new Promise((resolve, reject) => {
         const ajax = new XMLHttpRequest();
@@ -120,6 +124,11 @@ buttonCard.addEventListener("click", async () => {
             letMinus++
             // Tworzenie nowego elementu w koszyku...
             let div = document.createElement("div")
+            successAdd.style.opacity = "1"
+            successText.textContent = "Dodałeś produkt do koszyka!"
+            setInterval(() => {
+                successAdd.style.opacity = "0"
+            },2000)
             getTagsName(cart[cart.length -1].color).then(colorName => {
             getTagsName(cart[cart.length -1].size).then(sizeName => {
                 div.innerHTML = `
@@ -151,13 +160,3 @@ buttonCard.addEventListener("click", async () => {
     }
 });
 
-const successAdd = document.querySelector(".add-product-to-card")
-const successText = document.querySelector(".success-text")
-
-buttonCard.addEventListener("click", () => {
-    successAdd.style.opacity = "1"
-    successText.textContent = "Dodałeś produkt do koszyka!"
-            setInterval(() => {
-                successAdd.style.opacity = "0"
-            },2000)
-})
