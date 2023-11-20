@@ -68,7 +68,31 @@ const getTagsName = (id) => {
     });
 }
 
-buttonCard.addEventListener("click", () => {
+const getLocalAmount = (id) => {
+    return new Promise((resolve, reject) => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", "../components/fetch-product.php", true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let database = JSON.parse(this.responseText);
+                for (let i = 0; i < database.length; i++) {
+                    if (database[i].Id_produktu == id) {
+                        resolve(database[i].stan_magazynowy);
+                        return;
+                    }
+                }
+                resolve("Brak parametru.");
+            }
+        };
+    });
+}
+let letMinus = 1
+
+buttonCard.addEventListener("click", async () => {
+    let localAmount = (await getLocalAmount(parseInt(buttonCard.dataset.id))) - letMinus
+    console.log(localAmount)
+    if(localAmount > 0){
     getProductInfo(buttonCard, color, size).then((productInfo) => {
         if (typeof Storage !== 'undefined') {
             let cart = JSON.parse(localStorage.getItem('cart5')) || [];
@@ -93,6 +117,7 @@ buttonCard.addEventListener("click", () => {
             }
 
             localStorage.setItem('cart5', JSON.stringify(cart))
+            letMinus++
             // Tworzenie nowego elementu w koszyku...
             let div = document.createElement("div")
             getTagsName(cart[cart.length -1].color).then(colorName => {
@@ -120,6 +145,10 @@ buttonCard.addEventListener("click", () => {
     }).catch((error) => {
         console.error("Wystąpił błąd: ", error);
     });
+    }
+    else{
+        console.log("Produktu nie ma juz.")
+    }
 });
 
 const successAdd = document.querySelector(".add-product-to-card")
