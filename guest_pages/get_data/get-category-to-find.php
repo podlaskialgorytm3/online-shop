@@ -13,9 +13,9 @@ $stmt = $pdo->query('SELECT * FROM kategorie');
 
 
 
-$html = '';
+$html = '<option value=""></option>';
 foreach ($stmt as $row){
-    $html .= '<option value='.$row['id_kategorii'].'>'.$row['nazwa_kategorii'].'</option>';
+    $html .= '<option value="'.$row['nazwa_kategorii'].'">'.$row['nazwa_kategorii'].'</option>';
 }
 
 sleep(1);

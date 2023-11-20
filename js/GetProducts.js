@@ -14,7 +14,7 @@ function getProductsFilter(){
                 url: "../guest_pages/get_data/get-product-filter.php",
                 method: 'POST',
                 data: {
-                    search: $('#search').val()	
+                    search: $('#search').val(),
                 }
             }).done(function( data ) {
                 $('#product-container').html(data);
@@ -22,7 +22,23 @@ function getProductsFilter(){
     });
 
 }
+const selectCategory = document.querySelector(".category")
+function getCategoryFilter(){
+    selectCategory.addEventListener("change",() => {
+        $('#product-container').html('<div> </div>');
+        $.ajax({
+                url: "../guest_pages/get_data/get-product-category.php",
+                method: 'POST',
+                data: {
+                    category: selectCategory.value
+                }
+            }).done(function( data ) {
+                $('#product-container').html(data);
+            });
+    })
+}
 $(document).ready(function(){
     getProducts();
     getProductsFilter()
+    getCategoryFilter()
 });
