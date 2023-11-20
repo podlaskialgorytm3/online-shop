@@ -1,6 +1,8 @@
 <?php
 
 require_once '../../config.php';
+session_start();
+$id_user = json_decode($_SESSION['user_name']);
 try {
     $pdo = new PDO('mysql:host='.$hostname.';dbname='.$database, $login, $password);
     $pdo->query('SET NAMES utf8');
@@ -9,7 +11,7 @@ try {
     exit();
 }
 
-$stmt = $pdo->query('SELECT * FROM ulubione_produkty');
+$stmt = $pdo->query('SELECT * FROM ulubione_produkty WHERE ID_USER ='.$id_user);
 
 $html = '';
 foreach ($stmt as $row){
