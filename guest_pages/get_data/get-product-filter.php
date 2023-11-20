@@ -14,7 +14,7 @@ $stmt = $pdo->prepare("SELECT * FROM produkty p JOIN produkty_parametry pp ON pp
                         JOIN produkty_kategorie pk ON pk.Id_produktu = p.Id_produktu
                         JOIN kategorie k ON k.id_kategorii = pk.id_kategorii
                         WHERE (p.nazwa_produktu LIKE :nazwa_produktu OR pr.wartosc_parametru LIKE :wartosc_parametru) AND k.nazwa_kategorii LIKE :nazwa_kategorii
-                        AND p.cena > ".$_POST["price_from"]."
+                        AND p.cena > ".$_POST["price_from"]." AND p.cena < ".$_POST["price_to"]."
                         GROUP BY p.Id_produktu");
 $stmt -> bindValue(':nazwa_produktu', '%'.$_POST['search'].'%', PDO::PARAM_STR);
 $stmt -> bindValue(':wartosc_parametru', '%'.$_POST['search'].'%', PDO::PARAM_STR);

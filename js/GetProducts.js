@@ -19,7 +19,8 @@ function getProductsFilter(){
                 data: {
                     search: $('#search').val(),
                     category: selectCategory.value,
-                    price_from: priceFrom.value || 0
+                    price_from: priceFrom.value || 0,
+                    price_to: priceTo.value || 10000
                 }
             }).done(function( data ) {
                 $('#product-container').html(data);
@@ -36,7 +37,8 @@ function getCategoryFilter(){
                 data: {
                     category: selectCategory.value,
                     search: $('#search').val(),
-                    price_from: priceFrom.value || 0
+                    price_from: priceFrom.value || 0,
+                    price_to: priceTo.value || 10000
                 }
             }).done(function( data ) {
                 $('#product-container').html(data);
@@ -53,7 +55,27 @@ function getPriceFrom(){
                 data: {
                     search: $('#search').val(),
                     category: selectCategory.value,
-                    price_from: priceFrom.value || 0
+                    price_from: priceFrom.value || 0,
+                    price_to: priceTo.value || 10000
+                }
+            }).done(function( data ) {
+                $('#product-container').html(data);
+            });
+    });
+
+}
+function getPriceTo(){
+    $(".price-to").keyup(function(e){
+        e.preventDefault();
+        $('#product-container').html('<div> </div>');
+        $.ajax({
+                url: "../guest_pages/get_data/get-product-filter.php",
+                method: 'POST',
+                data: {
+                    search: $('#search').val(),
+                    category: selectCategory.value,
+                    price_from: priceFrom.value || 0,
+                    price_to: priceTo.value || 10000
                 }
             }).done(function( data ) {
                 $('#product-container').html(data);
@@ -66,4 +88,5 @@ $(document).ready(function(){
     getProductsFilter()
     getCategoryFilter()
     getPriceFrom()
+    getPriceTo()
 });
