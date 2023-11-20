@@ -1,7 +1,5 @@
 const addToFavourite = document.querySelector(".add-to-favourite")
 const rejectInfo = document.querySelector(".reject-info")
-const successAdd = document.querySelector(".success-add")
-const successText = document.querySelector(".success-text")
 
 const getID = () => {
     return new Promise((resolve, reject) => {
