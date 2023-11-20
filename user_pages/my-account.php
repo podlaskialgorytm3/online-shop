@@ -15,5 +15,6 @@ if(!isset($_SESSION['user_name'])){
 <body>
     <?php include '../user_pages/components/header.php' ?>
     <?php include '../user_pages/components/side-panel.php' ?>
+    <?php include '../user_pages/components/main-dashboard.php' ?>
 </body>
 </html>
