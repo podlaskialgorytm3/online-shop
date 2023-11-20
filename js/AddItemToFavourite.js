@@ -22,26 +22,30 @@ const getID = () => {
     });
 }
 const isFavourite = async (id) => {
-    let id_user = await getID()
-    return new Promise((resolve,reject) => {
-        const ajax = new XMLHttpRequest();
-        ajax.open("GET","../components/fetch-favourite-products.php" , true);
-        ajax.send();
-        ajax.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            let database = JSON.parse(this.responseText);
-            for(let i = 0; i < database.length; i++){
-                if(database[i].Id_produktu == id && database[i].ID_USER == id_user){
-                    resolve(true)
+    try {
+        let id_user = await getID();
+        return new Promise((resolve, reject) => {
+            const ajax = new XMLHttpRequest();
+            ajax.open("GET", "../components/fetch-favourite-products.php", true);
+            ajax.send();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let database = JSON.parse(this.responseText);
+                    for (let i = 0; i < database.length; i++) {
+                        if (database[i].Id_produktu == id && database[i].ID_USER == id_user) {
+                            resolve(true);
+                            return;
+                        }
+                    }
+                    resolve(false); // Jeżeli nie znaleziono pasującego rekordu
                 }
-                else{
-                    resolve(false)
-                }
-            }
-        }}
-        
-    })
-}
+            };
+        });
+    } catch (error) {
+        console.error("Wystąpił błąd: ", error);
+        throw error;
+    }
+};
 
 const productIsAlreadyFavourite = () => {
     rejectInfo.style.opacity = "1"
@@ -74,10 +78,15 @@ const addProductToFavourite = async () => {
 }
 
 addToFavourite.addEventListener("click", async () => {
-    if(await isFavourite(addToFavourite.dataset.id)){
-        productIsAlreadyFavourite()
+    try {
+        const id = addToFavourite.dataset.id;
+        const isFav = await isFavourite(id);
+        if (isFav) {
+            productIsAlreadyFavourite();
+        } else {
+            addProductToFavourite();
+        }
+    } catch (error) {
+        console.error("Wystąpił błąd:", error);
     }
-    else{
-        addProductToFavourite()
-    }
-})
+});
