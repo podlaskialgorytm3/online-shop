@@ -1,3 +1,4 @@
+const selectCategory = document.querySelector(".category")
 function getProducts(){
     $.ajax({
         url: "../guest_pages/get_data/get_products.php",
@@ -15,6 +16,7 @@ function getProductsFilter(){
                 method: 'POST',
                 data: {
                     search: $('#search').val(),
+                    category: selectCategory.value
                 }
             }).done(function( data ) {
                 $('#product-container').html(data);
@@ -22,15 +24,15 @@ function getProductsFilter(){
     });
 
 }
-const selectCategory = document.querySelector(".category")
 function getCategoryFilter(){
     selectCategory.addEventListener("change",() => {
         $('#product-container').html('<div> </div>');
         $.ajax({
-                url: "../guest_pages/get_data/get-product-category.php",
+                url: "../guest_pages/get_data/get-product-filter.php",
                 method: 'POST',
                 data: {
-                    category: selectCategory.value
+                    category: selectCategory.value,
+                    search: $('#search').val()
                 }
             }).done(function( data ) {
                 $('#product-container').html(data);
