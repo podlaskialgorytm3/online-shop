@@ -34,12 +34,17 @@ const isFavourite = async (id) => {
                 if(database[i].Id_produktu == id && database[i].ID_USER == id_user){
                     resolve(true)
                 }
+                else{
+                    resolve(false)
+                }
             }
         }}
-        resolve(false)
+        
     })
 }
 
 addToFavourite.addEventListener("click", async () => {
-    console.log(isFavourite(addToFavourite.dataset.id))
+    if(await isFavourite(addToFavourite.dataset.id)){
+        console.log("Jest ulubione! Nie możesz dodać tego do ulubionego : (( (( ")
+    }
 })
