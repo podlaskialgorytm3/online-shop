@@ -7,9 +7,14 @@
 </head>
 <body>
     <?php include 'components/header.php' ?>
+    <div class="search-options">
     <div class="container">
         <input type="text" placeholder="Parametr lub nazwa." id="search" >
         <div class="search"></div>
+    </div>
+    <select name="category">
+        
+    </select>
     </div>
     <div class="main">
     <?php include 'guest_pages/product-container.php'?>
