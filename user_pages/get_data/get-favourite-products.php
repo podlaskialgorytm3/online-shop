@@ -15,13 +15,13 @@ $html = '';
 foreach ($stmt as $row){
     $html = '
     <div class="favourite-item">
-    <a href="" class="link-to-item">
+    <a href="../product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'" class="link-to-item" style="display: block;">
         <div class="image" style="background-image: url('.$row["URL"].')">
 
         </div>
     </a>
     <h2 class="title-item">'.$row["nazwa_produktu"].'</h2>
-    <img src="../../images/delete.png" alt="Usuwanie" style="width: 50px;" data-id='.$row["Id_ulubiony_produkt"].'>
+    <button class="delete-item" data-id='.$row["Id_ulubiony_produkt"].'>Usuń z ulubionych</>
     </div>
     ';
 }
