@@ -1,5 +1,7 @@
 const addToFavourite = document.querySelector(".add-to-favourite")
-
+const rejectInfo = document.querySelector(".reject-info")
+const successAdd = document.querySelector(".success-add")
+const successText = document.querySelector(".success-text")
 
 const getID = () => {
     return new Promise((resolve, reject) => {
@@ -43,8 +45,41 @@ const isFavourite = async (id) => {
     })
 }
 
+const productIsAlreadyFavourite = () => {
+    rejectInfo.style.opacity = "1"
+    successText.textContent = "Produkt jest już w ulubionych."
+    setInterval(() => {
+        rejectInfo.style.opacity = "0"
+    },5000)
+}
+const successAddToFavourite = () => {
+    successAdd.style.opacity = "1"
+    successText.textContent = "Dodano produkt do ulubionych."
+    setInterval(() => {
+        successAdd.style.opacity = "0"
+    },5000)
+}
+const addProductToFavourite = async () => {
+    let id_user = await getID()
+    $.ajax({
+        url: "../user_pages/push_data/add-favourite-item.php",
+        type: "POST",
+        data: {
+            Id_user: id_user,
+            Id_product: addToFavourite.dataset.id
+         },
+        cache: false,
+        success: function(){
+            successAddToFavourite()
+        }
+     })
+}
+
 addToFavourite.addEventListener("click", async () => {
     if(await isFavourite(addToFavourite.dataset.id)){
-        console.log("Jest ulubione! Nie możesz dodać tego do ulubionego : (( (( ")
+        productIsAlreadyFavourite()
+    }
+    else{
+        addProductToFavourite()
     }
 })
