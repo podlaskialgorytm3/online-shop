@@ -138,3 +138,22 @@ div.search-options{
   width: 100%;
   height: 50px;
 }
+.price-range-container{
+  position: absolute;
+  top: 190px;
+  right: 200px;
+}
+.price-range-container {
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 80%;
+  margin: 10px;
+}
+
+.price-range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
