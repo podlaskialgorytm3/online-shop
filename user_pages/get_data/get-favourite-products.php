@@ -17,7 +17,7 @@ $html = '';
 foreach ($stmt as $row){
     $html .= '
     <div class="favourite-item">
-    <a href="../product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'" class="link-to-item" style="display: block;">
+    <a href="../../user_pages/product-page.php?id='.$row["Id_produktu"].'&name='.$row["nazwa_produktu"].'" class="link-to-item" style="display: block;">
         <div class="image" style="background-image: url('.$row["URL"].')">
 
         </div>

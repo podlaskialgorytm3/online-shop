@@ -88,7 +88,7 @@ if(!isset($_SESSION['user_name'])){
             echo '            <button class="add-to-card" data-id='.$row["Id_produktu"].'>';
             echo '                Dodaj do koszyka';
             echo '            </button>';
-            echo '             <img src="../images/favourite.png" style="width:50px;" class="add-to-favourite" alt="Dodaj do ulubionych!"/>';
+            echo '             <img src="../images/favourite.png" style="width:50px;" class="add-to-favourite" alt="Dodaj do ulubionych!" data-id='.$row["Id_produktu"].'>';
             echo '        <div class="desc">';
             echo '            <h3>Opis</h3>';
             echo '            <p class="description">';
@@ -114,5 +114,6 @@ if(!isset($_SESSION['user_name'])){
 </div>
 </body>
 </html>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/HandleShopCart.js"></script>
-
+<script src="../js/AddItemToFavourite.js"></script>
