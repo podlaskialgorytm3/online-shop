@@ -113,7 +113,7 @@ if(!isset($_SESSION['user_name'])){
     <img src="/images/checked.png" alt=""><p class="success-text"></p>
     </div>
     <div class="reject-info">
-    <img src="../../images/x.png" alt=""><p class="success-text"></p>
+    <img src="../../images/x.png" alt=""><p class="reject-text"></p>
     </div>
 </body>
 </html>

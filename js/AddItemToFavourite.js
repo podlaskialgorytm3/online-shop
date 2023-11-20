@@ -1,6 +1,6 @@
 const addToFavourite = document.querySelector(".add-to-favourite")
 const rejectInfo = document.querySelector(".reject-info")
-
+const rejectText = document.querySelector(".reject-text")
 const getID = () => {
     return new Promise((resolve, reject) => {
         let xmlhttp = new XMLHttpRequest();
@@ -37,7 +37,7 @@ const isFavourite = async (id) => {
                             return;
                         }
                     }
-                    resolve(false); // Jeżeli nie znaleziono pasującego rekordu
+                    resolve(false);
                 }
             };
         });
@@ -49,7 +49,7 @@ const isFavourite = async (id) => {
 
 const productIsAlreadyFavourite = () => {
     rejectInfo.style.opacity = "1"
-    successText.textContent = "Produkt jest już w ulubionych."
+    rejectText.textContent = "Produkt jest już w ulubionych."
     setInterval(() => {
         rejectInfo.style.opacity = "0"
     },5000)
