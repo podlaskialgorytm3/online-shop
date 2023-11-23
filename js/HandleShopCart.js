@@ -9,6 +9,7 @@ let cart = JSON.parse(localStorage.getItem('cart5')) || [];
 
 const successAdd = document.querySelector(".add-product-to-card")
 const successText = document.querySelector(".success-text")
+const reject = document.querySelector(".reject")
 
 const getProductInfo = (buttonCard, color, size) => {
     return new Promise((resolve, reject) => {
@@ -91,7 +92,7 @@ const getLocalAmount = (id) => {
         };
     });
 }
-let letMinus = 1
+let letMinus = 0
 
 buttonCard.addEventListener("click", async () => {
     let localAmount = (await getLocalAmount(parseInt(buttonCard.dataset.id))) - letMinus
@@ -156,7 +157,11 @@ buttonCard.addEventListener("click", async () => {
     });
     }
     else{
-        console.log("Produktu nie ma juz.")
+            reject.style.opacity = "1"
+            successText.textContent = "Produktu już nie ma!"
+            setInterval(() => {
+                reject.style.opacity = "0"
+            },2000)
     }
 });
 
