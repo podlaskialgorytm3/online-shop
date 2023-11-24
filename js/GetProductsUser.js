@@ -3,7 +3,7 @@ const priceFrom = document.querySelector(".price-from")
 const priceTo = document.querySelector(".price-to")
 function getProducts(){
     $.ajax({
-        url: "../guest_pages/get_data/get_products.php",
+        url: "../user_pages/get_data/get-products.php",
         method: 'POST'
     }).done(function( data ) {
         $('#product-container').html(data);
@@ -14,7 +14,7 @@ function getProductsFilter(){
         e.preventDefault();
         $('#product-container').html('<div> </div>');
         $.ajax({
-                url: "../guest_pages/get_data/get-product-filter.php",
+                url: "../user_pages/get_data/get-products-filter.php",
                 method: 'POST',
                 data: {
                     search: $('#search').val(),
@@ -32,7 +32,7 @@ function getCategoryFilter(){
     selectCategory.addEventListener("change",() => {
         $('#product-container').html('<div> </div>');
         $.ajax({
-                url: "../guest_pages/get_data/get-product-filter.php",
+                url: "../user_pages/get_data/get-products-filter.php",
                 method: 'POST',
                 data: {
                     category: selectCategory.value,
@@ -50,7 +50,7 @@ function getPriceFrom(){
         e.preventDefault();
         $('#product-container').html('<div> </div>');
         $.ajax({
-                url: "../guest_pages/get_data/get-product-filter.php",
+                url: "../user_pages/get_data/get-products-filter.php",
                 method: 'POST',
                 data: {
                     search: $('#search').val(),
@@ -69,7 +69,7 @@ function getPriceTo(){
         e.preventDefault();
         $('#product-container').html('<div> </div>');
         $.ajax({
-                url: "../guest_pages/get_data/get-product-filter.php",
+                url: "../user_pages/get_data/get-products-filter.php",
                 method: 'POST',
                 data: {
                     search: $('#search').val(),
