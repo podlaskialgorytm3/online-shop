@@ -31,5 +31,6 @@ if(!isset($_SESSION['user_name'])){
     <div class="main">
     <?php include '../user_pages/product-container.php'?>
     </div>
+    <script src="../js/GetCategoriesToFind.js"></script>
 </body>
 </html>
