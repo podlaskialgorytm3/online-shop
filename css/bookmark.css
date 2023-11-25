@@ -18,3 +18,10 @@ div.bookmark:hover{
 div.bookmark>a>img{
     width: 70px;
 }
+
+@media (max-width: 768px) {
+    div.bookmark{
+    width: 80px;
+    height: 80px;
+    }
+}
