@@ -70,3 +70,28 @@ body {
     color: red;
     font-size: 18px;
 }
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 290px; 
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        width: 90%;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .form-group{
+        width: 300px;
+        margin-bottom: 10px;
+    }
+
+
+}
