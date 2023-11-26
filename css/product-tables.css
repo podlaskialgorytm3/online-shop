@@ -258,3 +258,27 @@ input.description-page-edit{
     width: 70%;
     height: 40%;
 }
+@media (max-width: 768px) {
+    body{
+        font-size: 14px;
+    }
+}
+@media (max-width:1024px){
+    body{
+        font-size: 15px;
+    }
+    div.title-shop {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    div.logout{
+        height: 50px;
+        width: 50px;
+    }
+    div.logout>a>img {
+        width: 35px;
+    }
+    td {
+        padding: 1px;
+    }
+}
