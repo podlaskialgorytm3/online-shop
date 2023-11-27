@@ -27,3 +27,8 @@
 .side-panel>a>div>p{
     margin-left: 20px;
 }
+@media screen and (max-width: 900px) and (orientation: portrait){
+    .side-panel>a>div>p{
+        display: none;
+    }
+}
