@@ -6,9 +6,10 @@ div.content{
     margin: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 70vw;
+    height: 50vh;
 }
 h1{
     font-size: 48px;

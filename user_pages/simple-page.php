@@ -47,5 +47,6 @@ if(!isset($_SESSION['user_name'])){
         $pdo = null;
         ?>
     </div>
+    <?php include '../components/footer.php' ?>
 </body>
 </html>
