@@ -150,3 +150,8 @@ input[type="number"]{
   width: 100px;
   height: 30px;
 }
+@media screen and (max-width: 900px) and (orientation: portrait){
+  select,input[type="number"]{
+    visibility: hidden;
+  }
+}
