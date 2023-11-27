@@ -109,3 +109,23 @@ div.success-add>p,div.reject-info>p{
 .add-to-favourite:hover{
     background-color: #007bff;
 }
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .product-page{
+        width: 100vw;
+        min-height: 120vh;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 14px;
+    }
+    .left-side{ 
+        width: 100%;
+        height: 300px;
+    }
+    .right-side{
+        width: 100%;
+        height: calc(100vh - 300px);
+    }
+}
