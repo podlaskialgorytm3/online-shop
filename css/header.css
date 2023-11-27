@@ -144,10 +144,17 @@ div.accounts>a{
     height: auto;
 }
 @media screen and (max-width: 768px) {
-    .header-left-side{
-        display: none;
+    .header-left-side>a>img{
+        width: 30px;
     }
-    .header-right-side{
+    div.accounts>a>img{
+        width: 30px;
+    }
+    div.accounts>a{
+        width: 30px;
+        height: auto;
+    }
+    div#simple-pages{
         display: none;
     }
 }
