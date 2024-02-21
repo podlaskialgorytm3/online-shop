@@ -19,13 +19,14 @@
         <li>There may also be an option to filter or search for products based on specific criteria.</li>
     </ul>
 
-    <h2>Admin Panel:</h2>
+<h2>Admin Panel:</h2>
     <ul>
         <li>Requires authentication, usually through a login form.</li>
         <li>Enables the admin to manage the store's content, such as adding, editing, and deleting products.</li>
         <li>The admin can view the list of products, add new products to the store, and update existing products.</li>
         <li>In addition, the admin panel may include features for managing orders, users, and other aspects of the store's operations.</li>
     </ul> 
+
 <h2>🏆 Motivation </h2>
 
 * to start programming because I like to learn by doing
